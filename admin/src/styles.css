@@ -1,0 +1,69 @@
+:root { color: #e8ecef; background: #080a0c; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #080a0c; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.eyebrow { color: #1595ff; font: 500 10px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .15em; }
+.loading { display: grid; min-height: 100vh; place-items: center; color: #8d969f; font: 12px ui-monospace, SFMono-Regular, Consolas, monospace; }
+
+.login-shell { display: grid; min-height: 100vh; place-items: center; padding: 24px; background: radial-gradient(circle at 70% 0, rgba(21,149,255,.08), transparent 36%), #080a0c; }
+.login-card { width: min(430px, 100%); padding: 42px; border: 1px solid #272d33; border-radius: 18px; background: rgba(17,20,23,.88); box-shadow: 0 30px 90px rgba(0,0,0,.38); }
+.login-card > svg { display: block; margin: 44px 0 22px; color: #1595ff; }
+.login-card h1 { margin: 0 0 12px; font-size: 34px; letter-spacing: -.04em; }
+.login-card p { margin: 0 0 35px; color: #8d969f; font-size: 14px; line-height: 1.65; }
+.login-card form, .login-card label { display: grid; gap: 10px; }
+.login-card label span, .field > span { color: #8d969f; font: 10px ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; }
+input, textarea { width: 100%; border: 1px solid #2b3239; border-radius: 9px; outline: 0; color: #eef2f4; background: #0c0f12; transition: border-color .2s, box-shadow .2s; }
+input { min-height: 46px; padding: 0 13px; }
+textarea { min-height: 92px; padding: 12px 13px; resize: vertical; line-height: 1.55; }
+input:focus, textarea:focus { border-color: #1595ff; box-shadow: 0 0 0 3px rgba(21,149,255,.12); }
+.login-card form > button, .save { min-height: 46px; border: 0; border-radius: 9px; color: #07101a; background: #1595ff; font-weight: 600; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+.error { display: flex; gap: 8px; align-items: center; color: #ff8d8d; font-size: 12px; }
+
+.studio { display: grid; grid-template-columns: 250px minmax(0,1fr); min-height: 100vh; }
+.sidebar { position: sticky; top: 0; display: flex; flex-direction: column; height: 100vh; padding: 30px 18px 22px; border-right: 1px solid #242a30; background: #090b0d; }
+.sidebar h1 { margin: 10px 0 4px; font-size: 20px; letter-spacing: -.025em; }
+.sidebar p { margin: 0; color: #68717a; font: 10px ui-monospace, SFMono-Regular, Consolas, monospace; text-transform: uppercase; }
+.sidebar nav { display: grid; gap: 3px; margin-top: 42px; overflow: auto; }
+.sidebar nav button, .logout { display: flex; align-items: center; min-height: 38px; padding: 0 12px; border: 0; border-radius: 7px; color: #8f979f; background: transparent; text-align: left; cursor: pointer; }
+.sidebar nav button:hover, .sidebar nav button.active { color: #eef1f3; background: #15191d; }
+.sidebar nav button.active::before { width: 4px; height: 4px; margin-right: 10px; border-radius: 50%; background: #1595ff; content: ""; }
+.logout { gap: 9px; margin-top: auto; }
+
+.editor { min-width: 0; padding: 0 4vw 80px; }
+.editor-header { position: sticky; z-index: 5; top: 0; display: flex; align-items: center; justify-content: space-between; min-height: 112px; border-bottom: 1px solid #242a30; background: rgba(8,10,12,.91); backdrop-filter: blur(18px); }
+.editor-header h2 { margin: 8px 0 0; font-size: 28px; letter-spacing: -.04em; }
+.actions { display: flex; align-items: center; gap: 12px; }
+.actions a, .actions button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 15px; border-radius: 8px; text-decoration: none; font-size: 12px; }
+.actions a { border: 1px solid #2b3239; color: #bbc2c8; }
+.save { min-width: 142px; }
+.save-state { display: flex; align-items: center; gap: 7px; min-height: 48px; color: #77818a; font: 10px ui-monospace, SFMono-Regular, Consolas, monospace; }
+.save-state svg { color: #1595ff; }
+.form-surface { max-width: 1120px; padding: 30px; border: 1px solid #242a30; border-radius: 14px; background: #0d1013; }
+fieldset { min-width: 0; margin: 0; border: 0; padding: 0; }
+fieldset > legend { width: 100%; margin-bottom: 24px; color: #eff2f4; font-size: 17px; font-weight: 600; }
+fieldset > legend span { margin-left: 8px; color: #68717a; font: 10px ui-monospace, SFMono-Regular, Consolas, monospace; }
+.field-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.field { display: grid; align-content: start; gap: 9px; min-width: 0; }
+.field.wide, .field-grid > .group, .field-grid > .collection { grid-column: 1/-1; }
+.collection-list { display: grid; gap: 14px; }
+.collection-item { position: relative; padding: 26px 22px 22px 58px; border: 1px solid #242a30; border-radius: 11px; background: #0a0c0f; }
+.item-index { position: absolute; top: 28px; left: 20px; color: #1595ff; font: 10px ui-monospace, SFMono-Regular, Consolas, monospace; }
+.collection-item > fieldset > legend { font-size: 14px; }
+.remove { position: absolute; top: 16px; right: 16px; border: 0; color: #7d858d; background: transparent; font: 9px ui-monospace, SFMono-Regular, Consolas, monospace; cursor: pointer; text-transform: uppercase; }
+.remove:hover { color: #ff8d8d; }
+.secondary { min-height: 38px; margin-top: 16px; padding: 0 14px; border: 1px solid #2b3239; border-radius: 8px; color: #bfc5ca; background: #12161a; cursor: pointer; }
+
+@media (max-width: 760px) {
+  .studio { display: block; }
+  .sidebar { position: relative; width: 100%; height: auto; border-right: 0; border-bottom: 1px solid #242a30; }
+  .sidebar nav { grid-template-columns: repeat(2,1fr); max-height: none; margin-top: 24px; }
+  .logout { margin-top: 22px; }
+  .editor { padding: 0 16px 60px; }
+  .editor-header { align-items: flex-start; min-height: 154px; padding: 24px 0; }
+  .actions { flex-direction: column-reverse; align-items: stretch; }
+  .field-grid { grid-template-columns: 1fr; }
+  .form-surface { padding: 20px; }
+  .collection-item { padding-left: 45px; }
+}

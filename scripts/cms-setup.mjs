@@ -1,0 +1,174 @@
+import { randomBytes, scrypt as scryptCallback } from "node:crypto";
+import { appendFile, mkdir, open, readFile, rename, unlink } from "node:fs/promises";
+import { promisify } from "node:util";
+import path from "node:path";
+import process from "node:process";
+import { fileURLToPath } from "node:url";
+
+const scrypt = promisify(scryptCallback);
+const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.resolve(SCRIPT_DIR, "..");
+const ENV_PATH = path.join(ROOT_DIR, ".env.cms.local");
+const GITIGNORE_PATH = path.join(ROOT_DIR, ".gitignore");
+const PASSWORD_MIN_LENGTH = 12;
+const PASSWORD_MAX_LENGTH = 256;
+const SCRYPT_PARAMS = Object.freeze({ N: 32768, r: 8, p: 1 });
+
+async function readHidden(prompt) {
+  if (!process.stdin.isTTY || !process.stdout.isTTY || !process.stdin.setRawMode) {
+    throw new Error("No interactive terminal. Set CMS_PASSWORD in the environment and run this script again.");
+  }
+
+  process.stdout.write(prompt);
+  process.stdin.setEncoding("utf8");
+  process.stdin.setRawMode(true);
+  process.stdin.resume();
+
+  return new Promise((resolve, reject) => {
+    let value = "";
+
+    const finish = (error) => {
+      process.stdin.off("data", onData);
+      process.stdin.setRawMode(false);
+      process.stdin.pause();
+      process.stdout.write("\n");
+      if (error) reject(error);
+      else resolve(value);
+    };
+
+    const onData = (chunk) => {
+      for (const character of chunk) {
+        if (character === "\u0003") {
+          finish(new Error("Setup cancelled."));
+          return;
+        }
+        if (character === "\r" || character === "\n") {
+          finish();
+          return;
+        }
+        if (character === "\u007f" || character === "\b") {
+          value = value.slice(0, -1);
+          continue;
+        }
+        value += character;
+        if (value.length > PASSWORD_MAX_LENGTH) {
+          finish(new Error(`Password must be at most ${PASSWORD_MAX_LENGTH} characters.`));
+          return;
+        }
+      }
+    };
+
+    process.stdin.on("data", onData);
+  });
+}
+
+async function getPassword() {
+  if (process.env.CMS_PASSWORD) return process.env.CMS_PASSWORD;
+
+  const password = await readHidden("Create CMS password (input hidden): ");
+  const confirmation = await readHidden("Confirm CMS password: ");
+  if (password !== confirmation) throw new Error("Passwords do not match.");
+  return password;
+}
+
+function validatePassword(password) {
+  if (password.length < PASSWORD_MIN_LENGTH) {
+    throw new Error(`Password must be at least ${PASSWORD_MIN_LENGTH} characters.`);
+  }
+  if (password.length > PASSWORD_MAX_LENGTH) {
+    throw new Error(`Password must be at most ${PASSWORD_MAX_LENGTH} characters.`);
+  }
+}
+
+async function hashPassword(password) {
+  const salt = randomBytes(32);
+  const derivedKey = await scrypt(password, salt, 64, {
+    ...SCRYPT_PARAMS,
+    maxmem: 64 * 1024 * 1024,
+  });
+  return [
+    "scrypt",
+    SCRYPT_PARAMS.N,
+    SCRYPT_PARAMS.r,
+    SCRYPT_PARAMS.p,
+    salt.toString("base64"),
+    derivedKey.toString("base64"),
+  ].join("$");
+}
+
+async function ensureLocalFilesAreIgnored() {
+  let existing = "";
+  try {
+    existing = await readFile(GITIGNORE_PATH, "utf8");
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+
+  const entries = new Set(existing.split(/\r?\n/u).map((entry) => entry.trim()));
+  const missing = [".env.cms.local", ".cms-backups/"].filter((entry) => !entries.has(entry));
+  if (missing.length === 0) return;
+
+  const prefix = existing.length > 0 && !existing.endsWith("\n") ? "\n" : "";
+  await appendFile(GITIGNORE_PATH, `${prefix}${missing.join("\n")}\n`, {
+    encoding: "utf8",
+    mode: 0o600,
+  });
+}
+
+async function writeSecretFile(contents, allowOverwrite) {
+  await mkdir(ROOT_DIR, { recursive: true });
+
+  if (!allowOverwrite) {
+    try {
+      const existing = await open(ENV_PATH, "wx", 0o600);
+      await existing.writeFile(contents, "utf8");
+      await existing.sync();
+      await existing.close();
+      return;
+    } catch (error) {
+      if (error.code === "EEXIST") {
+        throw new Error(".env.cms.local already exists. Re-run with --force only if you intend to rotate the password.");
+      }
+      throw error;
+    }
+  }
+
+  const temporaryPath = `${ENV_PATH}.${process.pid}.${randomBytes(8).toString("hex")}.tmp`;
+  const temporary = await open(temporaryPath, "wx", 0o600);
+  try {
+    await temporary.writeFile(contents, "utf8");
+    await temporary.sync();
+  } finally {
+    await temporary.close();
+  }
+
+  try {
+    await rename(temporaryPath, ENV_PATH);
+  } catch (error) {
+    await unlink(temporaryPath).catch(() => {});
+    throw error;
+  }
+}
+
+async function main() {
+  const allowOverwrite = process.argv.includes("--force");
+  await ensureLocalFilesAreIgnored();
+
+  const password = await getPassword();
+  validatePassword(password);
+  const passwordHash = await hashPassword(password);
+  const contents = [
+    "# Generated by scripts/cms-setup.mjs. Keep this file local.",
+    `CMS_PASSWORD_HASH=${passwordHash}`,
+    "",
+  ].join("\n");
+
+  await writeSecretFile(contents, allowOverwrite);
+  console.log("CMS credentials created in .env.cms.local.");
+  console.log("Start the API with: node scripts/cms-server.mjs");
+}
+
+main().catch((error) => {
+  console.error(`CMS setup failed: ${error.message}`);
+  process.exitCode = 1;
+});
