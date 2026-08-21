@@ -223,6 +223,14 @@ const fallbackContent = {
       embedUrl: "https://jovial-horse-5ee659.netlify.app/",
       stack: "React · Redux · JavaScript",
     },
+    {
+      id: "ai-news",
+      kind: "native",
+      title: "AI Briefing",
+      description: "Five useful AI, ML, and developer-technology updates, researched every morning with direct source links.",
+      status: "Daily · 08:15 IST",
+      stack: "X · Reddit · Medium",
+    },
   ],
   experienceSection: {
     label: "WHERE IT GOT REAL",
@@ -384,6 +392,7 @@ function ProjectRow({ project, open, onToggle }) {
 function ToolCard({ tool, onLaunch }) {
   const safeUrl = normalizeHttpsUrl(tool.url);
   const safeEmbedUrl = normalizeHttpsUrl(tool.embedUrl);
+  const runsHere = tool.kind === "native" || Boolean(safeEmbedUrl);
   const content = (
     <>
       <span className="tool-status">{tool.status || "Available"}</span>
@@ -392,11 +401,11 @@ function ToolCard({ tool, onLaunch }) {
         <p>{tool.description}</p>
       </div>
       <small>{tool.stack}</small>
-      {safeEmbedUrl ? <span className="tool-action">Use here <ArrowRight size={18} /></span> : safeUrl && <ArrowUpRight size={20} aria-hidden="true" />}
+      {runsHere ? <span className="tool-action">Use here <ArrowRight size={18} /></span> : safeUrl && <ArrowUpRight size={20} aria-hidden="true" />}
     </>
   );
 
-  if (safeEmbedUrl) {
+  if (runsHere) {
     return <button className="tool-card" type="button" onClick={() => onLaunch({ ...tool, url: safeUrl, embedUrl: safeEmbedUrl })} data-reveal>{content}</button>;
   }
 
@@ -550,6 +559,126 @@ function normalizeHttpsUrl(value, allowedHosts) {
   } catch {
     return "";
   }
+}
+
+function normalizeNewsSource(value) {
+  const safeUrl = normalizeHttpsUrl(value);
+  if (!safeUrl) return "";
+  const hostname = new URL(safeUrl).hostname.toLowerCase().replace(/^www\./, "");
+  if (hostname === "x.com" || hostname === "reddit.com" || hostname.endsWith(".reddit.com") || hostname === "medium.com" || hostname.endsWith(".medium.com")) {
+    return safeUrl;
+  }
+  return "";
+}
+
+function formatNewsDate(value, includeTime = false) {
+  const date = new Date(value);
+  if (!Number.isFinite(date.getTime())) return "";
+  return new Intl.DateTimeFormat("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    ...(includeTime ? { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Kolkata", timeZoneName: "short" } : {}),
+  }).format(date);
+}
+
+function AiNewsWorkbench() {
+  const [feed, setFeed] = useState(null);
+  const [loadState, setLoadState] = useState("loading");
+  const [view, setView] = useState("latest");
+  const [source, setSource] = useState("all");
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch("/data/ai-news.json", { cache: "no-store", signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("The briefing could not be loaded.");
+        return response.json();
+      })
+      .then((data) => {
+        setFeed(data);
+        setLoadState("ready");
+      })
+      .catch((error) => {
+        if (error.name !== "AbortError") setLoadState("error");
+      });
+    return () => controller.abort();
+  }, []);
+
+  const items = Array.isArray(feed?.items) ? feed.items : [];
+  const latestIds = new Set(feed?.editions?.[0]?.itemIds || items.slice(0, 5).map((item) => item.id));
+  const latestItems = items.filter((item) => latestIds.has(item.id));
+  const archiveItems = items.filter((item) => !latestIds.has(item.id));
+  const visibleItems = (view === "latest" ? latestItems : archiveItems).filter((item) => source === "all" || item.sourceType === source);
+  const sourceLabels = { all: "All sources", x: "X", reddit: "Reddit", medium: "Medium" };
+
+  return (
+    <div className="ai-news-app">
+      <header className="ai-news-masthead">
+        <div>
+          <span>DAILY SIGNAL / AI · ML · TECH</span>
+          <h3>Five developments worth your time.</h3>
+          <p>Direct links. Clear context. No feed-chasing.</p>
+        </div>
+        <dl>
+          <div><dt>EDITION</dt><dd>{feed?.generatedAt ? formatNewsDate(feed.generatedAt) : "First run pending"}</dd></div>
+          <div><dt>REFRESH</dt><dd>08:15 IST</dd></div>
+          <div><dt>ARCHIVE</dt><dd>{archiveItems.length} {archiveItems.length === 1 ? "story" : "stories"}</dd></div>
+        </dl>
+      </header>
+
+      <div className="ai-news-controls">
+        <div className="ai-news-view" role="tablist" aria-label="Briefing editions">
+          <button type="button" role="tab" aria-selected={view === "latest"} className={view === "latest" ? "is-active" : ""} onClick={() => setView("latest")}>Latest five</button>
+          <button type="button" role="tab" aria-selected={view === "archive"} className={view === "archive" ? "is-active" : ""} onClick={() => setView("archive")}>Archive</button>
+        </div>
+        <div className="ai-news-sources" aria-label="Filter by source">
+          {Object.entries(sourceLabels).map(([id, label]) => (
+            <button type="button" className={source === id ? "is-active" : ""} aria-pressed={source === id} onClick={() => setSource(id)} key={id}>{label}</button>
+          ))}
+        </div>
+      </div>
+
+      {loadState === "loading" && <div className="ai-news-message"><span />Loading the briefing…</div>}
+      {loadState === "error" && <div className="ai-news-message is-error">The briefing is temporarily unavailable. The last validated edition will return here.</div>}
+      {loadState === "ready" && !items.length && (
+        <div className="ai-news-first-run">
+          <span>READY FOR THE FIRST EDITION</span>
+          <strong>The reader is connected.</strong>
+          <p>Add the two server-side API secrets, then run the secure refresh once. New editions will arrive here every morning.</p>
+        </div>
+      )}
+      {loadState === "ready" && items.length > 0 && !visibleItems.length && (
+        <div className="ai-news-message">No {source === "all" ? "archived" : sourceLabels[source]} stories in this view yet.</div>
+      )}
+      {visibleItems.length > 0 && (
+        <ol className="ai-news-list">
+          {visibleItems.map((item, index) => {
+            const sourceUrl = normalizeNewsSource(item.sourceUrl);
+            return (
+              <li key={item.id || item.sourceUrl}>
+                <span className="ai-news-index">{String(index + 1).padStart(2, "0")}</span>
+                <article>
+                  <div className="ai-news-meta">
+                    <span className={`source-${item.sourceType}`}>{sourceLabels[item.sourceType] || "Source"}</span>
+                    <time dateTime={item.publishedAt}>{formatNewsDate(item.publishedAt, true)}</time>
+                  </div>
+                  <h4>{item.title}</h4>
+                  <p>{item.summary}</p>
+                  <aside><strong>Why it matters</strong><span>{item.whyItMatters}</span></aside>
+                  <footer>
+                    <div>{(item.topics || []).map((topic) => <span key={topic}>{topic}</span>)}</div>
+                    {sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer">Read source <ArrowUpRight size={15} /></a>}
+                  </footer>
+                </article>
+              </li>
+            );
+          })}
+        </ol>
+      )}
+      <footer className="ai-news-note">Public posts are summarized for discovery. Follow the source link before relying on a claim.</footer>
+    </div>
+  );
 }
 
 function EducationRecord({ item }) {
@@ -1220,15 +1349,17 @@ export function App() {
             </div>
           )}
           {activeTool && (
-            <section className="tool-workbench" aria-label={`${activeTool.title} embedded tool`} data-reveal>
+            <section className={`tool-workbench${activeTool.id === "ai-news" ? " is-news" : ""}`} aria-label={`${activeTool.title} tool`} data-reveal>
               <header>
-                <div><small>RUNNING IN PORTFOLIO</small><strong>{activeTool.title}</strong></div>
+                <div><small>USE HERE</small><strong>{activeTool.title}</strong></div>
                 <span>
-                  <a href={activeTool.url} target="_blank" rel="noreferrer">Open full screen <ArrowUpRight size={16} /></a>
+                  {activeTool.url && <a href={activeTool.url} target="_blank" rel="noreferrer">Open full screen <ArrowUpRight size={16} /></a>}
                   <button type="button" onClick={() => setActiveTool(null)} aria-label={`Close ${activeTool.title}`}><X size={18} /></button>
                 </span>
               </header>
-              {activeTool.id === "dfinance" ? (
+              {activeTool.id === "ai-news" ? (
+                <AiNewsWorkbench />
+              ) : activeTool.id === "dfinance" ? (
                 <DFinanceManager />
               ) : (
                 <iframe

@@ -1,0 +1,47 @@
+name: Refresh AI news
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 8 * * *"
+      timezone: "Asia/Kolkata"
+
+concurrency:
+  group: ai-news-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the portfolio
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build the daily edition
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_NEWS_MODEL: ${{ vars.OPENAI_NEWS_MODEL || 'gpt-5.4-mini' }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_NEWS_MODEL: ${{ vars.GROQ_NEWS_MODEL || 'groq/compound' }}
+        run: node scripts/refresh-ai-news.mjs
+
+      - name: Commit the validated feed
+        run: |
+          if git diff --quiet -- public/data/ai-news.json; then
+            echo "No feed changes to commit."
+            exit 0
+          fi
+          git config user.name "dhruvith-news-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- public/data/ai-news.json
+          git commit -m "Refresh daily AI news"
+          git push

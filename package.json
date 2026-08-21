@@ -18,7 +18,9 @@
     "firebase:status": "firebase login:list && firebase projects:list",
     "firebase:emulators": "firebase emulators:start --only hosting,firestore",
     "firebase:deploy:rules": "firebase deploy --only firestore:rules",
-    "firebase:deploy:hosting": "firebase deploy --only hosting"
+    "firebase:deploy:hosting": "firebase deploy --only hosting",
+    "news:refresh": "node --env-file-if-exists=.env.news.local scripts/refresh-ai-news.mjs",
+    "news:test": "node --test tests/ai-news.test.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

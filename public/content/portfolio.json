@@ -58,6 +58,14 @@
       "url": "https://jovial-horse-5ee659.netlify.app/",
       "embedUrl": "https://jovial-horse-5ee659.netlify.app/",
       "stack": "React · Redux · JavaScript"
+    },
+    {
+      "id": "ai-news",
+      "kind": "native",
+      "title": "AI Briefing",
+      "description": "Five useful AI, ML, and developer-technology updates, researched every morning with direct source links.",
+      "status": "Daily · 08:15 IST",
+      "stack": "X · Reddit · Medium"
     }
   ],
   "storyBeats": [
