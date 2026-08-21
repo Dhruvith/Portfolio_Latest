@@ -1018,14 +1018,38 @@ export function App() {
         scrollTrigger: { trigger: ".music-stage", start: "top bottom", end: "bottom top", scrub: 0.7 },
       });
 
-      gsap.from(".footer-signature", {
-        y: 18,
-        rotate: -7,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
+      gsap.timeline({
         scrollTrigger: { trigger: ".contact-section footer", start: "top 88%", once: true },
-      });
+      })
+        .fromTo(".footer-signature-word", {
+          clipPath: "inset(-12% 100% -18% 0)",
+          x: -7,
+          filter: "blur(1.5px)",
+        }, {
+          clipPath: "inset(-12% -6% -18% 0)",
+          x: 0,
+          filter: "blur(0px)",
+          duration: 1.45,
+          ease: "power2.inOut",
+        })
+        .fromTo(".footer-signature-dot", {
+          y: -18,
+          scale: 0,
+          opacity: 0,
+        }, {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.38,
+          ease: "back.out(2.8)",
+        }, "-=0.06")
+        .fromTo(".footer-signature", {
+          rotate: -4.5,
+        }, {
+          rotate: -3,
+          duration: 0.6,
+          ease: "elastic.out(1, 0.48)",
+        }, "-=0.22");
 
       gsap.utils.toArray(".timeline-row").forEach((node) => {
         ScrollTrigger.create({
@@ -1290,7 +1314,10 @@ export function App() {
             <a href="/Dhruvith_Chokkarapu_Resume.pdf" download><DownloadSimple size={22} /><span><small>Resume</small>Download PDF</span><ArrowDown size={18} /></a>
           </div>
           <footer>
-            <span className="footer-signature" aria-label="Signed, Dhruvith">Dhruvith.</span>
+            <span className="footer-signature" aria-label="Signed, Dhruvith">
+              <span className="footer-signature-word" aria-hidden="true">Dhruvith</span>
+              <span className="footer-signature-dot" aria-hidden="true">.</span>
+            </span>
             <span>© 2026 Dhruvith Chokkarapu</span>
             <span>Built locally in Hyderabad</span>
             <a href="#top">Back to top <ArrowUpRight size={14} /></a>

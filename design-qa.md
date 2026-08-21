@@ -231,3 +231,38 @@ Pass F result: passed
 - Mobile music and contact: zero horizontal overflow; no overlap in the player or signature metadata.
 
 final result: passed
+
+## Pass H — animated closing signature (21 August 2026)
+
+### Source and rendered evidence
+
+- Source visual truth: `C:\Users\DELL\AppData\Local\Temp\codex-clipboard-f5eccefb-4f45-40e6-90b6-93c9dbdcd407.png` (868 × 236).
+- Final browser-rendered implementation: `qa-signature-final.png` (1521 × 722 from the default 1536 × 730 Chrome viewport).
+- Mid-animation evidence: `qa-signature-motion.png`.
+- Focused comparison: `qa-signature-comparison.png`, with the unscaled 868 × 236 source above an unscaled 868 × 236 crop from the implementation.
+- State: contact footer during the ink reveal and after the period has landed.
+
+### Findings and comparison history
+
+- P2: the closing signature was visually correct but its existing entrance read as a generic fade-and-rise.
+  - Fix: replaced the generic entrance with a left-to-right ink reveal, a separately timed period landing, and a restrained elastic settle into the original angle.
+  - Post-fix evidence: the mid-animation capture shows the partially revealed word with the period withheld; the final capture shows the complete signature, period, and resting angle.
+- No additional P0, P1, or P2 findings were introduced, so no second corrective iteration was required.
+
+### Required fidelity surfaces
+
+- Fonts and typography: passed. The existing local Instrument Serif italic face, punctuation, scale, tracking, and accessible name are preserved.
+- Spacing and layout rhythm: passed. The footer divider, responsive grid, section gutter, signature footprint, and resting position are unchanged.
+- Colors and visual tokens: passed. The mark remains black on the established Swedish yellow contact scene.
+- Image quality and asset fidelity: passed. The signature remains crisp browser-rendered text; no compressed GIF, generated mark, handcrafted SVG, or placeholder asset was introduced.
+- Copy and content: passed. The visible copy remains exactly `Dhruvith.` and the accessible label remains `Signed, Dhruvith`.
+- Interaction and accessibility: passed. The animation plays once on entry, hover adds only a two-pixel lift, and `prefers-reduced-motion: reduce` renders the complete static signature immediately.
+
+### Verification
+
+- Production build: passed.
+- Sites worker tests: 4 passed, 0 failed.
+- Chrome final state: word clip fully open, period opacity 1, period transform at identity.
+- Browser console errors: none. Two pre-existing Firestore permission warnings correctly fell back to bundled content and are unrelated to this change.
+
+final result: passed

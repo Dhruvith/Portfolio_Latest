@@ -687,6 +687,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-
 .contact-section footer { grid-template-columns: minmax(220px, 1.4fr) auto auto auto; gap: 32px; border-color: rgba(17, 17, 17, .35); color: #3e3e3e; font-size: 10px; }
 .contact-section footer a { color: #111; font-weight: 700; }
 .contact-section footer .footer-signature {
+  display: inline-flex;
+  align-items: baseline;
+  width: max-content;
   color: #111;
   font-family: var(--serif);
   font-size: clamp(48px, 5.2vw, 78px);
@@ -697,6 +700,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-
   text-transform: none;
   transform: rotate(-3deg);
   transform-origin: left center;
+  transition: transform 420ms cubic-bezier(.2, .8, .2, 1);
+  will-change: transform;
+}
+
+.footer-signature-word {
+  display: inline-block;
+  clip-path: inset(-12% -6% -18% 0);
+  will-change: clip-path, filter, transform;
+}
+
+.footer-signature-dot {
+  display: inline-block;
+  margin-left: .015em;
+  transform-origin: 50% 82%;
+  will-change: opacity, transform;
+}
+
+.contact-section footer .footer-signature:hover { transform: rotate(-2deg) translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-signature-word { clip-path: none !important; filter: none !important; transform: none !important; }
+  .footer-signature-dot { opacity: 1 !important; transform: none !important; }
 }
 
 @media (max-width: 1080px) {
