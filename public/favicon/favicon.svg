@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dhruvith portfolio mark">
+  <rect width="64" height="64" rx="14" fill="#FFD91A" />
+  <path fill="#111111" fill-rule="evenodd" d="M13 10h19c13.255 0 24 9.85 24 22S45.255 54 32 54H13V10Zm11 11v22h8c6.627 0 12-4.925 12-11s-5.373-11-12-11h-8Z" />
+  <circle cx="33" cy="32" r="5" fill="#0067B1" />
+</svg>
