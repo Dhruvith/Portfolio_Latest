@@ -1,15 +1,13 @@
-# Local playlist audio
+# Portfolio playlist audio
 
 Place only audio files that you own or have permission to publish in this folder.
 
-For the local-only personal library, Vite mounts `C:\Users\DELL\Desktop\Songs` at `/audio/library/` through loopback-only middleware. The source MP3 files stay outside the project and are not copied into production builds or committed to Git. Set `PERSONAL_AUDIO_DIR` before starting Vite if the folder moves.
+Production tracks live in `public/audio/library/` and are copied unchanged into the built site. Playlist entries in `public/content/portfolio.json` reference them with root-relative URLs such as:
 
-For each track in the local Content Studio, set `audioSrc` to a root-relative path such as:
-
-```text
-/audio/the-night-we-met.mp3
+```json
+{ "audioSrc": "/audio/library/example.mp3" }
 ```
 
-Supported local formats: MP3, M4A, OGG, and WAV.
+Keep the filename and `audioSrc` value identical, including spaces and capitalization. Supported formats are MP3, M4A, OGG, and WAV.
 
-When `audioSrc` is present, the custom player plays the complete file inside the portfolio. When it is empty, the in-page play control stays disabled; it never opens another site or tab.
+The custom player streams the complete file inside the portfolio and never opens another site or tab. Before adding or replacing a track, confirm that you have permission to publish it and test the production URL after deployment.

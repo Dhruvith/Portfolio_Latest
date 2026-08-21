@@ -606,6 +606,7 @@ function MinimalPlaylistPlayer({ playlist }) {
   const [queueOpen, setQueueOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [playbackError, setPlaybackError] = useState("");
   const currentTrack = tracks[currentIndex] || {};
   const audioSource = normalizeLocalAudioSource(currentTrack.audioSrc);
 
@@ -617,8 +618,14 @@ function MinimalPlaylistPlayer({ playlist }) {
     setCurrentTime(0);
     setDuration(0);
     setPlaying(false);
+    setPlaybackError("");
     if (audioSource && pendingPlayRef.current) {
-      audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+      audio.play()
+        .then(() => setPlaying(true))
+        .catch(() => {
+          setPlaying(false);
+          setPlaybackError("Playback unavailable");
+        });
     }
     pendingPlayRef.current = false;
   }, [audioSource, currentIndex, playlist.id]);
@@ -643,7 +650,13 @@ function MinimalPlaylistPlayer({ playlist }) {
     const audio = audioRef.current;
     if (!audioSource || !audio) return;
     if (playing) audio.pause();
-    else audio.play().catch(() => setPlaying(false));
+    else {
+      setPlaybackError("");
+      audio.play().catch(() => {
+        setPlaying(false);
+        setPlaybackError("Playback unavailable");
+      });
+    }
   };
 
   return (
@@ -654,6 +667,11 @@ function MinimalPlaylistPlayer({ playlist }) {
         preload="metadata"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
+        onCanPlay={() => setPlaybackError("")}
+        onError={() => {
+          setPlaying(false);
+          setPlaybackError("Playback unavailable");
+        }}
         onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime || 0)}
         onDurationChange={(event) => setDuration(Number.isFinite(event.currentTarget.duration) ? event.currentTarget.duration : 0)}
         onEnded={() => moveTrack(1)}
@@ -668,7 +686,9 @@ function MinimalPlaylistPlayer({ playlist }) {
       <label className="minimal-progress">
         <span className="sr-only">Song position</span>
         <input type="range" min="0" max={Math.max(1, duration)} value={Math.min(currentTime, Math.max(1, duration))} onChange={(event) => { if (audioRef.current) audioRef.current.currentTime = Number(event.target.value); }} disabled={!audioSource || !duration} />
-        <span>{formatPlaybackTime(currentTime)} / {formatPlaybackTime(duration)}</span>
+        <span className={playbackError ? "minimal-playback-error" : ""} aria-live="polite">
+          {playbackError || `${formatPlaybackTime(currentTime)} / ${formatPlaybackTime(duration)}`}
+        </span>
       </label>
       <div className="minimal-transport">
         <button type="button" onClick={() => moveTrack(-1)} disabled={!tracks.length} aria-label="Previous song"><SkipBack size={18} weight="fill" /></button>

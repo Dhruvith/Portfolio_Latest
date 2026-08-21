@@ -1307,6 +1307,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-
 .minimal-progress input { width: 100%; margin: 0; accent-color: #fff; cursor: pointer; }
 .minimal-progress input:disabled { cursor: default; opacity: .56; }
 .minimal-progress > span:last-child { color: rgba(255, 255, 255, .66); font-size: 8px; font-variant-numeric: tabular-nums; }
+.minimal-progress > .minimal-playback-error { color: #ffd84d; font-weight: 800; letter-spacing: .01em; }
 
 .minimal-transport { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .minimal-transport > button,
