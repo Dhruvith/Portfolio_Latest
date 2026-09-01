@@ -1,11 +1,79 @@
 {
   "schemaVersion": 1,
-  "generatedAt": null,
-  "status": "awaiting_first_run",
+  "generatedAt": "2026-09-01T13:39:39.642Z",
+  "status": "ready",
   "schedule": {
     "time": "08:15",
     "timezone": "Asia/Kolkata"
   },
-  "editions": [],
-  "items": []
+  "editions": [
+    {
+      "id": "2026-09-01",
+      "generatedAt": "2026-09-01T13:39:39.642Z",
+      "itemIds": [
+        "ab56c3f852d5eb31",
+        "980e8cd349e6c194",
+        "7ed435c187bcde5a",
+        "b4a962562652de65",
+        "2b9785a44e9a6ddc"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "ab56c3f852d5eb31",
+      "title": "Andrew Ng maps the software fundamentals AI engineers still need",
+      "summary": "Andrew Ng's AI Engineering Skills Map argues that agentic coding raises the value of full-stack judgment, data management, architecture, security, reliability, and production operations.",
+      "whyItMatters": "Coding agents can accelerate implementation, but engineers still own system boundaries, trade-offs, and production consequences.",
+      "sourceName": "X",
+      "sourceType": "x",
+      "sourceUrl": "https://x.com/AndrewYNg/status/2093388974194872781",
+      "publishedAt": "2026-08-28T17:23:19.391Z",
+      "topics": ["AI engineering", "Software design", "Agents"]
+    },
+    {
+      "id": "980e8cd349e6c194",
+      "title": "DeepLearning.AI puts evaluation loops at the center of reliable AI",
+      "summary": "DeepLearning.AI's engineering skills framework connects model mechanics, grounded data, agentic design, evaluation-driven development, and production reliability into one operating discipline.",
+      "whyItMatters": "Teams need continuous evaluation and iteration to turn probabilistic model behavior into dependable product behavior.",
+      "sourceName": "X",
+      "sourceType": "x",
+      "sourceUrl": "https://x.com/DeepLearningAI/status/2092356978651668834",
+      "publishedAt": "2026-08-25T21:02:32.480Z",
+      "topics": ["Evaluation", "Reliability", "AI systems"]
+    },
+    {
+      "id": "7ed435c187bcde5a",
+      "title": "Debian's community records its vote on LLM and AI use",
+      "summary": "A Debian community megathread consolidates the result and discussion around the project's formal vote on how LLM-generated contributions should be handled.",
+      "whyItMatters": "Open-source projects are turning informal AI concerns into explicit contribution and governance policy.",
+      "sourceName": "Reddit",
+      "sourceType": "reddit",
+      "sourceUrl": "https://reddit.com/r/debian/comments/1vzqns8/megathread_debian_llmai_vote_results",
+      "publishedAt": "2026-08-27T12:00:00.000Z",
+      "topics": ["Open source", "Governance", "LLM policy"]
+    },
+    {
+      "id": "b4a962562652de65",
+      "title": "A smaller web-search tool arrives for local llama-server setups",
+      "summary": "A LocalLLaMA developer shared a minimal helper that gives llama-server access to a simple web-search tool without requiring a larger orchestration stack.",
+      "whyItMatters": "Smaller tool layers make retrieval-augmented local models easier to inspect, operate, and adapt.",
+      "sourceName": "Reddit",
+      "sourceType": "reddit",
+      "sourceUrl": "https://reddit.com/r/LocalLLaMA/comments/1w0shqf/an_even_smaller_tool_for_llamaserver_websearching",
+      "publishedAt": "2026-08-28T12:00:00.000Z",
+      "topics": ["Local AI", "Tool use", "Open source"]
+    },
+    {
+      "id": "2b9785a44e9a6ddc",
+      "title": "Pinterest scales conditional retrieval across its home feed",
+      "summary": "Pinterest Engineering describes how Conditional Learned Retrieval expanded to new intent signals while foundation-model training, GPU serving, and a simpler condition interface reduced operational friction.",
+      "whyItMatters": "The work shows how retrieval quality, serving latency, and infrastructure cost must be designed together at production scale.",
+      "sourceName": "Medium",
+      "sourceType": "medium",
+      "sourceUrl": "https://medium.com/pinterest-engineering/scaling-conditional-learned-retrieval-for-pinterest-home-feed-ecfba7e5a426",
+      "publishedAt": "2026-08-26T14:01:04.249Z",
+      "topics": ["Retrieval", "Recommendations", "ML systems"]
+    }
+  ]
 }

@@ -228,7 +228,7 @@ const fallbackContent = {
       kind: "native",
       title: "AI Briefing",
       description: "Five useful AI, ML, and developer-technology updates, researched every morning with direct source links.",
-      status: "Daily · 08:15 IST",
+      status: "New · Daily 08:15",
       stack: "X · Reddit · Medium",
     },
   ],
@@ -406,7 +406,7 @@ function ToolCard({ tool, onLaunch }) {
   );
 
   if (runsHere) {
-    return <button className="tool-card" type="button" onClick={() => onLaunch({ ...tool, url: safeUrl, embedUrl: safeEmbedUrl })} data-reveal>{content}</button>;
+    return <button className={`tool-card${tool.id === "ai-news" ? " is-featured" : ""}`} type="button" onClick={() => onLaunch({ ...tool, url: safeUrl, embedUrl: safeEmbedUrl })} data-reveal>{content}</button>;
   }
 
   return safeUrl ? (
@@ -645,7 +645,7 @@ function AiNewsWorkbench() {
         <div className="ai-news-first-run">
           <span>READY FOR THE FIRST EDITION</span>
           <strong>The reader is connected.</strong>
-          <p>Add the two server-side API secrets, then run the secure refresh once. New editions will arrive here every morning.</p>
+          <p>The next validated edition is being prepared. Published briefings remain available here when a refresh is delayed.</p>
         </div>
       )}
       {loadState === "ready" && items.length > 0 && !visibleItems.length && (

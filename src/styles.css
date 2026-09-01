@@ -793,6 +793,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-
 .tool-card > div { grid-column: 1 / -1; }
 .tool-card > small { grid-column: 1; align-self: end; }
 .tool-card .tool-status { grid-column: 1 / -1; justify-self: start; color: #fff; background: var(--blue); }
+.tool-card.is-featured { background: #edf3f7; box-shadow: inset 0 4px var(--yellow); }
+.tool-card.is-featured:hover { background: #e5f0f8; }
 .tool-action { display: inline-flex; align-items: center; gap: 8px; align-self: end; justify-self: end; color: var(--blue); font-size: 12px; font-weight: 700; }
 .tool-workbench { max-width: 1240px; margin: 30px auto 0; overflow: hidden; border: 1px solid var(--line-strong); background: #fff; }
 .tool-workbench > header { display: flex; align-items: center; justify-content: space-between; min-height: 72px; padding: 14px 18px; border-bottom: 1px solid var(--line); }
