@@ -1,0 +1,84 @@
+#travel-map { scroll-margin-top: 110px; }
+.travel-explorer { color: #202a32; background: #fff; border-top: 1px solid var(--line); font-family: var(--sans); }
+.travel-explorer button, .travel-explorer input, .travel-explorer select { font: inherit; }
+.travel-toolbar { position: relative; z-index: 600; display: flex; align-items: center; gap: 12px; padding: 16px; border-bottom: 1px solid var(--line); background: #fff; }
+.travel-toolbar button, .travel-detail button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 44px; padding: 10px 12px; border: 1px solid #d9e0e5; border-radius: 5px; color: #273c4d; background: #fff; cursor: pointer; }
+.travel-toolbar button:hover, .travel-detail button:hover { background: #edf3f7; }
+.travel-toolbar button:disabled { cursor: wait; opacity: .5; }
+.travel-search { position: relative; display: flex; align-items: center; flex: 1; min-width: 150px; gap: 10px; border: 1px solid #c3cdd5; border-radius: 5px; padding: 0 12px; background: #fff; }
+.travel-search > svg { flex-shrink: 0; color: #61717e; }
+.travel-search input { width: 100%; min-width: 0; min-height: 46px; padding: 6px 0; border: 0; color: #202a32; background: transparent; font-size: 14px; }
+.travel-search:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
+.travel-search input:focus-visible { outline: none; }
+.travel-search > button { padding: 8px; border: 0; }
+.travel-results { position: absolute; z-index: 700; top: calc(100% + 8px); right: 0; left: 0; max-height: 360px; overflow-y: auto; border: 1px solid #c3cdd5; border-radius: 5px; background: #fff; box-shadow: 0 8px 22px rgb(0 0 0 / 12%); }
+.travel-results button { width: 100%; justify-content: flex-start; text-align: left; border: 0; border-radius: 0; border-bottom: 1px solid #e4e9ed; }
+.travel-results button > svg { flex-shrink: 0; color: var(--blue); }
+.travel-results button span { display: flex; flex-direction: column; gap: 4px; }
+.travel-results strong { font-size: 14px; }
+.travel-results small { font-size: 12px; color: #5c6c78; }
+.travel-results p { padding: 10px 14px; font-size: 13px; line-height: 1.6; }
+.travel-filter { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.travel-filter > span { color: #637380; }
+.travel-filter select { max-width: 160px; min-height: 46px; padding: 8px 26px 8px 12px; color: #273c4d; border: 1px solid #c3cdd5; border-radius: 5px; background: #fff; font-size: 14px; }
+.travel-all { white-space: nowrap; font-size: 14px !important; }
+.travel-fullscreen { flex-shrink: 0; width: 46px; }
+.travel-canvas { position: relative; }
+.travel-map-options { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; background: #f7f9fa; border-bottom: 1px solid #dce3e8; }
+.travel-basemap { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid #ccd6de; border-radius: 7px; background: #fff; }
+.travel-basemap button { min-height: 40px; padding: 8px 18px; border: 0; border-radius: 4px; background: transparent; color: #425767; cursor: pointer; font-size: 13px; transition: background 180ms ease, color 180ms ease; }
+.travel-basemap button[aria-pressed="true"] { background: #0058a3; color: #fff; }
+.travel-map-options > span { color: #61717e; font-size: 12px; text-align: right; }
+.travel-map-notice { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; background: #fff8d4; color: #51430a; font-size: 13px; line-height: 1.6; }
+.travel-map-notice button { min-width: 44px; min-height: 44px; border: 0; background: none; color: inherit; cursor: pointer; }
+.travel-explorer select:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.travel-canvas .atlas-map { height: 620px; min-height: 480px; }
+.travel-canvas .leaflet-tile-pane { filter: none; }
+.travel-canvas .leaflet-control-attribution { font-size: 10px; }
+.travel-canvas .leaflet-control-scale { margin: 0 14px 14px; }
+.travel-canvas .leaflet-control-zoom a { width: 44px; height: 44px; }
+.travel-canvas .atlas-cluster { background: var(--blue); box-shadow: 0 0 0 4px rgb(0 88 163 / 14%), 0 2px 5px rgb(0 0 0 / 12%); font-size: 13px; }
+.travel-canvas .leaflet-marker-icon:focus-visible { outline: 3px solid #111; outline-offset: 4px; }
+.travel-canvas .leaflet-tooltip { max-width: 270px; white-space: normal; }
+.travel-canvas .leaflet-tooltip strong { font-size: 14px; }
+.travel-canvas .leaflet-tooltip small { font-size: 12px; }
+.travel-view-status { position: absolute; z-index: 500; top: 14px; right: 14px; display: flex; gap: 5px; flex-wrap: wrap; align-items: center; padding: 10px 13px; border: 1px solid #d3dce2; border-radius: 5px; color: #394e5f; background: #fff; font-size: 12px; box-shadow: 0 2px 8px rgb(0 0 0 / 8%); pointer-events: none; }
+.travel-view-status span { margin-left: 7px; padding-left: 10px; border-left: 1px solid #d3dce2; color: var(--blue); }
+.travel-detail { position: absolute; z-index: 510; top: 14px; left: 14px; width: min(320px, calc(100% - 84px)); max-height: calc(100% - 74px); overflow-y: auto; padding: 18px; border: 1px solid #c7d2da; border-radius: 8px; background: #fff; box-shadow: 0 5px 20px rgb(0 0 0 / 13%); }
+.travel-detail header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.travel-detail header span { color: var(--blue); font-size: 11px; letter-spacing: .08em; font-weight: 700; }
+.travel-detail header button { min-width: 44px; padding: 8px; border: 0; }
+.travel-detail h4 { margin: 4px 0 12px; font: 650 25px/1.2 var(--sans); letter-spacing: -.025em; }
+.travel-unnamed { margin: 0 0 18px; color: #60707c; font-size: 13px; line-height: 1.6; }
+.travel-detail dl { margin: 0; }
+.travel-detail dl div { display: flex; justify-content: space-between; gap: 10px; padding: 11px 0; border-top: 1px solid #e3e8eb; font-size: 13px; }
+.travel-detail dt { color: #667681; }
+.travel-detail dd { margin: 0; font-weight: 600; text-align: right; }
+.travel-detail dl .travel-coordinates { display: block; }
+.travel-coordinates dd { margin-top: 6px; text-align: left; font: 13px/1.6 ui-monospace, monospace; user-select: all; }
+.travel-detail .travel-street { width: 100%; justify-content: space-between; margin-top: 12px; color: #fff; background: var(--blue); border-color: var(--blue); font-size: 13px; }
+.travel-colocated { display: flex; align-items: center; gap: 6px; margin: 10px 0; }
+.travel-colocated span { flex: 1; color: #60707c; font-size: 12px; }
+.travel-colocated button { width: 44px; flex-shrink: 0; }
+.travel-status { position: absolute; z-index: 550; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 24px; background: #edf3f7; color: #394e5f; }
+.travel-status button { padding: 12px 20px; color: #fff; background: var(--blue); border: 0; border-radius: 4px; cursor: pointer; }
+.travel-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 14px 18px; border-top: 1px solid #e3e8eb; color: #526574; font-size: 12px; line-height: 1.5; }
+.travel-footer small { font-size: 11px; }
+.travel-explorer:fullscreen { width: 100%; height: 100%; overflow-y: auto; }
+.travel-explorer:fullscreen .atlas-map { height: calc(100dvh - 220px); }
+@media (max-width: 760px) {
+  .travel-toolbar { flex-wrap: wrap; padding: 12px; gap: 10px; }
+  .travel-search { flex-basis: 100%; }
+  .travel-filter { flex: 1; min-width: 0; }
+  .travel-filter > span { display: none; }
+  .travel-filter select { max-width: 100%; width: 100%; padding-left: 8px; font-size: 13px; }
+  .travel-toolbar .travel-all { gap: 5px; padding: 10px; font-size: 12px !important; }
+  .travel-fullscreen { width: 44px; }
+  .travel-canvas .atlas-map { height: 460px; min-height: 460px; }
+  .travel-view-status { top: 10px; right: 10px; left: 10px; width: fit-content; max-width: calc(100% - 20px); font-size: 11px; }
+  .travel-detail { position: relative; top: auto; left: auto; width: 100%; max-height: none; border: 0; border-top: 1px solid #c7d2da; border-radius: 0; box-shadow: none; }
+  .travel-explorer:fullscreen .atlas-map { height: 60dvh; }
+  .travel-footer { padding: 12px; }
+  .travel-map-options { flex-wrap: wrap; padding: 10px 12px; }
+  .travel-map-options > span { text-align: left; font-size: 11px; }
+}

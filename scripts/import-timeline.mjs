@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { recordedPosition } from "../src/lib/travelPlaces.js";
 
 const root = process.cwd();
 const inputPath = path.resolve(process.argv[2] || "");
@@ -56,19 +57,24 @@ for (const segment of timeline.semanticSegments) {
   grouped.set(placeId, record);
 }
 
+const content = JSON.parse(await readFile(contentPath, "utf8"));
+const previousPlaces = new Map((content.places || []).map((place) => [place.id, place]));
 const imported = [...grouped.values()]
   .sort((left, right) => left.first - right.first || left.key.localeCompare(right.key))
   .map((record, index) => {
-    const lat = record.coordinates.reduce((sum, point) => sum + point.lat, 0) / record.coordinates.length;
-    const lng = record.coordinates.reduce((sum, point) => sum + point.lng, 0) / record.coordinates.length;
+    const { lat, lng } = recordedPosition(record.coordinates);
     const sequence = String(index + 1).padStart(3, "0");
+    const id = `timeline-${createHash("sha256").update(record.key).digest("hex").slice(0, 12)}`;
+    const previous = previousPlaces.get(id);
     return {
-      id: `timeline-${createHash("sha256").update(record.key).digest("hex").slice(0, 12)}`,
-      city: `Place ${sequence}`,
-      country: "Timeline",
+      ...previous,
+      id,
+      city: previous?.city || `Place ${sequence}`,
+      country: previous?.country || "Timeline",
       note: `${record.visits} visit${record.visits === 1 ? "" : "s"}`,
       lat: Number(lat.toFixed(7)),
       lng: Number(lng.toFixed(7)),
+      positionSource: "timeline-candidate",
       visitCount: record.visits,
       firstVisited: dateOnly(record.first),
       lastVisited: dateOnly(record.last),
@@ -77,12 +83,11 @@ const imported = [...grouped.values()]
 
 if (!imported.length) throw new Error("No valid visits were found in the Timeline JSON.");
 
-const content = JSON.parse(await readFile(contentPath, "utf8"));
 content.places = imported;
 content.placesSection = {
   label: "PLACES I'VE VISITED",
   heading: "A map of where I've been.",
-  copy: "Zoom, pan, and select a pin to see when it appeared in my timeline.",
+  copy: "Explore recorded stops at street level. Select a pin for coordinates and visit dates, or use All locations to see the full map.",
   firstVisited: imported.reduce((value, place) => value < place.firstVisited ? value : place.firstVisited, imported[0].firstVisited),
   lastVisited: imported.reduce((value, place) => value > place.lastVisited ? value : place.lastVisited, imported[0].lastVisited),
 };

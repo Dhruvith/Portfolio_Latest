@@ -13,12 +13,10 @@ import {
   ListBullets,
   MapPin,
   MapTrifold,
-  MagnifyingGlass,
   MusicNotes,
   Pause,
   Play,
   Shuffle,
-  Crosshair,
   SkipBack,
   SkipForward,
   Toolbox,
@@ -31,6 +29,8 @@ import "leaflet/dist/leaflet.css";
 import Lenis from "lenis";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { loadPortfolioContent } from "./lib/portfolioContent.js";
+import { TravelMap } from "./TravelMap.jsx";
+import { Signature } from "./Signature.jsx";
 import {
   identity, hero, story, work, educationSection, toolsSection, tools,
   experienceSection, musicSection, musicPlaylists, signals, placesSection,
@@ -620,183 +620,6 @@ function MinimalMusicExperience({ playlists }) {
   );
 }
 
-function TravelMap({ places }) {
-  const mapNode = useRef(null);
-  const mapInstance = useRef(null);
-  const mapRuntime = useRef(null);
-  const [query, setQuery] = useState("");
-  const [selectedPlace, setSelectedPlace] = useState(null);
-  const validPlaces = useMemo(
-    () => places.filter((place) => Number.isFinite(Number(place.lat)) && Number.isFinite(Number(place.lng)) && Math.abs(Number(place.lat)) <= 90 && Math.abs(Number(place.lng)) <= 180),
-    [places],
-  );
-  const matches = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-    if (!normalized) return [];
-    return validPlaces.filter((place) => [place.city, place.note, place.firstVisited, place.lastVisited]
-      .some((value) => String(value || "").toLowerCase().includes(normalized))).slice(0, 7);
-  }, [query, validPlaces]);
-
-  const formatVisitDate = (value) => {
-    if (!value) return "Unknown";
-    return new Intl.DateTimeFormat("en-IN", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(`${value}T00:00:00Z`));
-  };
-
-  const focusPlace = (place) => {
-    setSelectedPlace(place);
-    setQuery("");
-    mapInstance.current?.flyTo([Number(place.lat), Number(place.lng)], 16, { duration: 0.8 });
-  };
-
-  const fitAll = () => {
-    setSelectedPlace(null);
-    const runtime = mapRuntime.current;
-    if (runtime?.bounds) runtime.map.fitBounds(runtime.bounds.pad(0.08), { maxZoom: 8, animate: true, duration: 0.75 });
-  };
-
-  useEffect(() => {
-    if (!mapNode.current || mapInstance.current || !validPlaces.length) return undefined;
-    let disposed = false;
-    Promise.all([import("leaflet"), import("supercluster")]).then(([{ default: Leaflet }, { default: Supercluster }]) => {
-      if (disposed || !mapNode.current) return;
-      const bounds = Leaflet.latLngBounds(validPlaces.map((place) => [Number(place.lat), Number(place.lng)]));
-      const map = Leaflet.map(mapNode.current, {
-        attributionControl: true,
-        boxZoom: true,
-        doubleClickZoom: true,
-        markerZoomAnimation: true,
-        scrollWheelZoom: true,
-        wheelDebounceTime: 28,
-        wheelPxPerZoomLevel: 90,
-        zoomAnimation: true,
-        zoomControl: false,
-      });
-      Leaflet.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        maxZoom: 19,
-      }).addTo(map);
-      Leaflet.control.zoom({ position: "bottomright" }).addTo(map);
-
-      const pointIndex = new Supercluster({ radius: 42, maxZoom: 17 }).load(validPlaces.map((place) => ({
-        type: "Feature",
-        geometry: { type: "Point", coordinates: [Number(place.lng), Number(place.lat)] },
-        properties: { place },
-      })));
-      const visibleLayer = Leaflet.layerGroup().addTo(map);
-
-      const placeMarker = (place, coordinates) => {
-        const tooltip = document.createElement("span");
-        const title = document.createElement("strong");
-        const detail = document.createElement("small");
-        title.textContent = place.city;
-        detail.textContent = `${place.note || "Visited"} · last ${formatVisitDate(place.lastVisited)}`;
-        tooltip.append(title, detail);
-
-        const marker = Leaflet.marker([coordinates[1], coordinates[0]], {
-          keyboard: true,
-          title: place.city,
-          icon: Leaflet.divIcon({
-            className: "atlas-point",
-            html: "<span></span><i></i>",
-            iconSize: [28, 36],
-            iconAnchor: [14, 34],
-            tooltipAnchor: [0, -28],
-          }),
-        }).bindTooltip(tooltip, { direction: "top", offset: [0, -8], opacity: 1 });
-        marker.on("click", () => {
-          setSelectedPlace(place);
-          marker.openTooltip();
-        });
-        return marker;
-      };
-
-      if (validPlaces.length === 1) map.setView(bounds.getCenter(), 11, { animate: false });
-      else map.fitBounds(bounds.pad(0.35), { maxZoom: 6, animate: false });
-
-      const renderVisiblePoints = () => {
-        visibleLayer.clearLayers();
-        const view = map.getBounds();
-        const zoom = Math.max(0, Math.min(17, Math.round(map.getZoom())));
-        pointIndex.getClusters([view.getWest(), view.getSouth(), view.getEast(), view.getNorth()], zoom).forEach((feature) => {
-          const [lng, lat] = feature.geometry.coordinates;
-          if (feature.properties.cluster) {
-            const count = Number(feature.properties.point_count);
-            const clusterMarker = Leaflet.marker([lat, lng], {
-              icon: Leaflet.divIcon({
-                className: "atlas-cluster",
-                html: `<span>${count}</span>`,
-                iconSize: [42, 42],
-              }),
-            });
-            clusterMarker.on("click", () => {
-              const nextZoom = Math.min(pointIndex.getClusterExpansionZoom(feature.properties.cluster_id), 17);
-              map.setView([lat, lng], nextZoom, { animate: true });
-            });
-            visibleLayer.addLayer(clusterMarker);
-          } else {
-            visibleLayer.addLayer(placeMarker(feature.properties.place, feature.geometry.coordinates));
-          }
-        });
-      };
-
-      map.on("moveend", renderVisiblePoints);
-      renderVisiblePoints();
-
-      mapInstance.current = map;
-      mapRuntime.current = { map, bounds };
-    });
-    return () => {
-      disposed = true;
-      mapInstance.current?.remove();
-      mapInstance.current = null;
-      mapRuntime.current = null;
-    };
-  }, [validPlaces]);
-
-  return (
-    <div className="atlas-layout" aria-label={`${validPlaces.length} visited places`}>
-      <div ref={mapNode} className="atlas-map" role="application" aria-label="Interactive visited-places map. Zoom in and hover or tap a marker for details." />
-      <div className="atlas-search">
-        <MagnifyingGlass size={19} weight="bold" aria-hidden="true" />
-        <input
-          aria-label="Search visited places"
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder={`Search ${validPlaces.length} saved places`}
-          type="search"
-          value={query}
-        />
-        {query && <button type="button" onClick={() => setQuery("")} aria-label="Clear place search"><X size={17} /></button>}
-        {matches.length > 0 && (
-          <div className="atlas-results">
-            {matches.map((place) => (
-              <button type="button" key={place.id} onClick={() => focusPlace(place)}>
-                <MapPin size={17} weight="fill" />
-                <span><strong>{place.city}</strong><small>{place.note} · {formatVisitDate(place.lastVisited)}</small></span>
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-      <button className="atlas-fit" type="button" onClick={fitAll} aria-label="Fit all visited places on map">
-        <Crosshair size={20} weight="bold" />
-      </button>
-      <div className="atlas-count"><MapPin size={15} weight="fill" /><strong>{validPlaces.length}</strong> places</div>
-      {selectedPlace && (
-        <aside className="atlas-place-card" aria-live="polite">
-          <button type="button" onClick={() => setSelectedPlace(null)} aria-label="Close place details"><X size={17} /></button>
-          <span>VISITED PLACE</span>
-          <h4>{selectedPlace.city}</h4>
-          <div><strong>{selectedPlace.visitCount || 1}</strong><small>VISITS</small></div>
-          <p><span>First</span>{formatVisitDate(selectedPlace.firstVisited)}</p>
-          <p><span>Latest</span>{formatVisitDate(selectedPlace.lastVisited)}</p>
-        </aside>
-      )}
-      <div className="atlas-hint" aria-hidden="true">
-        <i /> <span>Scroll to zoom · drag to explore</span>
-      </div>
-    </div>
-  );
-}
 
 export function App() {
   const [openProject, setOpenProject] = useState("02");
@@ -892,39 +715,6 @@ export function App() {
         ease: "none",
         scrollTrigger: { trigger: ".music-stage", start: "top bottom", end: "bottom top", scrub: 0.7 },
       });
-
-      gsap.timeline({
-        scrollTrigger: { trigger: ".contact-section footer", start: "top 88%", once: true },
-      })
-        .fromTo(".footer-signature-word", {
-          clipPath: "inset(-12% 100% -18% 0)",
-          x: -7,
-          filter: "blur(1.5px)",
-        }, {
-          clipPath: "inset(-12% -6% -18% 0)",
-          x: 0,
-          filter: "blur(0px)",
-          duration: 1.45,
-          ease: "power2.inOut",
-        })
-        .fromTo(".footer-signature-dot", {
-          y: -18,
-          scale: 0,
-          opacity: 0,
-        }, {
-          y: 0,
-          scale: 1,
-          opacity: 1,
-          duration: 0.38,
-          ease: "back.out(2.8)",
-        }, "-=0.06")
-        .fromTo(".footer-signature", {
-          rotate: -4.5,
-        }, {
-          rotate: -3,
-          duration: 0.6,
-          ease: "elastic.out(1, 0.48)",
-        }, "-=0.22");
 
       gsap.utils.toArray(".timeline-row").forEach((node) => {
         ScrollTrigger.create({
@@ -1146,7 +936,7 @@ export function App() {
             <Trophy size={19} /><span>{content.lifeNotes[2]}</span>
           </aside>
           <div className="personal-grid">
-            <article className="atlas-card" data-reveal>
+            <article className="atlas-card" id="travel-map" data-reveal>
               <header>
                 <span><MapTrifold size={18} weight="light" /> {content.placesSection.label}</span>
                 <small>{content.places.length} places{content.placesSection.firstVisited && content.placesSection.lastVisited ? ` · ${content.placesSection.firstVisited.slice(0, 4)}—${content.placesSection.lastVisited.slice(0, 4)}` : ""}</small>
@@ -1173,10 +963,7 @@ export function App() {
             <a href="/Dhruvith_Chokkarapu_Resume.pdf" download><DownloadSimple size={22} /><span><small>Resume</small>Download PDF</span><ArrowDown size={18} /></a>
           </div>
           <footer>
-            <span className="footer-signature" aria-label="Signed, Dhruvith">
-              <span className="footer-signature-word" aria-hidden="true">Dhruvith</span>
-              <span className="footer-signature-dot" aria-hidden="true">.</span>
-            </span>
+            <Signature />
             <span>© 2026 Dhruvith Chokkarapu</span>
             <span>Built locally in Hyderabad</span>
             <a href="#top">Back to top <ArrowUpRight size={14} /></a>

@@ -175,7 +175,7 @@
   "placesSection": {
     "label": "PLACES",
     "heading": "Places I have visited.",
-    "copy": "Search, zoom, or select a pin to inspect the places recorded in my timeline.",
+    "copy": "Explore recorded stops at street level. Select a pin for coordinates and visit dates, or use All locations to see the full map.",
     "firstVisited": "2025-09-27",
     "lastVisited": "2026-08-20"
   },
@@ -189,7 +189,8 @@
       "lng": 78.535395,
       "visitCount": 1,
       "firstVisited": "2025-09-27",
-      "lastVisited": "2025-09-27"
+      "lastVisited": "2025-09-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3eb0b1349816",
@@ -200,7 +201,8 @@
       "lng": 78.5387188,
       "visitCount": 1,
       "firstVisited": "2025-09-27",
-      "lastVisited": "2025-09-27"
+      "lastVisited": "2025-09-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-581e48f77450",
@@ -211,7 +213,8 @@
       "lng": 78.5385176,
       "visitCount": 1,
       "firstVisited": "2025-09-27",
-      "lastVisited": "2025-09-27"
+      "lastVisited": "2025-09-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b77dbd65eba5",
@@ -222,7 +225,8 @@
       "lng": 78.5355744,
       "visitCount": 2,
       "firstVisited": "2025-09-27",
-      "lastVisited": "2025-09-27"
+      "lastVisited": "2025-09-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-102f6a4ad169",
@@ -233,7 +237,8 @@
       "lng": 78.539915,
       "visitCount": 2,
       "firstVisited": "2025-09-27",
-      "lastVisited": "2026-02-22"
+      "lastVisited": "2026-02-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-45a517d8a4fe",
@@ -244,7 +249,8 @@
       "lng": 78.508255,
       "visitCount": 1,
       "firstVisited": "2025-09-27",
-      "lastVisited": "2025-09-27"
+      "lastVisited": "2025-09-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-9f6e648a7533",
@@ -255,7 +261,8 @@
       "lng": 78.5313476,
       "visitCount": 1,
       "firstVisited": "2025-09-27",
-      "lastVisited": "2025-09-27"
+      "lastVisited": "2025-09-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4b03d9d945bc",
@@ -266,7 +273,8 @@
       "lng": 78.555792,
       "visitCount": 423,
       "firstVisited": "2025-09-27",
-      "lastVisited": "2026-08-20"
+      "lastVisited": "2026-08-20",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7fcab420063e",
@@ -277,7 +285,8 @@
       "lng": 78.4493949,
       "visitCount": 1,
       "firstVisited": "2025-09-28",
-      "lastVisited": "2025-09-28"
+      "lastVisited": "2025-09-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c628332823b0",
@@ -288,7 +297,8 @@
       "lng": 78.4496669,
       "visitCount": 1,
       "firstVisited": "2025-09-28",
-      "lastVisited": "2025-09-28"
+      "lastVisited": "2025-09-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7f20df81ab9a",
@@ -299,7 +309,8 @@
       "lng": 78.4493822,
       "visitCount": 1,
       "firstVisited": "2025-09-28",
-      "lastVisited": "2025-09-28"
+      "lastVisited": "2025-09-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5cfc044a9ca4",
@@ -310,7 +321,8 @@
       "lng": 78.4489375,
       "visitCount": 1,
       "firstVisited": "2025-09-28",
-      "lastVisited": "2025-09-28"
+      "lastVisited": "2025-09-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3f3e1dcee587",
@@ -321,7 +333,8 @@
       "lng": 78.4488686,
       "visitCount": 1,
       "firstVisited": "2025-09-28",
-      "lastVisited": "2025-09-28"
+      "lastVisited": "2025-09-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e25b0601e79b",
@@ -332,7 +345,8 @@
       "lng": 79.5640379,
       "visitCount": 3,
       "firstVisited": "2025-10-01",
-      "lastVisited": "2025-10-04"
+      "lastVisited": "2025-10-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b16fddd3afe6",
@@ -343,7 +357,8 @@
       "lng": 79.5524717,
       "visitCount": 1,
       "firstVisited": "2025-10-02",
-      "lastVisited": "2025-10-02"
+      "lastVisited": "2025-10-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-073def15f96d",
@@ -354,7 +369,8 @@
       "lng": 79.5612142,
       "visitCount": 1,
       "firstVisited": "2025-10-02",
-      "lastVisited": "2025-10-02"
+      "lastVisited": "2025-10-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-54a761f4f18a",
@@ -365,7 +381,8 @@
       "lng": 79.6358234,
       "visitCount": 1,
       "firstVisited": "2025-10-03",
-      "lastVisited": "2025-10-03"
+      "lastVisited": "2025-10-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-89753ff7742c",
@@ -376,7 +393,8 @@
       "lng": 79.6344098,
       "visitCount": 1,
       "firstVisited": "2025-10-03",
-      "lastVisited": "2025-10-03"
+      "lastVisited": "2025-10-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5cc244b7f667",
@@ -387,7 +405,8 @@
       "lng": 79.5474037,
       "visitCount": 1,
       "firstVisited": "2025-10-03",
-      "lastVisited": "2025-10-03"
+      "lastVisited": "2025-10-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-08ab9dcf612b",
@@ -398,7 +417,8 @@
       "lng": 79.5637966,
       "visitCount": 1,
       "firstVisited": "2025-10-03",
-      "lastVisited": "2025-10-03"
+      "lastVisited": "2025-10-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d321ff9bd193",
@@ -409,7 +429,8 @@
       "lng": 79.2585749,
       "visitCount": 1,
       "firstVisited": "2025-10-04",
-      "lastVisited": "2025-10-04"
+      "lastVisited": "2025-10-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1d9fbc56eb83",
@@ -420,7 +441,8 @@
       "lng": 78.8484322,
       "visitCount": 1,
       "firstVisited": "2025-10-04",
-      "lastVisited": "2025-10-04"
+      "lastVisited": "2025-10-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-99bb4f41fb2d",
@@ -431,7 +453,8 @@
       "lng": 78.5343807,
       "visitCount": 8,
       "firstVisited": "2025-10-05",
-      "lastVisited": "2026-02-15"
+      "lastVisited": "2026-02-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fcedc8d14f3b",
@@ -442,18 +465,20 @@
       "lng": 78.5192432,
       "visitCount": 1,
       "firstVisited": "2025-10-05",
-      "lastVisited": "2025-10-05"
+      "lastVisited": "2025-10-05",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ddd1dca11564",
       "city": "Place 025",
       "country": "Timeline",
       "note": "29 visits",
-      "lat": 17.3312741,
-      "lng": 78.5698156,
+      "lat": 17.3312496,
+      "lng": 78.569948,
       "visitCount": 29,
       "firstVisited": "2025-10-06",
-      "lastVisited": "2026-08-19"
+      "lastVisited": "2026-08-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-bd1314ba96f7",
@@ -464,7 +489,8 @@
       "lng": 78.547973,
       "visitCount": 143,
       "firstVisited": "2025-10-06",
-      "lastVisited": "2026-03-07"
+      "lastVisited": "2026-03-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-535987f0da6a",
@@ -475,7 +501,8 @@
       "lng": 78.3831911,
       "visitCount": 81,
       "firstVisited": "2025-10-06",
-      "lastVisited": "2026-05-03"
+      "lastVisited": "2026-05-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7ab63b9f9f68",
@@ -486,7 +513,8 @@
       "lng": 78.3764329,
       "visitCount": 113,
       "firstVisited": "2025-10-06",
-      "lastVisited": "2026-07-23"
+      "lastVisited": "2026-07-23",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f1ebaeb956e9",
@@ -497,7 +525,8 @@
       "lng": 78.4445922,
       "visitCount": 81,
       "firstVisited": "2025-10-06",
-      "lastVisited": "2026-03-05"
+      "lastVisited": "2026-03-05",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2c986d47637f",
@@ -508,7 +537,8 @@
       "lng": 78.5553407,
       "visitCount": 2,
       "firstVisited": "2025-10-11",
-      "lastVisited": "2026-02-06"
+      "lastVisited": "2026-02-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-21fd786ed4e5",
@@ -519,7 +549,8 @@
       "lng": 78.5219327,
       "visitCount": 2,
       "firstVisited": "2025-10-11",
-      "lastVisited": "2026-01-01"
+      "lastVisited": "2026-01-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-52d2be25f7ff",
@@ -530,7 +561,8 @@
       "lng": 78.5183631,
       "visitCount": 1,
       "firstVisited": "2025-10-11",
-      "lastVisited": "2025-10-11"
+      "lastVisited": "2025-10-11",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-39ff602619d4",
@@ -541,7 +573,8 @@
       "lng": 78.557014,
       "visitCount": 1,
       "firstVisited": "2025-10-11",
-      "lastVisited": "2025-10-11"
+      "lastVisited": "2025-10-11",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ad3c8e2c455f",
@@ -552,7 +585,8 @@
       "lng": 78.5704355,
       "visitCount": 1,
       "firstVisited": "2025-10-13",
-      "lastVisited": "2025-10-13"
+      "lastVisited": "2025-10-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e8ba1658076f",
@@ -563,7 +597,8 @@
       "lng": 78.3876282,
       "visitCount": 3,
       "firstVisited": "2025-10-13",
-      "lastVisited": "2025-10-15"
+      "lastVisited": "2025-10-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-93012c83e45b",
@@ -574,7 +609,8 @@
       "lng": 78.3944511,
       "visitCount": 1,
       "firstVisited": "2025-10-13",
-      "lastVisited": "2025-10-13"
+      "lastVisited": "2025-10-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2d517f3cb5a2",
@@ -585,7 +621,8 @@
       "lng": 78.3858518,
       "visitCount": 1,
       "firstVisited": "2025-10-13",
-      "lastVisited": "2025-10-13"
+      "lastVisited": "2025-10-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-624733437266",
@@ -596,7 +633,8 @@
       "lng": 78.3857262,
       "visitCount": 1,
       "firstVisited": "2025-10-15",
-      "lastVisited": "2025-10-15"
+      "lastVisited": "2025-10-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-017f537df6ea",
@@ -607,18 +645,20 @@
       "lng": 78.3948562,
       "visitCount": 1,
       "firstVisited": "2025-10-15",
-      "lastVisited": "2025-10-15"
+      "lastVisited": "2025-10-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f02ecee2fced",
       "city": "Place 040",
       "country": "Timeline",
       "note": "3 visits",
-      "lat": 17.4513689,
-      "lng": 78.3816596,
+      "lat": 17.4513728,
+      "lng": 78.3816437,
       "visitCount": 3,
       "firstVisited": "2025-10-17",
-      "lastVisited": "2026-02-13"
+      "lastVisited": "2026-02-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-94bc544f76ee",
@@ -629,7 +669,8 @@
       "lng": 78.3676412,
       "visitCount": 1,
       "firstVisited": "2025-10-17",
-      "lastVisited": "2025-10-17"
+      "lastVisited": "2025-10-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-343716e28fe5",
@@ -640,7 +681,8 @@
       "lng": 78.3695388,
       "visitCount": 1,
       "firstVisited": "2025-10-17",
-      "lastVisited": "2025-10-17"
+      "lastVisited": "2025-10-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-33a3212e7fd8",
@@ -651,18 +693,20 @@
       "lng": 78.5599043,
       "visitCount": 9,
       "firstVisited": "2025-10-18",
-      "lastVisited": "2026-08-02"
+      "lastVisited": "2026-08-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-795230ca00a5",
       "city": "Place 044",
       "country": "Timeline",
       "note": "9 visits",
-      "lat": 17.3311056,
-      "lng": 78.5727973,
+      "lat": 17.3310531,
+      "lng": 78.5728143,
       "visitCount": 9,
       "firstVisited": "2025-10-20",
-      "lastVisited": "2026-01-26"
+      "lastVisited": "2026-01-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-07d647e75285",
@@ -673,7 +717,8 @@
       "lng": 78.5727215,
       "visitCount": 7,
       "firstVisited": "2025-10-20",
-      "lastVisited": "2026-01-26"
+      "lastVisited": "2026-01-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8bb0bcc6d038",
@@ -684,7 +729,8 @@
       "lng": 78.5622565,
       "visitCount": 5,
       "firstVisited": "2025-10-20",
-      "lastVisited": "2026-08-14"
+      "lastVisited": "2026-08-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-15bfcbc684a3",
@@ -695,7 +741,8 @@
       "lng": 78.4746645,
       "visitCount": 1,
       "firstVisited": "2025-10-20",
-      "lastVisited": "2025-10-20"
+      "lastVisited": "2025-10-20",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-22a92834d374",
@@ -706,7 +753,8 @@
       "lng": 78.3783065,
       "visitCount": 4,
       "firstVisited": "2025-10-23",
-      "lastVisited": "2026-03-02"
+      "lastVisited": "2026-03-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-9bd6290ab29f",
@@ -717,7 +765,8 @@
       "lng": 78.5656464,
       "visitCount": 7,
       "firstVisited": "2025-10-24",
-      "lastVisited": "2026-06-29"
+      "lastVisited": "2026-06-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6d41f49958b1",
@@ -728,7 +777,8 @@
       "lng": 78.3709691,
       "visitCount": 6,
       "firstVisited": "2025-10-24",
-      "lastVisited": "2025-12-11"
+      "lastVisited": "2025-12-11",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-60f3f169e0ae",
@@ -739,7 +789,8 @@
       "lng": 78.3709106,
       "visitCount": 6,
       "firstVisited": "2025-10-24",
-      "lastVisited": "2025-12-11"
+      "lastVisited": "2025-12-11",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e80ebbaccc62",
@@ -750,7 +801,8 @@
       "lng": 78.3732854,
       "visitCount": 1,
       "firstVisited": "2025-10-24",
-      "lastVisited": "2025-10-24"
+      "lastVisited": "2025-10-24",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7fca66bcff4d",
@@ -761,7 +813,8 @@
       "lng": 78.555904,
       "visitCount": 2,
       "firstVisited": "2025-10-25",
-      "lastVisited": "2026-01-10"
+      "lastVisited": "2026-01-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0c24e4e280b4",
@@ -772,18 +825,20 @@
       "lng": 78.5728488,
       "visitCount": 2,
       "firstVisited": "2025-10-25",
-      "lastVisited": "2026-03-08"
+      "lastVisited": "2026-03-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-90cf40f35ecf",
       "city": "Place 055",
       "country": "Timeline",
       "note": "2 visits",
-      "lat": 17.3359232,
-      "lng": 78.5735514,
+      "lat": 17.3360646,
+      "lng": 78.5736269,
       "visitCount": 2,
       "firstVisited": "2025-10-25",
-      "lastVisited": "2026-03-08"
+      "lastVisited": "2026-03-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7e36f47d7409",
@@ -794,7 +849,8 @@
       "lng": 78.6630289,
       "visitCount": 1,
       "firstVisited": "2025-10-25",
-      "lastVisited": "2025-10-25"
+      "lastVisited": "2025-10-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b6637196bbb4",
@@ -805,7 +861,8 @@
       "lng": 80.203913,
       "visitCount": 1,
       "firstVisited": "2025-10-26",
-      "lastVisited": "2025-10-26"
+      "lastVisited": "2025-10-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-bfbc0bec5b35",
@@ -816,7 +873,8 @@
       "lng": 80.2729076,
       "visitCount": 2,
       "firstVisited": "2025-10-26",
-      "lastVisited": "2025-10-28"
+      "lastVisited": "2025-10-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-a8861ea402d5",
@@ -827,7 +885,8 @@
       "lng": 80.2104602,
       "visitCount": 2,
       "firstVisited": "2025-10-26",
-      "lastVisited": "2025-10-28"
+      "lastVisited": "2025-10-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-42ba7b976b7e",
@@ -838,7 +897,8 @@
       "lng": 80.2391441,
       "visitCount": 4,
       "firstVisited": "2025-10-26",
-      "lastVisited": "2025-10-28"
+      "lastVisited": "2025-10-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7d3484750917",
@@ -849,7 +909,8 @@
       "lng": 80.2447247,
       "visitCount": 1,
       "firstVisited": "2025-10-26",
-      "lastVisited": "2025-10-26"
+      "lastVisited": "2025-10-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-785f41b43158",
@@ -860,7 +921,8 @@
       "lng": 80.2437554,
       "visitCount": 1,
       "firstVisited": "2025-10-26",
-      "lastVisited": "2025-10-26"
+      "lastVisited": "2025-10-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-65ee4839f657",
@@ -871,7 +933,8 @@
       "lng": 80.05961,
       "visitCount": 1,
       "firstVisited": "2025-10-27",
-      "lastVisited": "2025-10-27"
+      "lastVisited": "2025-10-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-623030ae1202",
@@ -882,7 +945,8 @@
       "lng": 80.0580415,
       "visitCount": 1,
       "firstVisited": "2025-10-27",
-      "lastVisited": "2025-10-27"
+      "lastVisited": "2025-10-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4c2a4a688058",
@@ -893,7 +957,8 @@
       "lng": 80.044416,
       "visitCount": 1,
       "firstVisited": "2025-10-27",
-      "lastVisited": "2025-10-27"
+      "lastVisited": "2025-10-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f2a569266e30",
@@ -904,7 +969,8 @@
       "lng": 80.0465067,
       "visitCount": 1,
       "firstVisited": "2025-10-27",
-      "lastVisited": "2025-10-27"
+      "lastVisited": "2025-10-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8ae6cb4fcf37",
@@ -915,7 +981,8 @@
       "lng": 80.0852321,
       "visitCount": 1,
       "firstVisited": "2025-10-27",
-      "lastVisited": "2025-10-27"
+      "lastVisited": "2025-10-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-09c15408deed",
@@ -926,7 +993,8 @@
       "lng": 80.2130519,
       "visitCount": 1,
       "firstVisited": "2025-10-28",
-      "lastVisited": "2025-10-28"
+      "lastVisited": "2025-10-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7ed144986938",
@@ -937,7 +1005,8 @@
       "lng": 80.1958707,
       "visitCount": 1,
       "firstVisited": "2025-10-28",
-      "lastVisited": "2025-10-28"
+      "lastVisited": "2025-10-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4c19050b70bd",
@@ -948,7 +1017,8 @@
       "lng": 80.199821,
       "visitCount": 1,
       "firstVisited": "2025-10-28",
-      "lastVisited": "2025-10-28"
+      "lastVisited": "2025-10-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ecf94db14b31",
@@ -959,7 +1029,8 @@
       "lng": 80.0238263,
       "visitCount": 1,
       "firstVisited": "2025-10-28",
-      "lastVisited": "2025-10-28"
+      "lastVisited": "2025-10-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b5bdc1648e23",
@@ -970,7 +1041,8 @@
       "lng": 78.578955,
       "visitCount": 1,
       "firstVisited": "2025-10-29",
-      "lastVisited": "2025-10-29"
+      "lastVisited": "2025-10-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6d73bb21cf96",
@@ -981,7 +1053,8 @@
       "lng": 78.3554937,
       "visitCount": 1,
       "firstVisited": "2025-10-30",
-      "lastVisited": "2025-10-30"
+      "lastVisited": "2025-10-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-75d45637071f",
@@ -992,7 +1065,8 @@
       "lng": 78.3552941,
       "visitCount": 1,
       "firstVisited": "2025-10-30",
-      "lastVisited": "2025-10-30"
+      "lastVisited": "2025-10-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4da2f628bb09",
@@ -1003,7 +1077,8 @@
       "lng": 78.3685463,
       "visitCount": 1,
       "firstVisited": "2025-10-31",
-      "lastVisited": "2025-10-31"
+      "lastVisited": "2025-10-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-adc73dcabe2a",
@@ -1014,7 +1089,8 @@
       "lng": 78.3603599,
       "visitCount": 7,
       "firstVisited": "2025-10-31",
-      "lastVisited": "2025-11-22"
+      "lastVisited": "2025-11-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e0198e51907b",
@@ -1025,7 +1101,8 @@
       "lng": 78.3607984,
       "visitCount": 1,
       "firstVisited": "2025-11-01",
-      "lastVisited": "2025-11-01"
+      "lastVisited": "2025-11-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-18ccf3aeb3de",
@@ -1036,7 +1113,8 @@
       "lng": 78.3647037,
       "visitCount": 2,
       "firstVisited": "2025-11-01",
-      "lastVisited": "2025-11-22"
+      "lastVisited": "2025-11-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-259ee596a0c5",
@@ -1047,7 +1125,8 @@
       "lng": 78.3771549,
       "visitCount": 10,
       "firstVisited": "2025-11-01",
-      "lastVisited": "2025-12-31"
+      "lastVisited": "2025-12-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e0615f7fa071",
@@ -1058,7 +1137,8 @@
       "lng": 78.5564473,
       "visitCount": 1,
       "firstVisited": "2025-11-01",
-      "lastVisited": "2025-11-01"
+      "lastVisited": "2025-11-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2a1fe7264ee8",
@@ -1069,7 +1149,8 @@
       "lng": 78.5257357,
       "visitCount": 4,
       "firstVisited": "2025-11-02",
-      "lastVisited": "2026-04-04"
+      "lastVisited": "2026-04-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1dddc8a38089",
@@ -1080,7 +1161,8 @@
       "lng": 78.5403303,
       "visitCount": 1,
       "firstVisited": "2025-11-02",
-      "lastVisited": "2025-11-02"
+      "lastVisited": "2025-11-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-05aa23e66ef5",
@@ -1091,7 +1173,8 @@
       "lng": 78.5250631,
       "visitCount": 4,
       "firstVisited": "2025-11-04",
-      "lastVisited": "2026-08-09"
+      "lastVisited": "2026-08-09",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-38f7cee71404",
@@ -1102,7 +1185,8 @@
       "lng": 78.5440564,
       "visitCount": 1,
       "firstVisited": "2025-11-11",
-      "lastVisited": "2025-11-11"
+      "lastVisited": "2025-11-11",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b66166f89998",
@@ -1113,7 +1197,8 @@
       "lng": 78.5445419,
       "visitCount": 2,
       "firstVisited": "2025-11-11",
-      "lastVisited": "2026-03-29"
+      "lastVisited": "2026-03-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6da3b325bfcd",
@@ -1124,7 +1209,8 @@
       "lng": 78.5444933,
       "visitCount": 2,
       "firstVisited": "2025-11-11",
-      "lastVisited": "2026-03-29"
+      "lastVisited": "2026-03-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-525faf14899c",
@@ -1135,7 +1221,8 @@
       "lng": 78.4560943,
       "visitCount": 1,
       "firstVisited": "2025-11-12",
-      "lastVisited": "2025-11-12"
+      "lastVisited": "2025-11-12",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-33b93a2f9f7a",
@@ -1146,7 +1233,8 @@
       "lng": 78.550358,
       "visitCount": 7,
       "firstVisited": "2025-11-16",
-      "lastVisited": "2026-08-01"
+      "lastVisited": "2026-08-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-51a66e3e71c3",
@@ -1157,7 +1245,8 @@
       "lng": 78.538709,
       "visitCount": 2,
       "firstVisited": "2025-11-16",
-      "lastVisited": "2026-03-29"
+      "lastVisited": "2026-03-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b5473fb98540",
@@ -1168,7 +1257,8 @@
       "lng": 78.522255,
       "visitCount": 1,
       "firstVisited": "2025-11-16",
-      "lastVisited": "2025-11-16"
+      "lastVisited": "2025-11-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8b8a02896560",
@@ -1179,7 +1269,8 @@
       "lng": 78.5636361,
       "visitCount": 2,
       "firstVisited": "2025-11-16",
-      "lastVisited": "2026-05-14"
+      "lastVisited": "2026-05-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-261342ae5586",
@@ -1190,7 +1281,8 @@
       "lng": 78.5637378,
       "visitCount": 1,
       "firstVisited": "2025-11-16",
-      "lastVisited": "2025-11-16"
+      "lastVisited": "2025-11-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-707bf83e47c3",
@@ -1201,7 +1293,8 @@
       "lng": 78.4217633,
       "visitCount": 3,
       "firstVisited": "2025-11-21",
-      "lastVisited": "2025-11-22"
+      "lastVisited": "2025-11-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-67888f0a081d",
@@ -1212,7 +1305,8 @@
       "lng": 78.3870113,
       "visitCount": 1,
       "firstVisited": "2025-11-21",
-      "lastVisited": "2025-11-21"
+      "lastVisited": "2025-11-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e11607a970f4",
@@ -1223,7 +1317,8 @@
       "lng": 78.3602776,
       "visitCount": 1,
       "firstVisited": "2025-11-21",
-      "lastVisited": "2025-11-21"
+      "lastVisited": "2025-11-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c32800a4d9b1",
@@ -1234,7 +1329,8 @@
       "lng": 78.3786209,
       "visitCount": 1,
       "firstVisited": "2025-11-21",
-      "lastVisited": "2025-11-21"
+      "lastVisited": "2025-11-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b0ddba5d8580",
@@ -1245,7 +1341,8 @@
       "lng": 78.419776,
       "visitCount": 1,
       "firstVisited": "2025-11-22",
-      "lastVisited": "2025-11-22"
+      "lastVisited": "2025-11-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-a08fee7d72c2",
@@ -1256,7 +1353,8 @@
       "lng": 78.5341051,
       "visitCount": 1,
       "firstVisited": "2025-11-23",
-      "lastVisited": "2025-11-23"
+      "lastVisited": "2025-11-23",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-28f82c969104",
@@ -1267,7 +1365,8 @@
       "lng": 78.3634513,
       "visitCount": 1,
       "firstVisited": "2025-11-28",
-      "lastVisited": "2025-11-28"
+      "lastVisited": "2025-11-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fd8feedc6a20",
@@ -1278,7 +1377,8 @@
       "lng": 78.3385379,
       "visitCount": 1,
       "firstVisited": "2025-11-28",
-      "lastVisited": "2025-11-28"
+      "lastVisited": "2025-11-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fbd4eea7ee05",
@@ -1289,7 +1389,8 @@
       "lng": 78.377183,
       "visitCount": 1,
       "firstVisited": "2025-11-28",
-      "lastVisited": "2025-11-28"
+      "lastVisited": "2025-11-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-40eb6462e2e4",
@@ -1300,7 +1401,8 @@
       "lng": 78.5643177,
       "visitCount": 2,
       "firstVisited": "2025-11-29",
-      "lastVisited": "2026-01-29"
+      "lastVisited": "2026-01-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ba97931e498f",
@@ -1311,7 +1413,8 @@
       "lng": 78.5440969,
       "visitCount": 1,
       "firstVisited": "2025-11-30",
-      "lastVisited": "2025-11-30"
+      "lastVisited": "2025-11-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-11e8526bf109",
@@ -1322,7 +1425,8 @@
       "lng": 78.5439605,
       "visitCount": 1,
       "firstVisited": "2025-11-30",
-      "lastVisited": "2025-11-30"
+      "lastVisited": "2025-11-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-a54937fe9ba5",
@@ -1333,7 +1437,8 @@
       "lng": 78.5476257,
       "visitCount": 3,
       "firstVisited": "2025-11-30",
-      "lastVisited": "2026-02-13"
+      "lastVisited": "2026-02-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0bb218463fab",
@@ -1344,7 +1449,8 @@
       "lng": 78.378258,
       "visitCount": 1,
       "firstVisited": "2025-12-03",
-      "lastVisited": "2025-12-03"
+      "lastVisited": "2025-12-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0cb0152374fa",
@@ -1355,7 +1461,8 @@
       "lng": 78.5699238,
       "visitCount": 4,
       "firstVisited": "2025-12-06",
-      "lastVisited": "2026-03-01"
+      "lastVisited": "2026-03-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3263dade26da",
@@ -1366,7 +1473,8 @@
       "lng": 78.5497456,
       "visitCount": 1,
       "firstVisited": "2025-12-06",
-      "lastVisited": "2025-12-06"
+      "lastVisited": "2025-12-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b892e27bfcc8",
@@ -1377,7 +1485,8 @@
       "lng": 78.5515689,
       "visitCount": 1,
       "firstVisited": "2025-12-06",
-      "lastVisited": "2025-12-06"
+      "lastVisited": "2025-12-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5a896538a59e",
@@ -1388,7 +1497,8 @@
       "lng": 78.5690635,
       "visitCount": 1,
       "firstVisited": "2025-12-06",
-      "lastVisited": "2025-12-06"
+      "lastVisited": "2025-12-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3683e1113bca",
@@ -1399,7 +1509,8 @@
       "lng": 78.5892566,
       "visitCount": 1,
       "firstVisited": "2025-12-07",
-      "lastVisited": "2025-12-07"
+      "lastVisited": "2025-12-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e9feabbfa5a5",
@@ -1410,7 +1521,8 @@
       "lng": 78.6016525,
       "visitCount": 2,
       "firstVisited": "2025-12-07",
-      "lastVisited": "2025-12-07"
+      "lastVisited": "2025-12-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-713464e78ecb",
@@ -1421,7 +1533,8 @@
       "lng": 78.6418905,
       "visitCount": 1,
       "firstVisited": "2025-12-07",
-      "lastVisited": "2025-12-07"
+      "lastVisited": "2025-12-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-71768c4327a7",
@@ -1432,7 +1545,8 @@
       "lng": 78.5624247,
       "visitCount": 2,
       "firstVisited": "2025-12-07",
-      "lastVisited": "2025-12-07"
+      "lastVisited": "2025-12-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b68c4a1a6817",
@@ -1443,7 +1557,8 @@
       "lng": 78.5693509,
       "visitCount": 2,
       "firstVisited": "2025-12-07",
-      "lastVisited": "2025-12-19"
+      "lastVisited": "2025-12-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-37dbd79a89a8",
@@ -1454,7 +1569,8 @@
       "lng": 78.3826503,
       "visitCount": 2,
       "firstVisited": "2025-12-09",
-      "lastVisited": "2026-02-10"
+      "lastVisited": "2026-02-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-73b2a5ec2201",
@@ -1465,7 +1581,8 @@
       "lng": 78.558832,
       "visitCount": 6,
       "firstVisited": "2025-12-10",
-      "lastVisited": "2026-02-12"
+      "lastVisited": "2026-02-12",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-53d7104d9c61",
@@ -1476,7 +1593,8 @@
       "lng": 78.5630823,
       "visitCount": 2,
       "firstVisited": "2025-12-11",
-      "lastVisited": "2026-01-26"
+      "lastVisited": "2026-01-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4eaa3ff7c43d",
@@ -1487,7 +1605,8 @@
       "lng": 78.5246081,
       "visitCount": 3,
       "firstVisited": "2025-12-11",
-      "lastVisited": "2026-01-16"
+      "lastVisited": "2026-01-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-599a05bc5597",
@@ -1498,7 +1617,8 @@
       "lng": 78.5578009,
       "visitCount": 3,
       "firstVisited": "2025-12-11",
-      "lastVisited": "2026-03-18"
+      "lastVisited": "2026-03-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2daaf9eff93d",
@@ -1509,7 +1629,8 @@
       "lng": 78.5690052,
       "visitCount": 3,
       "firstVisited": "2025-12-12",
-      "lastVisited": "2026-05-10"
+      "lastVisited": "2026-05-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fa2af151ac43",
@@ -1520,7 +1641,8 @@
       "lng": 78.5043917,
       "visitCount": 1,
       "firstVisited": "2025-12-13",
-      "lastVisited": "2025-12-13"
+      "lastVisited": "2025-12-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-294548293abb",
@@ -1531,7 +1653,8 @@
       "lng": 78.5040659,
       "visitCount": 1,
       "firstVisited": "2025-12-13",
-      "lastVisited": "2025-12-13"
+      "lastVisited": "2025-12-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2aba48ef73f1",
@@ -1542,7 +1665,8 @@
       "lng": 78.4789517,
       "visitCount": 1,
       "firstVisited": "2025-12-13",
-      "lastVisited": "2025-12-13"
+      "lastVisited": "2025-12-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7af8906a9631",
@@ -1553,7 +1677,8 @@
       "lng": 78.4775058,
       "visitCount": 1,
       "firstVisited": "2025-12-13",
-      "lastVisited": "2025-12-13"
+      "lastVisited": "2025-12-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-a307beb54fd0",
@@ -1564,7 +1689,8 @@
       "lng": 78.5646559,
       "visitCount": 1,
       "firstVisited": "2025-12-13",
-      "lastVisited": "2025-12-13"
+      "lastVisited": "2025-12-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6f4995a3ea4e",
@@ -1575,7 +1701,8 @@
       "lng": 78.6479433,
       "visitCount": 1,
       "firstVisited": "2025-12-14",
-      "lastVisited": "2025-12-14"
+      "lastVisited": "2025-12-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2e65789265ad",
@@ -1586,7 +1713,8 @@
       "lng": 78.3706029,
       "visitCount": 1,
       "firstVisited": "2025-12-17",
-      "lastVisited": "2025-12-17"
+      "lastVisited": "2025-12-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c1cfdcb1610f",
@@ -1597,7 +1725,8 @@
       "lng": 78.3462779,
       "visitCount": 1,
       "firstVisited": "2025-12-17",
-      "lastVisited": "2025-12-17"
+      "lastVisited": "2025-12-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b34a15194bc6",
@@ -1608,7 +1737,8 @@
       "lng": 78.550697,
       "visitCount": 1,
       "firstVisited": "2025-12-18",
-      "lastVisited": "2025-12-18"
+      "lastVisited": "2025-12-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d9a7019ed5f8",
@@ -1619,7 +1749,8 @@
       "lng": 78.558067,
       "visitCount": 1,
       "firstVisited": "2025-12-18",
-      "lastVisited": "2025-12-18"
+      "lastVisited": "2025-12-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-19c0748bdd7d",
@@ -1630,7 +1761,8 @@
       "lng": 78.5567591,
       "visitCount": 1,
       "firstVisited": "2025-12-18",
-      "lastVisited": "2025-12-18"
+      "lastVisited": "2025-12-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e114752b6dd9",
@@ -1641,7 +1773,8 @@
       "lng": 78.5218152,
       "visitCount": 1,
       "firstVisited": "2025-12-18",
-      "lastVisited": "2025-12-18"
+      "lastVisited": "2025-12-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-60960f91fe75",
@@ -1652,7 +1785,8 @@
       "lng": 78.5750586,
       "visitCount": 1,
       "firstVisited": "2025-12-19",
-      "lastVisited": "2025-12-19"
+      "lastVisited": "2025-12-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c9e782d4f3f9",
@@ -1663,7 +1797,8 @@
       "lng": 78.5574263,
       "visitCount": 5,
       "firstVisited": "2025-12-19",
-      "lastVisited": "2026-06-06"
+      "lastVisited": "2026-06-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e61989cfff28",
@@ -1674,7 +1809,8 @@
       "lng": 78.5576288,
       "visitCount": 5,
       "firstVisited": "2025-12-19",
-      "lastVisited": "2026-06-06"
+      "lastVisited": "2026-06-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4e113067cfd5",
@@ -1685,7 +1821,8 @@
       "lng": 78.6152247,
       "visitCount": 1,
       "firstVisited": "2025-12-20",
-      "lastVisited": "2025-12-20"
+      "lastVisited": "2025-12-20",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3be774677b08",
@@ -1696,7 +1833,8 @@
       "lng": 78.5669719,
       "visitCount": 1,
       "firstVisited": "2025-12-20",
-      "lastVisited": "2025-12-21"
+      "lastVisited": "2025-12-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4f7d55c8617b",
@@ -1707,7 +1845,8 @@
       "lng": 78.3639493,
       "visitCount": 2,
       "firstVisited": "2025-12-23",
-      "lastVisited": "2026-01-08"
+      "lastVisited": "2026-01-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-188732cb2ea8",
@@ -1718,7 +1857,8 @@
       "lng": 78.3632536,
       "visitCount": 3,
       "firstVisited": "2025-12-23",
-      "lastVisited": "2026-01-08"
+      "lastVisited": "2026-01-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-af02b9633dec",
@@ -1729,7 +1869,8 @@
       "lng": 78.5692652,
       "visitCount": 1,
       "firstVisited": "2025-12-23",
-      "lastVisited": "2025-12-23"
+      "lastVisited": "2025-12-23",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c172477437cf",
@@ -1740,7 +1881,8 @@
       "lng": 78.3113706,
       "visitCount": 1,
       "firstVisited": "2025-12-25",
-      "lastVisited": "2025-12-25"
+      "lastVisited": "2025-12-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-76d13290d240",
@@ -1751,7 +1893,8 @@
       "lng": 78.049928,
       "visitCount": 1,
       "firstVisited": "2025-12-25",
-      "lastVisited": "2025-12-25"
+      "lastVisited": "2025-12-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-dacf81f96cb4",
@@ -1762,7 +1905,8 @@
       "lng": 77.9456548,
       "visitCount": 1,
       "firstVisited": "2025-12-25",
-      "lastVisited": "2025-12-25"
+      "lastVisited": "2025-12-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d1ba11605746",
@@ -1773,7 +1917,8 @@
       "lng": 78.1891955,
       "visitCount": 1,
       "firstVisited": "2025-12-25",
-      "lastVisited": "2025-12-25"
+      "lastVisited": "2025-12-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5734baa2495b",
@@ -1784,7 +1929,8 @@
       "lng": 78.2092902,
       "visitCount": 1,
       "firstVisited": "2025-12-25",
-      "lastVisited": "2025-12-25"
+      "lastVisited": "2025-12-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-22f9d415016c",
@@ -1795,7 +1941,8 @@
       "lng": 78.5284273,
       "visitCount": 2,
       "firstVisited": "2025-12-25",
-      "lastVisited": "2026-07-24"
+      "lastVisited": "2026-07-24",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-741942dbe96f",
@@ -1806,7 +1953,8 @@
       "lng": 78.3831804,
       "visitCount": 1,
       "firstVisited": "2025-12-26",
-      "lastVisited": "2025-12-26"
+      "lastVisited": "2025-12-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1f61bfc25096",
@@ -1817,7 +1965,8 @@
       "lng": 78.377413,
       "visitCount": 1,
       "firstVisited": "2025-12-26",
-      "lastVisited": "2025-12-26"
+      "lastVisited": "2025-12-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-858fd977fd9d",
@@ -1828,18 +1977,20 @@
       "lng": 78.5675672,
       "visitCount": 6,
       "firstVisited": "2025-12-26",
-      "lastVisited": "2026-07-17"
+      "lastVisited": "2026-07-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1adab43d5878",
       "city": "Place 151",
       "country": "Timeline",
       "note": "6 visits",
-      "lat": 17.3383575,
-      "lng": 78.5676843,
+      "lat": 17.3384068,
+      "lng": 78.5677097,
       "visitCount": 6,
       "firstVisited": "2025-12-26",
-      "lastVisited": "2026-07-17"
+      "lastVisited": "2026-07-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-31756286a2b2",
@@ -1850,7 +2001,8 @@
       "lng": 78.5697616,
       "visitCount": 2,
       "firstVisited": "2025-12-28",
-      "lastVisited": "2025-12-28"
+      "lastVisited": "2025-12-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-cbda263aa92a",
@@ -1861,7 +2013,8 @@
       "lng": 78.5640636,
       "visitCount": 1,
       "firstVisited": "2025-12-28",
-      "lastVisited": "2025-12-28"
+      "lastVisited": "2025-12-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0c016e4a6349",
@@ -1872,7 +2025,8 @@
       "lng": 78.3734727,
       "visitCount": 1,
       "firstVisited": "2025-12-29",
-      "lastVisited": "2025-12-29"
+      "lastVisited": "2025-12-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d5dbbc1a4371",
@@ -1883,7 +2037,8 @@
       "lng": 78.5400335,
       "visitCount": 1,
       "firstVisited": "2025-12-29",
-      "lastVisited": "2025-12-29"
+      "lastVisited": "2025-12-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d32abb74bc46",
@@ -1894,7 +2049,8 @@
       "lng": 78.5405362,
       "visitCount": 2,
       "firstVisited": "2025-12-29",
-      "lastVisited": "2026-05-02"
+      "lastVisited": "2026-05-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f1041acf3dbc",
@@ -1905,7 +2061,8 @@
       "lng": 78.5701851,
       "visitCount": 1,
       "firstVisited": "2026-01-01",
-      "lastVisited": "2026-01-01"
+      "lastVisited": "2026-01-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b4dc6d6fec22",
@@ -1916,7 +2073,8 @@
       "lng": 78.5401708,
       "visitCount": 2,
       "firstVisited": "2026-01-01",
-      "lastVisited": "2026-01-15"
+      "lastVisited": "2026-01-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-efa28760caba",
@@ -1927,7 +2085,8 @@
       "lng": 78.5402777,
       "visitCount": 2,
       "firstVisited": "2026-01-01",
-      "lastVisited": "2026-01-15"
+      "lastVisited": "2026-01-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0304b896c7ff",
@@ -1938,7 +2097,8 @@
       "lng": 78.5611058,
       "visitCount": 2,
       "firstVisited": "2026-01-01",
-      "lastVisited": "2026-01-03"
+      "lastVisited": "2026-01-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-538d1635ba9b",
@@ -1949,7 +2109,8 @@
       "lng": 78.5205662,
       "visitCount": 1,
       "firstVisited": "2026-01-02",
-      "lastVisited": "2026-01-02"
+      "lastVisited": "2026-01-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-312e266ddb50",
@@ -1960,7 +2121,8 @@
       "lng": 78.4755104,
       "visitCount": 1,
       "firstVisited": "2026-01-03",
-      "lastVisited": "2026-01-03"
+      "lastVisited": "2026-01-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-600e92b66e5a",
@@ -1971,7 +2133,8 @@
       "lng": 78.4745861,
       "visitCount": 1,
       "firstVisited": "2026-01-03",
-      "lastVisited": "2026-01-03"
+      "lastVisited": "2026-01-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-856f09b368f6",
@@ -1982,7 +2145,8 @@
       "lng": 78.538281,
       "visitCount": 1,
       "firstVisited": "2026-01-03",
-      "lastVisited": "2026-01-03"
+      "lastVisited": "2026-01-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-824410a2d32f",
@@ -1993,18 +2157,20 @@
       "lng": 78.5811348,
       "visitCount": 1,
       "firstVisited": "2026-01-03",
-      "lastVisited": "2026-01-03"
+      "lastVisited": "2026-01-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-facb7281bed3",
       "city": "Place 166",
       "country": "Timeline",
       "note": "4 visits",
-      "lat": 17.3654621,
-      "lng": 78.5574381,
+      "lat": 17.3654534,
+      "lng": 78.5573916,
       "visitCount": 4,
       "firstVisited": "2026-01-03",
-      "lastVisited": "2026-03-30"
+      "lastVisited": "2026-03-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4ece9aca77cc",
@@ -2015,7 +2181,8 @@
       "lng": 78.563848,
       "visitCount": 1,
       "firstVisited": "2026-01-04",
-      "lastVisited": "2026-01-04"
+      "lastVisited": "2026-01-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c2b5a393e9c8",
@@ -2026,7 +2193,8 @@
       "lng": 78.5638663,
       "visitCount": 1,
       "firstVisited": "2026-01-04",
-      "lastVisited": "2026-01-04"
+      "lastVisited": "2026-01-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-03f2a83b9f66",
@@ -2037,7 +2205,8 @@
       "lng": 78.3639392,
       "visitCount": 2,
       "firstVisited": "2026-01-08",
-      "lastVisited": "2026-01-08"
+      "lastVisited": "2026-01-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0f4b9c386425",
@@ -2048,7 +2217,8 @@
       "lng": 78.5310432,
       "visitCount": 1,
       "firstVisited": "2026-01-10",
-      "lastVisited": "2026-01-10"
+      "lastVisited": "2026-01-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-bf355a501932",
@@ -2059,7 +2229,8 @@
       "lng": 78.5519106,
       "visitCount": 1,
       "firstVisited": "2026-01-10",
-      "lastVisited": "2026-01-10"
+      "lastVisited": "2026-01-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1dfcb5387660",
@@ -2070,7 +2241,8 @@
       "lng": 78.5394489,
       "visitCount": 1,
       "firstVisited": "2026-01-11",
-      "lastVisited": "2026-01-11"
+      "lastVisited": "2026-01-11",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f14e8c878d0f",
@@ -2081,7 +2253,8 @@
       "lng": 78.422997,
       "visitCount": 2,
       "firstVisited": "2026-01-13",
-      "lastVisited": "2026-05-03"
+      "lastVisited": "2026-05-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-de5780ceb989",
@@ -2092,7 +2265,8 @@
       "lng": 78.5454484,
       "visitCount": 1,
       "firstVisited": "2026-01-14",
-      "lastVisited": "2026-01-14"
+      "lastVisited": "2026-01-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d517310da237",
@@ -2103,7 +2277,8 @@
       "lng": 78.523661,
       "visitCount": 2,
       "firstVisited": "2026-01-14",
-      "lastVisited": "2026-02-05"
+      "lastVisited": "2026-02-05",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-84d60de37337",
@@ -2114,7 +2289,8 @@
       "lng": 78.5667153,
       "visitCount": 1,
       "firstVisited": "2026-01-15",
-      "lastVisited": "2026-01-15"
+      "lastVisited": "2026-01-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6cd7883b0b33",
@@ -2125,18 +2301,20 @@
       "lng": 78.5264513,
       "visitCount": 2,
       "firstVisited": "2026-01-16",
-      "lastVisited": "2026-05-03"
+      "lastVisited": "2026-05-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-252ce737fe22",
       "city": "Place 178",
       "country": "Timeline",
       "note": "2 visits",
-      "lat": 17.3643067,
-      "lng": 78.5263911,
+      "lat": 17.3643263,
+      "lng": 78.5263733,
       "visitCount": 2,
       "firstVisited": "2026-01-16",
-      "lastVisited": "2026-05-03"
+      "lastVisited": "2026-05-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6af9c63bda3b",
@@ -2147,7 +2325,8 @@
       "lng": 78.5285058,
       "visitCount": 1,
       "firstVisited": "2026-01-16",
-      "lastVisited": "2026-01-16"
+      "lastVisited": "2026-01-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4f2b81f91204",
@@ -2158,7 +2337,8 @@
       "lng": 78.569283,
       "visitCount": 3,
       "firstVisited": "2026-01-18",
-      "lastVisited": "2026-08-02"
+      "lastVisited": "2026-08-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8ab3772279c1",
@@ -2169,7 +2349,8 @@
       "lng": 78.5686119,
       "visitCount": 1,
       "firstVisited": "2026-01-18",
-      "lastVisited": "2026-01-18"
+      "lastVisited": "2026-01-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c56b1fe71d0c",
@@ -2180,7 +2361,8 @@
       "lng": 78.5639781,
       "visitCount": 1,
       "firstVisited": "2026-01-18",
-      "lastVisited": "2026-01-18"
+      "lastVisited": "2026-01-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-bfd32b7addc4",
@@ -2191,7 +2373,8 @@
       "lng": 78.5693076,
       "visitCount": 1,
       "firstVisited": "2026-01-18",
-      "lastVisited": "2026-01-18"
+      "lastVisited": "2026-01-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3cf1b502858c",
@@ -2202,7 +2385,8 @@
       "lng": 78.382053,
       "visitCount": 1,
       "firstVisited": "2026-01-20",
-      "lastVisited": "2026-01-20"
+      "lastVisited": "2026-01-20",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-229491754152",
@@ -2213,7 +2397,8 @@
       "lng": 78.3748233,
       "visitCount": 2,
       "firstVisited": "2026-01-20",
-      "lastVisited": "2026-02-10"
+      "lastVisited": "2026-02-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7d1e25a8fe79",
@@ -2224,7 +2409,8 @@
       "lng": 78.5581312,
       "visitCount": 1,
       "firstVisited": "2026-01-22",
-      "lastVisited": "2026-01-22"
+      "lastVisited": "2026-01-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c288687cda22",
@@ -2235,7 +2421,8 @@
       "lng": 78.3717011,
       "visitCount": 2,
       "firstVisited": "2026-01-22",
-      "lastVisited": "2026-03-06"
+      "lastVisited": "2026-03-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-89f94219c2b1",
@@ -2246,7 +2433,8 @@
       "lng": 78.3734612,
       "visitCount": 4,
       "firstVisited": "2026-01-23",
-      "lastVisited": "2026-02-19"
+      "lastVisited": "2026-02-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-30b731bf648e",
@@ -2257,7 +2445,8 @@
       "lng": 78.5566159,
       "visitCount": 4,
       "firstVisited": "2026-01-24",
-      "lastVisited": "2026-07-05"
+      "lastVisited": "2026-07-05",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0e36b68b9313",
@@ -2268,18 +2457,20 @@
       "lng": 78.5657934,
       "visitCount": 8,
       "firstVisited": "2026-01-24",
-      "lastVisited": "2026-07-21"
+      "lastVisited": "2026-07-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-9b07661ebfd4",
       "city": "Place 191",
       "country": "Timeline",
       "note": "8 visits",
-      "lat": 17.3091367,
-      "lng": 78.5668107,
+      "lat": 17.3091037,
+      "lng": 78.5667312,
       "visitCount": 8,
       "firstVisited": "2026-01-24",
-      "lastVisited": "2026-07-21"
+      "lastVisited": "2026-07-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d0e49fc35838",
@@ -2290,18 +2481,20 @@
       "lng": 78.5751328,
       "visitCount": 1,
       "firstVisited": "2026-01-25",
-      "lastVisited": "2026-01-25"
+      "lastVisited": "2026-01-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-761763283de9",
       "city": "Place 193",
       "country": "Timeline",
       "note": "2 visits",
-      "lat": 17.3585736,
-      "lng": 78.5613908,
+      "lat": 17.3585728,
+      "lng": 78.561374,
       "visitCount": 2,
       "firstVisited": "2026-01-25",
-      "lastVisited": "2026-04-16"
+      "lastVisited": "2026-04-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ed459aaa5760",
@@ -2312,7 +2505,8 @@
       "lng": 78.5631942,
       "visitCount": 1,
       "firstVisited": "2026-01-25",
-      "lastVisited": "2026-01-25"
+      "lastVisited": "2026-01-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0ca0b235fe7d",
@@ -2323,7 +2517,8 @@
       "lng": 78.5462576,
       "visitCount": 1,
       "firstVisited": "2026-01-25",
-      "lastVisited": "2026-01-25"
+      "lastVisited": "2026-01-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-9e7fe4b87dc9",
@@ -2334,7 +2529,8 @@
       "lng": 78.5647843,
       "visitCount": 1,
       "firstVisited": "2026-01-26",
-      "lastVisited": "2026-01-26"
+      "lastVisited": "2026-01-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5fe96ba82a5a",
@@ -2345,7 +2541,8 @@
       "lng": 78.5691651,
       "visitCount": 1,
       "firstVisited": "2026-01-26",
-      "lastVisited": "2026-01-26"
+      "lastVisited": "2026-01-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fa2eb2f7b05c",
@@ -2356,7 +2553,8 @@
       "lng": 78.5693107,
       "visitCount": 1,
       "firstVisited": "2026-01-26",
-      "lastVisited": "2026-01-26"
+      "lastVisited": "2026-01-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-05218cd4f72b",
@@ -2367,7 +2565,8 @@
       "lng": 78.5696801,
       "visitCount": 1,
       "firstVisited": "2026-01-29",
-      "lastVisited": "2026-01-29"
+      "lastVisited": "2026-01-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-29158c96f3af",
@@ -2378,7 +2577,8 @@
       "lng": 78.4184612,
       "visitCount": 1,
       "firstVisited": "2026-01-30",
-      "lastVisited": "2026-01-30"
+      "lastVisited": "2026-01-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5d84d8221bf2",
@@ -2389,7 +2589,8 @@
       "lng": 78.4185586,
       "visitCount": 1,
       "firstVisited": "2026-01-30",
-      "lastVisited": "2026-01-30"
+      "lastVisited": "2026-01-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-38334496519a",
@@ -2400,7 +2601,8 @@
       "lng": 78.38565,
       "visitCount": 1,
       "firstVisited": "2026-01-30",
-      "lastVisited": "2026-01-30"
+      "lastVisited": "2026-01-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-767308239ea3",
@@ -2411,7 +2613,8 @@
       "lng": 78.3937936,
       "visitCount": 1,
       "firstVisited": "2026-01-30",
-      "lastVisited": "2026-01-30"
+      "lastVisited": "2026-01-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7aa07c72d47c",
@@ -2422,7 +2625,8 @@
       "lng": 78.5533139,
       "visitCount": 1,
       "firstVisited": "2026-02-01",
-      "lastVisited": "2026-02-01"
+      "lastVisited": "2026-02-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3f2ded18c0a5",
@@ -2433,7 +2637,8 @@
       "lng": 78.531785,
       "visitCount": 1,
       "firstVisited": "2026-02-04",
-      "lastVisited": "2026-02-04"
+      "lastVisited": "2026-02-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d4195c5ac412",
@@ -2444,7 +2649,8 @@
       "lng": 78.5712602,
       "visitCount": 1,
       "firstVisited": "2026-02-04",
-      "lastVisited": "2026-02-04"
+      "lastVisited": "2026-02-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-011be049e1b1",
@@ -2455,7 +2661,8 @@
       "lng": 78.4237857,
       "visitCount": 1,
       "firstVisited": "2026-02-06",
-      "lastVisited": "2026-02-06"
+      "lastVisited": "2026-02-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e47a4584a5fb",
@@ -2466,7 +2673,8 @@
       "lng": 78.429358,
       "visitCount": 2,
       "firstVisited": "2026-02-06",
-      "lastVisited": "2026-02-13"
+      "lastVisited": "2026-02-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f9f8d52ad3d2",
@@ -2477,7 +2685,8 @@
       "lng": 78.241818,
       "visitCount": 2,
       "firstVisited": "2026-02-07",
-      "lastVisited": "2026-02-08"
+      "lastVisited": "2026-02-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3386616bfd4c",
@@ -2488,7 +2697,8 @@
       "lng": 78.2713155,
       "visitCount": 1,
       "firstVisited": "2026-02-07",
-      "lastVisited": "2026-02-07"
+      "lastVisited": "2026-02-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5a314610f3b5",
@@ -2499,7 +2709,8 @@
       "lng": 78.5806128,
       "visitCount": 1,
       "firstVisited": "2026-02-08",
-      "lastVisited": "2026-02-08"
+      "lastVisited": "2026-02-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-be09235ac802",
@@ -2510,7 +2721,8 @@
       "lng": 78.5710096,
       "visitCount": 1,
       "firstVisited": "2026-02-10",
-      "lastVisited": "2026-02-10"
+      "lastVisited": "2026-02-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-21069d4bfe0a",
@@ -2521,7 +2733,8 @@
       "lng": 78.5563548,
       "visitCount": 1,
       "firstVisited": "2026-02-12",
-      "lastVisited": "2026-02-12"
+      "lastVisited": "2026-02-12",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-73c77242d2ad",
@@ -2532,7 +2745,8 @@
       "lng": 78.3861066,
       "visitCount": 1,
       "firstVisited": "2026-02-12",
-      "lastVisited": "2026-02-12"
+      "lastVisited": "2026-02-12",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-742a56526c83",
@@ -2543,7 +2757,8 @@
       "lng": 78.4165779,
       "visitCount": 1,
       "firstVisited": "2026-02-12",
-      "lastVisited": "2026-02-12"
+      "lastVisited": "2026-02-12",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ddc976a4dc13",
@@ -2554,7 +2769,8 @@
       "lng": 78.2499968,
       "visitCount": 1,
       "firstVisited": "2026-02-12",
-      "lastVisited": "2026-02-12"
+      "lastVisited": "2026-02-12",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-62a3a46e8885",
@@ -2565,7 +2781,8 @@
       "lng": 78.3791131,
       "visitCount": 1,
       "firstVisited": "2026-02-13",
-      "lastVisited": "2026-02-13"
+      "lastVisited": "2026-02-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-db3fa4967bea",
@@ -2576,7 +2793,8 @@
       "lng": 78.3790963,
       "visitCount": 1,
       "firstVisited": "2026-02-13",
-      "lastVisited": "2026-02-13"
+      "lastVisited": "2026-02-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ab4c202c6e9f",
@@ -2587,7 +2805,8 @@
       "lng": 78.5631278,
       "visitCount": 5,
       "firstVisited": "2026-02-14",
-      "lastVisited": "2026-07-17"
+      "lastVisited": "2026-07-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c51378d5de33",
@@ -2598,7 +2817,8 @@
       "lng": 78.5743056,
       "visitCount": 5,
       "firstVisited": "2026-02-14",
-      "lastVisited": "2026-08-17"
+      "lastVisited": "2026-08-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-484e4a0963ea",
@@ -2609,7 +2829,8 @@
       "lng": 78.5718313,
       "visitCount": 1,
       "firstVisited": "2026-02-14",
-      "lastVisited": "2026-02-14"
+      "lastVisited": "2026-02-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-15bfacd8464f",
@@ -2620,7 +2841,8 @@
       "lng": 78.5675588,
       "visitCount": 3,
       "firstVisited": "2026-02-14",
-      "lastVisited": "2026-06-21"
+      "lastVisited": "2026-06-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e5f7c7e93b00",
@@ -2631,7 +2853,8 @@
       "lng": 78.5678787,
       "visitCount": 3,
       "firstVisited": "2026-02-14",
-      "lastVisited": "2026-06-21"
+      "lastVisited": "2026-06-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-74daaa269826",
@@ -2642,7 +2865,8 @@
       "lng": 78.381519,
       "visitCount": 1,
       "firstVisited": "2026-02-17",
-      "lastVisited": "2026-02-17"
+      "lastVisited": "2026-02-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6eb1f2d1af1b",
@@ -2653,7 +2877,8 @@
       "lng": 78.5216733,
       "visitCount": 1,
       "firstVisited": "2026-02-20",
-      "lastVisited": "2026-02-20"
+      "lastVisited": "2026-02-20",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d8e1056112e5",
@@ -2664,7 +2889,8 @@
       "lng": 78.55879,
       "visitCount": 6,
       "firstVisited": "2026-03-02",
-      "lastVisited": "2026-06-29"
+      "lastVisited": "2026-06-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ba5c65711ae6",
@@ -2675,7 +2901,8 @@
       "lng": 78.5591083,
       "visitCount": 2,
       "firstVisited": "2026-03-02",
-      "lastVisited": "2026-03-06"
+      "lastVisited": "2026-03-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e88b986d8487",
@@ -2686,7 +2913,8 @@
       "lng": 78.5609255,
       "visitCount": 1,
       "firstVisited": "2026-03-03",
-      "lastVisited": "2026-03-03"
+      "lastVisited": "2026-03-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e4c48fb1f611",
@@ -2697,7 +2925,8 @@
       "lng": 78.3899595,
       "visitCount": 1,
       "firstVisited": "2026-03-06",
-      "lastVisited": "2026-03-06"
+      "lastVisited": "2026-03-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3ac8567d6f43",
@@ -2708,7 +2937,8 @@
       "lng": 78.395295,
       "visitCount": 1,
       "firstVisited": "2026-03-06",
-      "lastVisited": "2026-03-06"
+      "lastVisited": "2026-03-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-18895b14287d",
@@ -2719,7 +2949,8 @@
       "lng": 78.4051957,
       "visitCount": 1,
       "firstVisited": "2026-03-06",
-      "lastVisited": "2026-03-06"
+      "lastVisited": "2026-03-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1340b0a609d4",
@@ -2730,7 +2961,8 @@
       "lng": 78.4062575,
       "visitCount": 2,
       "firstVisited": "2026-03-06",
-      "lastVisited": "2026-05-03"
+      "lastVisited": "2026-05-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-19ab00dad4e6",
@@ -2741,7 +2973,8 @@
       "lng": 78.408451,
       "visitCount": 1,
       "firstVisited": "2026-03-06",
-      "lastVisited": "2026-03-06"
+      "lastVisited": "2026-03-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7933f1827e9c",
@@ -2752,7 +2985,8 @@
       "lng": 78.5423566,
       "visitCount": 1,
       "firstVisited": "2026-03-07",
-      "lastVisited": "2026-03-07"
+      "lastVisited": "2026-03-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2689dc2e04c5",
@@ -2763,7 +2997,8 @@
       "lng": 78.594001,
       "visitCount": 1,
       "firstVisited": "2026-03-07",
-      "lastVisited": "2026-03-07"
+      "lastVisited": "2026-03-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c81c1427770e",
@@ -2774,7 +3009,8 @@
       "lng": 78.5659622,
       "visitCount": 4,
       "firstVisited": "2026-03-07",
-      "lastVisited": "2026-07-05"
+      "lastVisited": "2026-07-05",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c2fd5fb48d7e",
@@ -2785,7 +3021,8 @@
       "lng": 78.5430917,
       "visitCount": 129,
       "firstVisited": "2026-03-09",
-      "lastVisited": "2026-08-10"
+      "lastVisited": "2026-08-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e986d0b8d0e1",
@@ -2796,7 +3033,8 @@
       "lng": 78.543258,
       "visitCount": 127,
       "firstVisited": "2026-03-09",
-      "lastVisited": "2026-08-10"
+      "lastVisited": "2026-08-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-744b464a1f4b",
@@ -2807,7 +3045,8 @@
       "lng": 78.5435754,
       "visitCount": 2,
       "firstVisited": "2026-03-13",
-      "lastVisited": "2026-07-14"
+      "lastVisited": "2026-07-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7e1afacf3099",
@@ -2818,7 +3057,8 @@
       "lng": 78.561743,
       "visitCount": 1,
       "firstVisited": "2026-03-13",
-      "lastVisited": "2026-03-13"
+      "lastVisited": "2026-03-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-9d2c5310056d",
@@ -2829,7 +3069,8 @@
       "lng": 78.5617401,
       "visitCount": 1,
       "firstVisited": "2026-03-13",
-      "lastVisited": "2026-03-13"
+      "lastVisited": "2026-03-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f9911fe097b1",
@@ -2840,7 +3081,8 @@
       "lng": 78.5577151,
       "visitCount": 2,
       "firstVisited": "2026-03-14",
-      "lastVisited": "2026-06-12"
+      "lastVisited": "2026-06-12",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-593ef18e6dba",
@@ -2851,7 +3093,8 @@
       "lng": 78.5587059,
       "visitCount": 1,
       "firstVisited": "2026-03-14",
-      "lastVisited": "2026-03-14"
+      "lastVisited": "2026-03-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-be64666afcc9",
@@ -2862,7 +3105,8 @@
       "lng": 78.563755,
       "visitCount": 1,
       "firstVisited": "2026-03-14",
-      "lastVisited": "2026-03-14"
+      "lastVisited": "2026-03-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e7390abb9135",
@@ -2873,7 +3117,8 @@
       "lng": 78.5609774,
       "visitCount": 1,
       "firstVisited": "2026-03-17",
-      "lastVisited": "2026-03-17"
+      "lastVisited": "2026-03-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0b3ff0f9f731",
@@ -2884,7 +3129,8 @@
       "lng": 78.539611,
       "visitCount": 1,
       "firstVisited": "2026-03-18",
-      "lastVisited": "2026-03-18"
+      "lastVisited": "2026-03-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-a5bc4d1f8861",
@@ -2895,7 +3141,8 @@
       "lng": 78.5443287,
       "visitCount": 1,
       "firstVisited": "2026-03-18",
-      "lastVisited": "2026-03-18"
+      "lastVisited": "2026-03-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-dd109a02d200",
@@ -2906,7 +3153,8 @@
       "lng": 78.5272187,
       "visitCount": 1,
       "firstVisited": "2026-03-19",
-      "lastVisited": "2026-03-19"
+      "lastVisited": "2026-03-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-70eb7ae66d67",
@@ -2917,7 +3165,8 @@
       "lng": 78.5453099,
       "visitCount": 1,
       "firstVisited": "2026-03-19",
-      "lastVisited": "2026-03-19"
+      "lastVisited": "2026-03-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4dc3d3393191",
@@ -2928,7 +3177,8 @@
       "lng": 78.5587465,
       "visitCount": 1,
       "firstVisited": "2026-03-20",
-      "lastVisited": "2026-03-20"
+      "lastVisited": "2026-03-20",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e83c1429f841",
@@ -2939,7 +3189,8 @@
       "lng": 79.2586407,
       "visitCount": 1,
       "firstVisited": "2026-03-21",
-      "lastVisited": "2026-03-21"
+      "lastVisited": "2026-03-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8bd87ea16481",
@@ -2950,7 +3201,8 @@
       "lng": 79.2626191,
       "visitCount": 1,
       "firstVisited": "2026-03-21",
-      "lastVisited": "2026-03-21"
+      "lastVisited": "2026-03-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8ea961c00071",
@@ -2961,7 +3213,8 @@
       "lng": 79.2598271,
       "visitCount": 3,
       "firstVisited": "2026-03-21",
-      "lastVisited": "2026-03-22"
+      "lastVisited": "2026-03-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-aa45ee740144",
@@ -2972,7 +3225,8 @@
       "lng": 79.2658827,
       "visitCount": 1,
       "firstVisited": "2026-03-21",
-      "lastVisited": "2026-03-21"
+      "lastVisited": "2026-03-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6393e5c20b6a",
@@ -2983,7 +3237,8 @@
       "lng": 78.568716,
       "visitCount": 1,
       "firstVisited": "2026-03-22",
-      "lastVisited": "2026-03-22"
+      "lastVisited": "2026-03-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-09293c3c31a1",
@@ -2994,7 +3249,8 @@
       "lng": 78.5583378,
       "visitCount": 2,
       "firstVisited": "2026-03-25",
-      "lastVisited": "2026-04-28"
+      "lastVisited": "2026-04-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c5e241e27383",
@@ -3005,7 +3261,8 @@
       "lng": 78.5452695,
       "visitCount": 4,
       "firstVisited": "2026-03-26",
-      "lastVisited": "2026-08-07"
+      "lastVisited": "2026-08-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3091740b47d1",
@@ -3016,7 +3273,8 @@
       "lng": 78.5473778,
       "visitCount": 1,
       "firstVisited": "2026-03-26",
-      "lastVisited": "2026-03-26"
+      "lastVisited": "2026-03-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fb67dd23dc4c",
@@ -3027,7 +3285,8 @@
       "lng": 78.5696068,
       "visitCount": 1,
       "firstVisited": "2026-03-26",
-      "lastVisited": "2026-03-26"
+      "lastVisited": "2026-03-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0c66b8cbcb86",
@@ -3038,7 +3297,8 @@
       "lng": 78.5406124,
       "visitCount": 16,
       "firstVisited": "2026-03-27",
-      "lastVisited": "2026-08-06"
+      "lastVisited": "2026-08-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4dd371c8b65e",
@@ -3049,7 +3309,8 @@
       "lng": 78.5453672,
       "visitCount": 1,
       "firstVisited": "2026-03-28",
-      "lastVisited": "2026-03-28"
+      "lastVisited": "2026-03-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-cd8d46d1dc89",
@@ -3060,7 +3321,8 @@
       "lng": 78.5371993,
       "visitCount": 1,
       "firstVisited": "2026-03-28",
-      "lastVisited": "2026-03-28"
+      "lastVisited": "2026-03-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4f841a0f73bc",
@@ -3071,7 +3333,8 @@
       "lng": 78.5674794,
       "visitCount": 1,
       "firstVisited": "2026-03-28",
-      "lastVisited": "2026-03-28"
+      "lastVisited": "2026-03-28",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5cc48a25f056",
@@ -3082,7 +3345,8 @@
       "lng": 78.5501489,
       "visitCount": 6,
       "firstVisited": "2026-03-29",
-      "lastVisited": "2026-08-07"
+      "lastVisited": "2026-08-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0a5a0bbfac16",
@@ -3093,7 +3357,8 @@
       "lng": 78.5547433,
       "visitCount": 4,
       "firstVisited": "2026-03-29",
-      "lastVisited": "2026-08-07"
+      "lastVisited": "2026-08-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-344691e43f02",
@@ -3104,7 +3369,8 @@
       "lng": 78.5575159,
       "visitCount": 1,
       "firstVisited": "2026-03-29",
-      "lastVisited": "2026-03-29"
+      "lastVisited": "2026-03-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fbf8fae92128",
@@ -3115,7 +3381,8 @@
       "lng": 78.5247964,
       "visitCount": 1,
       "firstVisited": "2026-03-29",
-      "lastVisited": "2026-03-29"
+      "lastVisited": "2026-03-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ccf3b571eab6",
@@ -3126,7 +3393,8 @@
       "lng": 78.546797,
       "visitCount": 1,
       "firstVisited": "2026-03-30",
-      "lastVisited": "2026-03-30"
+      "lastVisited": "2026-03-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d9c1821067e4",
@@ -3137,7 +3405,8 @@
       "lng": 78.544455,
       "visitCount": 3,
       "firstVisited": "2026-03-31",
-      "lastVisited": "2026-05-13"
+      "lastVisited": "2026-05-13",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-67230cb71023",
@@ -3148,7 +3417,8 @@
       "lng": 78.5579146,
       "visitCount": 1,
       "firstVisited": "2026-03-31",
-      "lastVisited": "2026-03-31"
+      "lastVisited": "2026-03-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-74b7c6a645dd",
@@ -3159,7 +3429,8 @@
       "lng": 78.5556674,
       "visitCount": 1,
       "firstVisited": "2026-03-31",
-      "lastVisited": "2026-03-31"
+      "lastVisited": "2026-03-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-bb36a93698eb",
@@ -3170,7 +3441,8 @@
       "lng": 78.5535534,
       "visitCount": 1,
       "firstVisited": "2026-03-31",
-      "lastVisited": "2026-03-31"
+      "lastVisited": "2026-03-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-80b9ce2afd40",
@@ -3181,7 +3453,8 @@
       "lng": 78.546726,
       "visitCount": 1,
       "firstVisited": "2026-04-01",
-      "lastVisited": "2026-04-01"
+      "lastVisited": "2026-04-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-afd50971bf38",
@@ -3192,7 +3465,8 @@
       "lng": 78.5306372,
       "visitCount": 1,
       "firstVisited": "2026-04-04",
-      "lastVisited": "2026-04-04"
+      "lastVisited": "2026-04-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c429ae08f93f",
@@ -3203,7 +3477,8 @@
       "lng": 78.5237314,
       "visitCount": 1,
       "firstVisited": "2026-04-04",
-      "lastVisited": "2026-04-04"
+      "lastVisited": "2026-04-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5c9476043170",
@@ -3214,7 +3489,8 @@
       "lng": 78.5236284,
       "visitCount": 1,
       "firstVisited": "2026-04-04",
-      "lastVisited": "2026-04-04"
+      "lastVisited": "2026-04-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d2d2699cd19c",
@@ -3225,7 +3501,8 @@
       "lng": 78.5491286,
       "visitCount": 1,
       "firstVisited": "2026-04-04",
-      "lastVisited": "2026-04-04"
+      "lastVisited": "2026-04-04",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-af28ff71b72f",
@@ -3236,7 +3513,8 @@
       "lng": 78.5568802,
       "visitCount": 1,
       "firstVisited": "2026-04-08",
-      "lastVisited": "2026-04-08"
+      "lastVisited": "2026-04-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-183b7ba9261a",
@@ -3247,7 +3525,8 @@
       "lng": 78.5557319,
       "visitCount": 1,
       "firstVisited": "2026-04-08",
-      "lastVisited": "2026-04-08"
+      "lastVisited": "2026-04-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-feb965c6c400",
@@ -3258,7 +3537,8 @@
       "lng": 78.5656585,
       "visitCount": 12,
       "firstVisited": "2026-04-08",
-      "lastVisited": "2026-08-19"
+      "lastVisited": "2026-08-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-44027d4f354b",
@@ -3269,7 +3549,8 @@
       "lng": 78.4805094,
       "visitCount": 1,
       "firstVisited": "2026-04-10",
-      "lastVisited": "2026-04-10"
+      "lastVisited": "2026-04-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e943266667cf",
@@ -3280,7 +3561,8 @@
       "lng": 78.5078591,
       "visitCount": 1,
       "firstVisited": "2026-04-10",
-      "lastVisited": "2026-04-10"
+      "lastVisited": "2026-04-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ebe4401ac4aa",
@@ -3291,7 +3573,8 @@
       "lng": 78.5413345,
       "visitCount": 2,
       "firstVisited": "2026-04-11",
-      "lastVisited": "2026-04-14"
+      "lastVisited": "2026-04-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0e2b7141a976",
@@ -3302,7 +3585,8 @@
       "lng": 78.5589473,
       "visitCount": 1,
       "firstVisited": "2026-04-11",
-      "lastVisited": "2026-04-11"
+      "lastVisited": "2026-04-11",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-10b440c1580e",
@@ -3313,7 +3597,8 @@
       "lng": 78.5634321,
       "visitCount": 1,
       "firstVisited": "2026-04-12",
-      "lastVisited": "2026-04-12"
+      "lastVisited": "2026-04-12",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f1e847a9aad9",
@@ -3324,7 +3609,8 @@
       "lng": 78.5466611,
       "visitCount": 1,
       "firstVisited": "2026-04-14",
-      "lastVisited": "2026-04-14"
+      "lastVisited": "2026-04-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-72f28144bf07",
@@ -3335,7 +3621,8 @@
       "lng": 78.5241888,
       "visitCount": 1,
       "firstVisited": "2026-04-14",
-      "lastVisited": "2026-04-14"
+      "lastVisited": "2026-04-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-002142bd9457",
@@ -3346,7 +3633,8 @@
       "lng": 78.5431351,
       "visitCount": 2,
       "firstVisited": "2026-04-15",
-      "lastVisited": "2026-04-16"
+      "lastVisited": "2026-04-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-338a05895621",
@@ -3357,7 +3645,8 @@
       "lng": 78.5501936,
       "visitCount": 6,
       "firstVisited": "2026-04-15",
-      "lastVisited": "2026-08-17"
+      "lastVisited": "2026-08-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-463972545a36",
@@ -3368,7 +3657,8 @@
       "lng": 78.557734,
       "visitCount": 1,
       "firstVisited": "2026-04-15",
-      "lastVisited": "2026-04-15"
+      "lastVisited": "2026-04-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d992727f6654",
@@ -3379,7 +3669,8 @@
       "lng": 78.5825541,
       "visitCount": 1,
       "firstVisited": "2026-04-16",
-      "lastVisited": "2026-04-16"
+      "lastVisited": "2026-04-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-315d9f2b296b",
@@ -3390,7 +3681,8 @@
       "lng": 79.607153,
       "visitCount": 1,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-17"
+      "lastVisited": "2026-04-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2be03846f2f2",
@@ -3401,7 +3693,8 @@
       "lng": 80.0109364,
       "visitCount": 1,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-17"
+      "lastVisited": "2026-04-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fb4425078e7f",
@@ -3412,7 +3705,8 @@
       "lng": 79.8815583,
       "visitCount": 1,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-17"
+      "lastVisited": "2026-04-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c7ac4f6e75f2",
@@ -3423,7 +3717,8 @@
       "lng": 79.4038768,
       "visitCount": 1,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-17"
+      "lastVisited": "2026-04-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-931e8f67a522",
@@ -3434,7 +3729,8 @@
       "lng": 79.355752,
       "visitCount": 2,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-18"
+      "lastVisited": "2026-04-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ae36569e60ee",
@@ -3445,7 +3741,8 @@
       "lng": 79.3540708,
       "visitCount": 1,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-17"
+      "lastVisited": "2026-04-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ddca662fb23a",
@@ -3456,7 +3753,8 @@
       "lng": 79.3493392,
       "visitCount": 1,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-17"
+      "lastVisited": "2026-04-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-955031cc50fb",
@@ -3467,7 +3765,8 @@
       "lng": 79.3472794,
       "visitCount": 1,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-17"
+      "lastVisited": "2026-04-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c56c86439a13",
@@ -3478,7 +3777,8 @@
       "lng": 79.3482972,
       "visitCount": 1,
       "firstVisited": "2026-04-17",
-      "lastVisited": "2026-04-17"
+      "lastVisited": "2026-04-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d80f3d823bf1",
@@ -3489,7 +3789,8 @@
       "lng": 79.4217883,
       "visitCount": 1,
       "firstVisited": "2026-04-18",
-      "lastVisited": "2026-04-18"
+      "lastVisited": "2026-04-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f55aca4f183d",
@@ -3500,7 +3801,8 @@
       "lng": 79.9546176,
       "visitCount": 4,
       "firstVisited": "2026-04-18",
-      "lastVisited": "2026-04-19"
+      "lastVisited": "2026-04-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-a8dac156b5bd",
@@ -3511,7 +3813,8 @@
       "lng": 79.9695512,
       "visitCount": 1,
       "firstVisited": "2026-04-18",
-      "lastVisited": "2026-04-18"
+      "lastVisited": "2026-04-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-9a419e1720ce",
@@ -3522,7 +3825,8 @@
       "lng": 80.1752182,
       "visitCount": 1,
       "firstVisited": "2026-04-19",
-      "lastVisited": "2026-04-19"
+      "lastVisited": "2026-04-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b4da88918adb",
@@ -3533,7 +3837,8 @@
       "lng": 79.9611008,
       "visitCount": 1,
       "firstVisited": "2026-04-19",
-      "lastVisited": "2026-04-19"
+      "lastVisited": "2026-04-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b5502a838915",
@@ -3544,7 +3849,8 @@
       "lng": 79.8883648,
       "visitCount": 1,
       "firstVisited": "2026-04-19",
-      "lastVisited": "2026-04-19"
+      "lastVisited": "2026-04-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-320c176267c8",
@@ -3555,7 +3861,8 @@
       "lng": 79.1440218,
       "visitCount": 1,
       "firstVisited": "2026-04-19",
-      "lastVisited": "2026-04-19"
+      "lastVisited": "2026-04-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4f846ff01cc7",
@@ -3566,7 +3873,8 @@
       "lng": 78.8669289,
       "visitCount": 1,
       "firstVisited": "2026-04-19",
-      "lastVisited": "2026-04-19"
+      "lastVisited": "2026-04-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-37dcd6feee58",
@@ -3577,7 +3885,8 @@
       "lng": 78.5442597,
       "visitCount": 1,
       "firstVisited": "2026-04-25",
-      "lastVisited": "2026-04-25"
+      "lastVisited": "2026-04-25",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f599308cdb2e",
@@ -3588,7 +3897,8 @@
       "lng": 78.5479473,
       "visitCount": 2,
       "firstVisited": "2026-04-25",
-      "lastVisited": "2026-06-30"
+      "lastVisited": "2026-06-30",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5040b481a40a",
@@ -3599,7 +3909,8 @@
       "lng": 79.2602443,
       "visitCount": 2,
       "firstVisited": "2026-04-26",
-      "lastVisited": "2026-04-26"
+      "lastVisited": "2026-04-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-47080db9c560",
@@ -3610,7 +3921,8 @@
       "lng": 79.263587,
       "visitCount": 1,
       "firstVisited": "2026-04-26",
-      "lastVisited": "2026-04-26"
+      "lastVisited": "2026-04-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1ffde7d8cdb6",
@@ -3621,7 +3933,8 @@
       "lng": 78.5603393,
       "visitCount": 1,
       "firstVisited": "2026-04-26",
-      "lastVisited": "2026-04-26"
+      "lastVisited": "2026-04-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e9b616bc34bf",
@@ -3632,7 +3945,8 @@
       "lng": 78.5601111,
       "visitCount": 1,
       "firstVisited": "2026-04-26",
-      "lastVisited": "2026-04-26"
+      "lastVisited": "2026-04-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e86e51dac1c8",
@@ -3643,7 +3957,8 @@
       "lng": 78.5542309,
       "visitCount": 1,
       "firstVisited": "2026-04-26",
-      "lastVisited": "2026-04-26"
+      "lastVisited": "2026-04-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-77a903d62c98",
@@ -3654,7 +3969,8 @@
       "lng": 78.5440332,
       "visitCount": 1,
       "firstVisited": "2026-05-01",
-      "lastVisited": "2026-05-01"
+      "lastVisited": "2026-05-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8c20b64dd64b",
@@ -3665,7 +3981,8 @@
       "lng": 78.5448383,
       "visitCount": 1,
       "firstVisited": "2026-05-01",
-      "lastVisited": "2026-05-01"
+      "lastVisited": "2026-05-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-dba5136f8727",
@@ -3676,7 +3993,8 @@
       "lng": 78.5440258,
       "visitCount": 2,
       "firstVisited": "2026-05-01",
-      "lastVisited": "2026-05-06"
+      "lastVisited": "2026-05-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-87de5e009df3",
@@ -3687,7 +4005,8 @@
       "lng": 78.5325955,
       "visitCount": 2,
       "firstVisited": "2026-05-02",
-      "lastVisited": "2026-05-09"
+      "lastVisited": "2026-05-09",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e82764ccbf6e",
@@ -3698,7 +4017,8 @@
       "lng": 78.52573,
       "visitCount": 1,
       "firstVisited": "2026-05-03",
-      "lastVisited": "2026-05-03"
+      "lastVisited": "2026-05-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-b23575f25bb2",
@@ -3709,7 +4029,8 @@
       "lng": 78.3848461,
       "visitCount": 1,
       "firstVisited": "2026-05-03",
-      "lastVisited": "2026-05-03"
+      "lastVisited": "2026-05-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-10930f9328d5",
@@ -3720,7 +4041,8 @@
       "lng": 78.5478369,
       "visitCount": 1,
       "firstVisited": "2026-05-06",
-      "lastVisited": "2026-05-06"
+      "lastVisited": "2026-05-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d086ff90c138",
@@ -3731,7 +4053,8 @@
       "lng": 78.548101,
       "visitCount": 1,
       "firstVisited": "2026-05-08",
-      "lastVisited": "2026-05-08"
+      "lastVisited": "2026-05-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f389db6031f9",
@@ -3742,7 +4065,8 @@
       "lng": 78.5439157,
       "visitCount": 1,
       "firstVisited": "2026-05-08",
-      "lastVisited": "2026-05-08"
+      "lastVisited": "2026-05-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5421cb40624a",
@@ -3753,7 +4077,8 @@
       "lng": 78.5412176,
       "visitCount": 1,
       "firstVisited": "2026-05-14",
-      "lastVisited": "2026-05-14"
+      "lastVisited": "2026-05-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-309d1ce33983",
@@ -3764,7 +4089,8 @@
       "lng": 78.5628009,
       "visitCount": 1,
       "firstVisited": "2026-05-16",
-      "lastVisited": "2026-05-16"
+      "lastVisited": "2026-05-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7e25a1c8d31e",
@@ -3775,7 +4101,8 @@
       "lng": 78.544562,
       "visitCount": 1,
       "firstVisited": "2026-05-17",
-      "lastVisited": "2026-05-17"
+      "lastVisited": "2026-05-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2f7c26753825",
@@ -3786,7 +4113,8 @@
       "lng": 78.5587025,
       "visitCount": 2,
       "firstVisited": "2026-05-17",
-      "lastVisited": "2026-07-22"
+      "lastVisited": "2026-07-22",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8721a61736db",
@@ -3797,7 +4125,8 @@
       "lng": 78.5460022,
       "visitCount": 1,
       "firstVisited": "2026-05-18",
-      "lastVisited": "2026-05-18"
+      "lastVisited": "2026-05-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7a9f64e6ba78",
@@ -3808,7 +4137,8 @@
       "lng": 78.5673845,
       "visitCount": 1,
       "firstVisited": "2026-05-23",
-      "lastVisited": "2026-05-23"
+      "lastVisited": "2026-05-23",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-4aaec0f3384d",
@@ -3819,7 +4149,8 @@
       "lng": 78.555169,
       "visitCount": 1,
       "firstVisited": "2026-05-24",
-      "lastVisited": "2026-05-24"
+      "lastVisited": "2026-05-24",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-87615395686a",
@@ -3830,7 +4161,8 @@
       "lng": 78.546318,
       "visitCount": 4,
       "firstVisited": "2026-05-27",
-      "lastVisited": "2026-07-08"
+      "lastVisited": "2026-07-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d4287e51d3a6",
@@ -3841,7 +4173,8 @@
       "lng": 78.5455583,
       "visitCount": 2,
       "firstVisited": "2026-05-30",
-      "lastVisited": "2026-06-03"
+      "lastVisited": "2026-06-03",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-9b46b03f2751",
@@ -3852,7 +4185,8 @@
       "lng": 78.5098524,
       "visitCount": 1,
       "firstVisited": "2026-05-31",
-      "lastVisited": "2026-05-31"
+      "lastVisited": "2026-05-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-102417547658",
@@ -3863,7 +4197,8 @@
       "lng": 78.5116806,
       "visitCount": 1,
       "firstVisited": "2026-05-31",
-      "lastVisited": "2026-05-31"
+      "lastVisited": "2026-05-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-37b00f17ea2f",
@@ -3874,7 +4209,8 @@
       "lng": 78.5052033,
       "visitCount": 1,
       "firstVisited": "2026-05-31",
-      "lastVisited": "2026-05-31"
+      "lastVisited": "2026-05-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7f4f19535b3b",
@@ -3885,7 +4221,8 @@
       "lng": 78.422002,
       "visitCount": 1,
       "firstVisited": "2026-05-31",
-      "lastVisited": "2026-05-31"
+      "lastVisited": "2026-05-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-923b02c1d6e2",
@@ -3896,7 +4233,8 @@
       "lng": 78.5118128,
       "visitCount": 1,
       "firstVisited": "2026-05-31",
-      "lastVisited": "2026-05-31"
+      "lastVisited": "2026-05-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-985a5947c3f9",
@@ -3907,7 +4245,8 @@
       "lng": 78.4992825,
       "visitCount": 1,
       "firstVisited": "2026-05-31",
-      "lastVisited": "2026-05-31"
+      "lastVisited": "2026-05-31",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-2902a30549e1",
@@ -3918,7 +4257,8 @@
       "lng": 78.5433112,
       "visitCount": 3,
       "firstVisited": "2026-06-03",
-      "lastVisited": "2026-07-08"
+      "lastVisited": "2026-07-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-0482e526fe80",
@@ -3929,7 +4269,8 @@
       "lng": 78.5510017,
       "visitCount": 4,
       "firstVisited": "2026-06-11",
-      "lastVisited": "2026-06-18"
+      "lastVisited": "2026-06-18",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5b965ffe47e4",
@@ -3940,7 +4281,8 @@
       "lng": 78.5495967,
       "visitCount": 1,
       "firstVisited": "2026-06-20",
-      "lastVisited": "2026-06-20"
+      "lastVisited": "2026-06-20",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-65a72121810b",
@@ -3951,7 +4293,8 @@
       "lng": 78.5718909,
       "visitCount": 1,
       "firstVisited": "2026-06-21",
-      "lastVisited": "2026-06-21"
+      "lastVisited": "2026-06-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fcd7c20998d7",
@@ -3962,7 +4305,8 @@
       "lng": 78.5717802,
       "visitCount": 1,
       "firstVisited": "2026-06-21",
-      "lastVisited": "2026-06-21"
+      "lastVisited": "2026-06-21",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-fba37b49f401",
@@ -3973,7 +4317,8 @@
       "lng": 78.5445611,
       "visitCount": 1,
       "firstVisited": "2026-06-27",
-      "lastVisited": "2026-06-27"
+      "lastVisited": "2026-06-27",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e64a37b3b1dd",
@@ -3984,7 +4329,8 @@
       "lng": 78.5690937,
       "visitCount": 1,
       "firstVisited": "2026-06-29",
-      "lastVisited": "2026-06-29"
+      "lastVisited": "2026-06-29",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3a5bd9318910",
@@ -3995,7 +4341,8 @@
       "lng": 78.5446652,
       "visitCount": 1,
       "firstVisited": "2026-07-01",
-      "lastVisited": "2026-07-01"
+      "lastVisited": "2026-07-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-daf768d2f756",
@@ -4006,7 +4353,8 @@
       "lng": 78.5100021,
       "visitCount": 1,
       "firstVisited": "2026-07-05",
-      "lastVisited": "2026-07-05"
+      "lastVisited": "2026-07-05",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1b38bf4719fa",
@@ -4017,7 +4365,8 @@
       "lng": 78.5097998,
       "visitCount": 1,
       "firstVisited": "2026-07-05",
-      "lastVisited": "2026-07-05"
+      "lastVisited": "2026-07-05",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-77de29e6e2f1",
@@ -4028,7 +4377,8 @@
       "lng": 78.5334989,
       "visitCount": 1,
       "firstVisited": "2026-07-06",
-      "lastVisited": "2026-07-06"
+      "lastVisited": "2026-07-06",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-915e44a4f93a",
@@ -4039,7 +4389,8 @@
       "lng": 78.5445592,
       "visitCount": 2,
       "firstVisited": "2026-07-10",
-      "lastVisited": "2026-07-15"
+      "lastVisited": "2026-07-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-a6ff296d1bda",
@@ -4050,7 +4401,8 @@
       "lng": 78.5581493,
       "visitCount": 2,
       "firstVisited": "2026-07-12",
-      "lastVisited": "2026-08-01"
+      "lastVisited": "2026-08-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-a622e9a8b4e0",
@@ -4061,7 +4413,8 @@
       "lng": 78.571926,
       "visitCount": 2,
       "firstVisited": "2026-07-17",
-      "lastVisited": "2026-08-17"
+      "lastVisited": "2026-08-17",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d85e60e46faf",
@@ -4072,7 +4425,8 @@
       "lng": 78.5517972,
       "visitCount": 1,
       "firstVisited": "2026-07-19",
-      "lastVisited": "2026-07-19"
+      "lastVisited": "2026-07-19",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c46c8b36d3b7",
@@ -4083,7 +4437,8 @@
       "lng": 78.5682177,
       "visitCount": 1,
       "firstVisited": "2026-07-20",
-      "lastVisited": "2026-07-20"
+      "lastVisited": "2026-07-20",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e03db24c84a9",
@@ -4094,7 +4449,8 @@
       "lng": 78.5354213,
       "visitCount": 1,
       "firstVisited": "2026-07-23",
-      "lastVisited": "2026-07-23"
+      "lastVisited": "2026-07-23",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ccce73def1da",
@@ -4105,7 +4461,8 @@
       "lng": 78.3889132,
       "visitCount": 3,
       "firstVisited": "2026-07-23",
-      "lastVisited": "2026-07-24"
+      "lastVisited": "2026-07-24",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-eb85146789ee",
@@ -4116,7 +4473,8 @@
       "lng": 78.3914379,
       "visitCount": 1,
       "firstVisited": "2026-07-23",
-      "lastVisited": "2026-07-23"
+      "lastVisited": "2026-07-23",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d3773811b268",
@@ -4127,7 +4485,8 @@
       "lng": 78.565198,
       "visitCount": 1,
       "firstVisited": "2026-07-26",
-      "lastVisited": "2026-07-26"
+      "lastVisited": "2026-07-26",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-55164a40a234",
@@ -4138,7 +4497,8 @@
       "lng": 78.5292242,
       "visitCount": 1,
       "firstVisited": "2026-08-01",
-      "lastVisited": "2026-08-01"
+      "lastVisited": "2026-08-01",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-7dabbfac765e",
@@ -4149,7 +4509,8 @@
       "lng": 78.5173695,
       "visitCount": 1,
       "firstVisited": "2026-08-02",
-      "lastVisited": "2026-08-02"
+      "lastVisited": "2026-08-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-8e9a12724fd1",
@@ -4160,7 +4521,8 @@
       "lng": 78.517351,
       "visitCount": 1,
       "firstVisited": "2026-08-02",
-      "lastVisited": "2026-08-02"
+      "lastVisited": "2026-08-02",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3d811531cbd3",
@@ -4171,7 +4533,8 @@
       "lng": 78.5557031,
       "visitCount": 1,
       "firstVisited": "2026-08-07",
-      "lastVisited": "2026-08-07"
+      "lastVisited": "2026-08-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-79054a3d5cce",
@@ -4182,7 +4545,8 @@
       "lng": 78.5556823,
       "visitCount": 1,
       "firstVisited": "2026-08-07",
-      "lastVisited": "2026-08-07"
+      "lastVisited": "2026-08-07",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-d66a157400ca",
@@ -4193,7 +4557,8 @@
       "lng": 78.5263219,
       "visitCount": 1,
       "firstVisited": "2026-08-08",
-      "lastVisited": "2026-08-08"
+      "lastVisited": "2026-08-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-86c5610f74b8",
@@ -4204,7 +4569,8 @@
       "lng": 78.3729359,
       "visitCount": 2,
       "firstVisited": "2026-08-08",
-      "lastVisited": "2026-08-09"
+      "lastVisited": "2026-08-09",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-c4e194c19cb3",
@@ -4215,7 +4581,8 @@
       "lng": 78.3615968,
       "visitCount": 3,
       "firstVisited": "2026-08-08",
-      "lastVisited": "2026-08-08"
+      "lastVisited": "2026-08-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-244894325875",
@@ -4226,7 +4593,8 @@
       "lng": 78.3583295,
       "visitCount": 1,
       "firstVisited": "2026-08-08",
-      "lastVisited": "2026-08-08"
+      "lastVisited": "2026-08-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-15d3698d9d20",
@@ -4237,7 +4605,8 @@
       "lng": 78.3646333,
       "visitCount": 1,
       "firstVisited": "2026-08-08",
-      "lastVisited": "2026-08-08"
+      "lastVisited": "2026-08-08",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-91a092df802b",
@@ -4248,7 +4617,8 @@
       "lng": 78.3617103,
       "visitCount": 1,
       "firstVisited": "2026-08-08",
-      "lastVisited": "2026-08-09"
+      "lastVisited": "2026-08-09",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ac698ef6e92a",
@@ -4259,7 +4629,8 @@
       "lng": 78.5512527,
       "visitCount": 1,
       "firstVisited": "2026-08-10",
-      "lastVisited": "2026-08-10"
+      "lastVisited": "2026-08-10",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-3f010ffe4a0c",
@@ -4270,7 +4641,8 @@
       "lng": 78.5214744,
       "visitCount": 1,
       "firstVisited": "2026-08-11",
-      "lastVisited": "2026-08-11"
+      "lastVisited": "2026-08-11",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-6ca25514f737",
@@ -4281,7 +4653,8 @@
       "lng": 78.5676333,
       "visitCount": 1,
       "firstVisited": "2026-08-14",
-      "lastVisited": "2026-08-14"
+      "lastVisited": "2026-08-14",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5483c67a6609",
@@ -4292,7 +4665,8 @@
       "lng": 79.5806758,
       "visitCount": 1,
       "firstVisited": "2026-08-15",
-      "lastVisited": "2026-08-15"
+      "lastVisited": "2026-08-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-08c70074a816",
@@ -4303,7 +4677,8 @@
       "lng": 79.5238469,
       "visitCount": 2,
       "firstVisited": "2026-08-15",
-      "lastVisited": "2026-08-16"
+      "lastVisited": "2026-08-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ebd9a487e1a9",
@@ -4314,7 +4689,8 @@
       "lng": 79.5747709,
       "visitCount": 1,
       "firstVisited": "2026-08-15",
-      "lastVisited": "2026-08-15"
+      "lastVisited": "2026-08-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-1b51c8c4e9a2",
@@ -4325,7 +4701,8 @@
       "lng": 79.5828484,
       "visitCount": 1,
       "firstVisited": "2026-08-15",
-      "lastVisited": "2026-08-15"
+      "lastVisited": "2026-08-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-893df89757ee",
@@ -4336,7 +4713,8 @@
       "lng": 79.5651389,
       "visitCount": 1,
       "firstVisited": "2026-08-15",
-      "lastVisited": "2026-08-15"
+      "lastVisited": "2026-08-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-84285c44655f",
@@ -4347,7 +4725,8 @@
       "lng": 79.5554462,
       "visitCount": 1,
       "firstVisited": "2026-08-15",
-      "lastVisited": "2026-08-15"
+      "lastVisited": "2026-08-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-ebe8cd4ce7ed",
@@ -4358,7 +4737,8 @@
       "lng": 79.5491776,
       "visitCount": 1,
       "firstVisited": "2026-08-15",
-      "lastVisited": "2026-08-15"
+      "lastVisited": "2026-08-15",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-5515df735ae7",
@@ -4369,7 +4749,8 @@
       "lng": 79.9433064,
       "visitCount": 1,
       "firstVisited": "2026-08-16",
-      "lastVisited": "2026-08-16"
+      "lastVisited": "2026-08-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-9762943eb887",
@@ -4380,7 +4761,8 @@
       "lng": 80.2414946,
       "visitCount": 1,
       "firstVisited": "2026-08-16",
-      "lastVisited": "2026-08-16"
+      "lastVisited": "2026-08-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-64797a3ae797",
@@ -4391,7 +4773,8 @@
       "lng": 80.2419684,
       "visitCount": 1,
       "firstVisited": "2026-08-16",
-      "lastVisited": "2026-08-16"
+      "lastVisited": "2026-08-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-e86f0d29f1c8",
@@ -4402,7 +4785,8 @@
       "lng": 80.0109202,
       "visitCount": 1,
       "firstVisited": "2026-08-16",
-      "lastVisited": "2026-08-16"
+      "lastVisited": "2026-08-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-f37ee614f991",
@@ -4413,7 +4797,8 @@
       "lng": 79.2913228,
       "visitCount": 1,
       "firstVisited": "2026-08-16",
-      "lastVisited": "2026-08-16"
+      "lastVisited": "2026-08-16",
+      "positionSource": "timeline-candidate"
     },
     {
       "id": "timeline-eae9d3cda2f1",
@@ -4424,7 +4809,8 @@
       "lng": 78.5633942,
       "visitCount": 1,
       "firstVisited": "2026-08-16",
-      "lastVisited": "2026-08-16"
+      "lastVisited": "2026-08-16",
+      "positionSource": "timeline-candidate"
     }
   ],
   "lifeNotes": [

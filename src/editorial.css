@@ -102,6 +102,25 @@ main section[id], .tool-workbench { scroll-margin-top: 108px; }
 .signals-intro > p { max-width: 60ch; }
 .life-notes { flex-wrap: wrap; margin-top: 32px; }
 .contact-statement h2 { font-size: clamp(42px, 4.5vw, 66px); line-height: 1.12; }
+.contact-section { min-height: auto; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px 72px; }
+.contact-statement { padding-left: 0; }
+.contact-section footer { grid-template-columns: minmax(240px, 1fr) auto auto auto; gap: 28px; margin-top: 16px; padding-top: 30px; }
+.signature-button { display: inline-flex; flex-direction: column; align-items: flex-start; justify-self: start; gap: 20px; max-width: 100%; padding: 16px 12px 12px 0; border: 0; background: transparent; color: #111; cursor: pointer; perspective: 700px; text-align: left; }
+.signature-depth { display: inline-flex; padding-right: 10px; font: italic 400 clamp(54px, 5.7vw, 86px)/1.1 var(--serif); letter-spacing: -.055em; text-transform: none; transform: rotate(-3deg) rotateX(var(--sign-x, 0deg)) rotateY(var(--sign-y, -5deg)); transform-style: preserve-3d; transform-origin: center; transition: transform 260ms ease-out; text-shadow: 1px 1px #715b0c, 2px 2px #715b0c, 3px 3px #715b0c, 4px 5px 0 rgb(102 75 0 / 18%); }
+.signature-ink, .signature-period { display: inline-block; }
+.signature-button:focus-visible { outline-offset: 6px; border-radius: 4px; }
+.contact-section .contact-links a { transition: background 180ms ease, padding 180ms ease; }
+.contact-section .contact-links a:hover { padding-left: 10px; background: rgb(255 255 255 / 18%); }
+@media (max-width: 1080px) { .contact-section footer { grid-template-columns: 1fr auto; } .signature-button { grid-row: 1 / 3; } }
+@media (max-width: 760px) {
+  .contact-section { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .contact-section footer { grid-template-columns: minmax(0, 1fr); gap: 18px; margin-top: 4px; }
+  .signature-button { grid-row: auto; margin-bottom: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signature-depth { transform: rotate(-3deg); transition: none; }
+  .contact-section .contact-links a { transition: none; }
+}
 
 @media (max-width: 1080px) {
   .site-nav { left: 16px; right: 16px; padding: 0 18px; }
