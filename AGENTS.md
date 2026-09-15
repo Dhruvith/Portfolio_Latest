@@ -10,7 +10,8 @@ The visual direction is a light, functional Scandinavian system: warm white surf
 - No Three.js, WebGL, 3D objects, floating blobs, particle fields, terminal clichés, cyberpunk neon, gradient mesh, card walls, or decorative AI imagery.
 - Avoid glass-heavy surfaces. Use flat, high-contrast panels, visible construction, and restrained shadows.
 - Motion must reveal hierarchy: masked text entrances, restrained image parallax, and project-row transitions. Avoid decorative bouncing or spinning.
-- Preserve the intent of the two signature lines: “Engineer, not developer” and “AI can code. I give it logic.” Keep the visible hero punctuation clean; do not end “not developer” with a comma.
+- Lead the hero with Dhruvith's name, role, concrete work, and direct project/tool links. Preserve “Engineer, not developer” and “AI can code. I give it logic.” as supporting copy in the method section, not the primary introduction.
+- Keep the story factual and concise: education → projects → production experience → method → tools → personal interests. Do not restore theatrical interludes, duplicate principles sections, or generic motivational copy. Keep reported performance percentages off the public page until the measurement context can accompany them.
 - Use factual résumé content and label invented work as “Concept”. Do not imply ownership of entire employer platforms or expose employer IP.
 - Use the exact official local SVG marks in `public/logos/` for the stack; never redraw or approximate them.
 - Headline typography must remain fully visible from 320px through large desktop widths. Do not use optical `scale` transforms or clipped line wrappers on display text.

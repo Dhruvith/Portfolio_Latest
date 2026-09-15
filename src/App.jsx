@@ -31,283 +31,20 @@ import "leaflet/dist/leaflet.css";
 import Lenis from "lenis";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { loadPortfolioContent } from "./lib/portfolioContent.js";
+import {
+  identity, hero, story, work, educationSection, toolsSection, tools,
+  experienceSection, musicSection, musicPlaylists, signals, placesSection,
+  lifeNotes, contact, experience, projects, timeline, education, stack,
+} from "../public/content/portfolio.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const experience = [
-  {
-    id: "01",
-    year: "Mar 2026 — present",
-    role: "Jr. Applied AI Engineer",
-    company: "Neuraoak Technologies Private Limited",
-    location: "Hyderabad, India",
-    summary: "Building an RCM platform that combines real-time claim processing, tenant-safe data access, and applied AI workflows.",
-    highlights: ["~35% faster claim processing", "~60% less manual effort", "Claim updates in under 2 seconds"],
-    stack: "Next.js · Supabase · ClickHouse · LLM agents · MCP",
-  },
-  {
-    id: "02",
-    year: "May 2025 — Feb 2026",
-    role: "Data Engineer Intern",
-    company: "Soulax",
-    location: "India",
-    summary: "Built and optimized streaming pipelines for a large-scale geofence analytics project.",
-    highlights: ["Kafka and Flink pipelines", "Low-latency Redis caching", "Scalable AWS deployment"],
-    stack: "Kafka · Flink · Redis · AWS",
-  },
-  {
-    id: "03",
-    year: "Independent · project-based",
-    role: "Conversational AI Builder",
-    company: "Freelance engagements",
-    location: "Remote",
-    summary: "Built chatbots and voice bots around client workflows, with conversation logic and API integrations shaped to the operating context.",
-    highlights: ["Chatbot workflows", "Voice-bot flows", "API integrations"],
-    stack: "LLM workflows · APIs · Voice interfaces",
-  },
-];
-
-const projects = [
-  {
-    id: "01",
-    kind: "Blockchain · healthcare",
-    year: "2025",
-    title: "Hospital Management System",
-    summary: "Decentralized storage for patient records using smart contracts and IPFS.",
-    decision: "Ethereum smart contracts coordinate record integrity while IPFS handles decentralized data storage.",
-    result: "A tamper-resistant approach to managing medical records.",
-    stack: "Ethereum · Solidity · React · Node.js · IPFS",
-  },
-  {
-    id: "02",
-    kind: "Applied AI · education",
-    year: "2023",
-    title: "AI-Powered Quiz Generator",
-    summary: "A PDF-to-quiz workflow built with retrieval and grounded generation.",
-    decision: "LangChain and vector search keep generated questions connected to the source material.",
-    result: "Improved quiz relevance by 70%.",
-    stack: "LangChain · Vector database · RAG",
-    sourceUrl: "https://github.com/Dhruvith/llmquiz",
-  },
-  {
-    id: "03",
-    kind: "Product build · finance",
-    year: "2024",
-    title: "DFinance Manager",
-    summary: "A practical finance utility for common personal-finance calculations.",
-    decision: "SIP, SWP, loan EMI, and fixed-deposit calculations share one consistent React interface.",
-    result: "Real-time estimates across four everyday finance calculators.",
-    stack: "React · Redux · JavaScript",
-    liveUrl: "https://jovial-horse-5ee659.netlify.app/",
-  },
-  {
-    id: "04",
-    kind: "Frontend · fitness",
-    year: "2023",
-    title: "Fitness Web Application",
-    summary: "A React fitness platform with personalized video recommendations.",
-    decision: "Recommendations connect users to relevant training videos instead of leaving discovery as a manual search task.",
-    result: "Résumé-reported gains of 85% in engagement and 40% in active users.",
-    stack: "React · APIs · Recommendation logic",
-  },
-];
-
-const timeline = [
-  {
-    number: "01",
-    time: "INPUT",
-    title: "Find the real state.",
-    place: "Data and context",
-    body: "Identify the event, source of truth, and constraints first. Reliable decisions need reliable context.",
-  },
-  {
-    number: "02",
-    time: "LOGIC",
-    title: "Choose where logic belongs.",
-    place: "Rules and models",
-    body: "Use rules where certainty exists and AI where interpretation helps. The boundary between them is part of the product design.",
-  },
-  {
-    number: "03",
-    time: "OUTPUT",
-    title: "Make the outcome reviewable.",
-    place: "Interface and observability",
-    body: "Show enough evidence, feedback, and recovery paths for a person to understand the result and act with confidence.",
-  },
-];
-
-const education = {
-  institution: "Vellore Institute of Technology (VIT)",
-  location: "Vellore, India",
-  period: "2021 — 2025",
-  degree: "B.Tech in Computer Science",
-  cgpa: "8.3 / 10",
-  coursework: ["Data Structures & Algorithms", "Machine Learning", "DBMS", "Computer Networks", "Operating Systems"],
-  achievements: [
-    "Finalist, IEEE-VIT Hackathon 2023 — healthcare analytics innovation",
-    "Participant, Smart India Hackathon 2023",
-    "Active member, Google Developer Student Club VIT",
-  ],
-  certifications: ["Google Cloud Digital Leader", "Google Cloud Computing Foundations", "Power BI Virtual Case Experience"],
-};
-
-const principles = [
-  ["01", "Logic before language", "A polished response is worthless if the system cannot show how it reached the next action."],
-  ["02", "Latency is product design", "When people work in real time, waiting and stale state are interface problems—not only infrastructure problems."],
-  ["03", "Humans own the consequence", "AI may suggest, classify, or summarize. The product must preserve review, boundaries, and a traceable decision."],
-];
-
-const stack = [
-  ["Next.js", "/logos/nextdotjs.svg"],
-  ["React", "/logos/react.svg"],
-  ["TypeScript", "/logos/typescript.svg"],
-  ["Supabase", "/logos/supabase.svg"],
-  ["ClickHouse", "/logos/clickhouse.svg"],
-  ["Kafka", "/logos/apachekafka.svg"],
-  ["Flink", "/logos/apacheflink.svg"],
-  ["Redis", "/logos/redis.svg"],
-  ["LangChain", "/logos/langchain.svg"],
-  ["Docker", "/logos/docker.svg"],
-  ["Google Cloud", "/logos/googlecloud.svg"],
-  ["Git", "/logos/git.svg"],
-];
-
+// One editorial source for both the initial render and the local CMS.
+// Keep the large travel dataset out of the initial JavaScript; the CMS fetch loads it.
 const fallbackContent = {
-  identity: { name: "Dhruvith Chokkarapu", role: "Jr. Applied AI Engineer", city: "Hyderabad" },
-  hero: {
-    lineOne: "Engineer",
-    lineTwo: "not developer",
-    description: "I build AI and data systems that turn complex operational work into clear, reliable decisions.",
-    location: "Hyderabad, India.",
-    imageAlt: "A quiet engineering workspace overlooking Charminar at night",
-    chapter: "Start at the beginning:",
-    chapterEmphasis: "computer science.",
-    currentLabel: "NOW",
-    currentTitle: "Applied AI for claims operations",
-    currentCopy: "Fast, traceable workflows for people making operational decisions.",
-  },
-  story: {
-    label: "HOW I THINK UNDER PRESSURE",
-    heading: "Real systems revealed",
-    emphasis: "the method.",
-    copy: "Find the true state, place the logic carefully, and make the outcome reviewable. That is how I turn complexity into a useful next action.",
-    beliefLead: "AI can code.",
-    beliefBody: "I give it",
-    beliefEmphasis: "logic.",
-  },
-  work: {
-    label: "WHAT I BUILT NEXT",
-    heading: "Theory needed",
-    emphasis: "something real.",
-    copy: "I used projects as a testing ground—turning concepts into working systems across healthcare, applied AI, finance, and fitness.",
-  },
-  educationSection: {
-    label: "WHERE IT STARTED",
-    heading: "Computer science was",
-    emphasis: "the starting point.",
-    copy: "At VIT, algorithms, databases, networks, and machine learning gave me the vocabulary. Building things taught me how those parts behave together.",
-  },
-  toolsSection: {
-    label: "TRY THE WORK",
-    heading: "Do not just read about it.",
-    emphasis: "Use it.",
-    copy: "This is a growing shelf of focused software. Every live tool is designed to solve one clear problem and can run directly inside the portfolio.",
-  },
-  tools: [
-    {
-      id: "dfinance",
-      title: "DFinance Manager",
-      description: "Estimate SIP, SWP, loan EMI, and fixed-deposit outcomes from one focused interface.",
-      status: "Live",
-      url: "https://jovial-horse-5ee659.netlify.app/",
-      embedUrl: "https://jovial-horse-5ee659.netlify.app/",
-      stack: "React · Redux · JavaScript",
-    },
-    {
-      id: "ai-news",
-      kind: "native",
-      title: "AI Briefing",
-      description: "Five useful AI, ML, and developer-technology updates, researched every morning with direct source links.",
-      status: "New · Daily 08:15",
-      stack: "X · Reddit · Medium",
-    },
-  ],
-  experienceSection: {
-    label: "WHERE IT GOT REAL",
-    heading: "Then the stakes",
-    emphasis: "became real.",
-    copy: "Production systems brought latency, scale, messy data, and people depending on the outcome. That is where my work moved from building features to engineering decisions.",
-  },
-  storyBeats: [
-    { kicker: "THE FIRST TURN", copy: "The foundation gave me the vocabulary. Projects gave it consequences." },
-    { kicker: "THE STAKES RISE", copy: "Prototypes can be forgiving. Production systems are not." },
-    { kicker: "THE PATTERN EMERGES", copy: "Different systems. The same question: what decision must become clearer?" },
-    { kicker: "THE PAYOFF", copy: "A method matters when someone can use the result." },
-  ],
-  principlesSection: { label: "WHAT I WILL NOT TRADE", heading: "The rules the work taught me to protect." },
-  musicSection: {
-    label: "MUSIC I LOVE",
-    heading: "Songs for different",
-    emphasis: "kinds of days.",
-    copy: "The playlists I return to when the work is done.",
-  },
-  musicPlaylists: [
-    {
-      id: "current-rotation",
-      tabLabel: "Current rotation",
-      title: "Current rotation",
-      note: "15 tracks · 47 minutes",
-      url: "",
-      banner: "/images/music-telangana-golden-hour.png",
-      tracks: [
-        { title: "Alaakaa Loova", artist: "Sai Abhyankkar", audioSrc: "/audio/library/Alaakaa Loova.mp3" },
-        { title: "Amma Paata", artist: "Janhavi Yerram", audioSrc: "/audio/library/Amma Paata.mp3" },
-        { title: "Bum Baa Diga Diga", artist: "Anirudh Ravichander, Vedan, Heisenberg", audioSrc: "/audio/library/Bum Baa Diga Diga.mp3" },
-        { title: "Daripontothundu", artist: "Mamidi Mounika", audioSrc: "/audio/library/Daripontothundu.mp3" },
-        { title: "Fire Storm", artist: "Simbu, SS Thaman, Deepak Blue", audioSrc: "/audio/library/Fire Storm.mp3" },
-        { title: "Guns And Roses", artist: "Thaman S", audioSrc: "/audio/library/Guns And Roses.mp3" },
-        { title: "Hungry Cheetah", artist: "Thaman S", audioSrc: "/audio/library/Hungry Cheetah.mp3" },
-        { title: "In The Streets Of Fire", artist: "Harsha D", audioSrc: "/audio/library/In The Streets Of Fire.mp3" },
-        { title: "Koyila", artist: "Vijai Bulganin", audioSrc: "/audio/library/Koyila.mp3" },
-        { title: "Mallepoola Pallaki", artist: "Dappu Srinu", audioSrc: "/audio/library/Mallepoola Pallaki.mp3" },
-        { title: "Neno Butterfly", artist: "Sublahshini", audioSrc: "/audio/library/Neno Butterfly.mp3" },
-        { title: "Raga of Revenge", artist: "Anirudh Ravichander", audioSrc: "/audio/library/Raga of Revenge.mp3" },
-        { title: "Thaalam Trip (Instrumental)", artist: "Anirudh Ravichander, Shivapriya", audioSrc: "/audio/library/Thaalam Trip (Instrumental).mp3" },
-        { title: "Trance of OMI", artist: "Sruthi Ranjani", audioSrc: "/audio/library/Trance of OMI.mp3" },
-        { title: "Washi O Washi", artist: "Pawan Kalyan", audioSrc: "/audio/library/Washi O Washi.mp3" },
-      ],
-    },
-  ],
-  signals: {
-    label: "THE WORLD OUTSIDE THE SCREEN",
-    heading: "The person behind",
-    emphasis: "the systems.",
-    copy: "Hyderabad is home. I watch movies for their pacing, follow cricket for its strategy, and save the places I visit.",
-  },
-  placesSection: {
-    label: "PLACES",
-    heading: "Places I have visited.",
-    copy: "Search, zoom, or select a pin to inspect the places recorded in my timeline.",
-  },
-  places: [
-    { id: "hyd", city: "Hyderabad", country: "India", note: "Home · building", lat: 17.385, lng: 78.4867 },
-    { id: "vit", city: "Vellore", country: "India", note: "VIT · learning", lat: 12.9165, lng: 79.1325 },
-  ],
-  lifeNotes: ["Hyderabad is home.", "Movies sharpen my sense of pacing and story.", "Cricket keeps strategy, uncertainty, and patience interesting."],
-  contact: {
-    label: "THE NEXT SCENE",
-    heading: "Let’s build something useful next.",
-    copy: "If the problem involves applied AI, data systems, or a workflow that needs clearer logic, I would like to hear about it.",
-    email: "dhruvith2004@gmail.com",
-    github: "https://github.com/Dhruvith",
-    linkedin: "https://linkedin.com/in/dhruvith-chokkarapu",
-  },
-  experience,
-  projects,
-  timeline,
-  education,
-  principles,
-  stack,
+  identity, hero, story, work, educationSection, toolsSection, tools,
+  experienceSection, musicSection, musicPlaylists, signals, placesSection,
+  lifeNotes, contact, experience, projects, timeline, education, stack, places: [],
 };
 
 const sectionMeta = {
@@ -322,17 +59,6 @@ const sectionMeta = {
   signals: { label: "More about me" },
   contact: { label: "Contact" },
 };
-
-function StoryBeat({ beat, variant }) {
-  if (!beat) return null;
-  return (
-    <aside className={`story-beat is-${variant}`} aria-label="Story transition" data-reveal>
-      <span>{beat.kicker}</span>
-      <p>{beat.copy}</p>
-      <ArrowDown size={24} weight="light" aria-hidden="true" />
-    </aside>
-  );
-}
 
 function ExperienceRow({ item }) {
   return (
@@ -356,7 +82,7 @@ function ExperienceRow({ item }) {
 function ProjectRow({ project, open, onToggle }) {
   return (
     <article className={`project-row${open ? " is-open" : ""}`} data-reveal>
-      <button className="project-trigger" type="button" onClick={onToggle} aria-expanded={open}>
+      <button className="project-trigger" type="button" onClick={onToggle} aria-expanded={open} aria-controls={`project-${project.id}`}>
         <span className="project-title-block">
           <small>{project.kind}</small>
           <strong>{project.title}</strong>
@@ -365,7 +91,7 @@ function ProjectRow({ project, open, onToggle }) {
         <span className="project-year">{project.year}</span>
         <CaretDown className="project-caret" size={22} />
       </button>
-      <div className="project-details" aria-hidden={!open}>
+      <div className="project-details" id={`project-${project.id}`} hidden={!open}>
         <div>
           <small>Implementation</small>
           <p>{project.decision}</p>
@@ -379,7 +105,7 @@ function ProjectRow({ project, open, onToggle }) {
           <p>{project.stack}</p>
           {(project.liveUrl || project.sourceUrl) && (
             <span className="project-actions">
-              {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer">Open tool <ArrowUpRight size={14} /></a>}
+              {project.title === "DFinance Manager" ? <a href="#tools">Try it here <ArrowRight size={14} /></a> : project.liveUrl && <a href={normalizeHttpsUrl(project.liveUrl)} target="_blank" rel="noreferrer">Open project <ArrowUpRight size={14} /></a>}
               {project.sourceUrl && <a href={project.sourceUrl} target="_blank" rel="noreferrer">Source <GithubLogo size={14} /></a>}
             </span>
           )}
@@ -616,16 +342,20 @@ function AiNewsWorkbench() {
     <div className="ai-news-app">
       <header className="ai-news-masthead">
         <div>
-          <span>DAILY SIGNAL / AI · ML · TECH</span>
+          <span>AI BRIEFING</span>
           <h3>Five developments worth your time.</h3>
-          <p>Direct links. Clear context. No feed-chasing.</p>
+          <p>AI, machine learning, and technology—with links to the original sources.</p>
         </div>
         <dl>
           <div><dt>EDITION</dt><dd>{feed?.generatedAt ? formatNewsDate(feed.generatedAt) : "First run pending"}</dd></div>
-          <div><dt>REFRESH</dt><dd>08:15 IST</dd></div>
+          <div><dt>SCHEDULE</dt><dd>08:15 IST</dd></div>
           <div><dt>ARCHIVE</dt><dd>{archiveItems.length} {archiveItems.length === 1 ? "story" : "stories"}</dd></div>
         </dl>
       </header>
+
+      {feed?.generatedAt && Date.now() - Date.parse(feed.generatedAt) > 48 * 60 * 60 * 1000 && (
+        <p className="ai-news-stale" role="status">You are reading the last published edition. A newer briefing is not available yet.</p>
+      )}
 
       <div className="ai-news-controls">
         <div className="ai-news-view" role="tablist" aria-label="Briefing editions">
@@ -694,7 +424,8 @@ function EducationRecord({ item }) {
         <strong>{item.degree}</strong>
         <p>CGPA <b>{item.cgpa}</b></p>
       </div>
-      <div className="education-detail">
+      <details className="education-detail" onToggle={() => ScrollTrigger.refresh()}>
+        <summary>Coursework, achievements & certifications</summary>
         <div>
           <small>RELEVANT COURSEWORK</small>
           <ul>{item.coursework.map((entry) => <li key={entry}>{entry}</li>)}</ul>
@@ -707,7 +438,7 @@ function EducationRecord({ item }) {
           <small>CERTIFICATIONS</small>
           <ul>{item.certifications.map((entry) => <li key={entry}>{entry}</li>)}</ul>
         </div>
-      </div>
+      </details>
     </div>
   );
 }
@@ -1068,11 +799,33 @@ function TravelMap({ places }) {
 }
 
 export function App() {
-  const [openProject, setOpenProject] = useState("01");
+  const [openProject, setOpenProject] = useState("02");
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTool, setActiveTool] = useState(null);
   const [content, setContent] = useState(fallbackContent);
   const [activeSection, setActiveSection] = useState("top");
+  const workbenchRef = useRef(null);
+  const toolTriggerRef = useRef(null);
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, [content, openProject]);
+
+  useEffect(() => {
+    if (!activeTool || !workbenchRef.current) return;
+    workbenchRef.current.focus({ preventScroll: true });
+    workbenchRef.current.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
+    ScrollTrigger.refresh();
+  }, [activeTool]);
+
+  const launchTool = (tool) => {
+    toolTriggerRef.current = document.activeElement;
+    setActiveTool(tool);
+  };
+  const closeTool = () => {
+    setActiveTool(null);
+    toolTriggerRef.current?.focus({ preventScroll: true });
+  };
 
 
   useEffect(() => {
@@ -1084,10 +837,10 @@ export function App() {
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const lenis = reduceMotion ? null : new Lenis({
-      duration: 1.18,
+      duration: 0.8,
       easing: (time) => Math.min(1, 1.001 - Math.pow(2, -10 * time)),
       smoothWheel: true,
-      wheelMultiplier: 0.88,
+      wheelMultiplier: 1,
       touchMultiplier: 1.12,
     });
     let rafId;
@@ -1119,13 +872,6 @@ export function App() {
         .from(".hero-line", { y: 30, opacity: 0, duration: 0.78, stagger: 0.08 }, 0.12)
         .from(".hero-support", { y: 16, opacity: 0, duration: 0.52 }, 0.42)
         .from(".hero-chapter", { y: 18, opacity: 0, duration: 0.52 }, 0.58);
-
-      gsap.to(".hero-media img", {
-        yPercent: 7,
-        scale: 1.03,
-        ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.8 },
-      });
 
       gsap.utils.toArray("[data-reveal]").forEach((node) => {
         const isHeading = node.matches(".section-heading, .music-heading");
@@ -1226,8 +972,7 @@ export function App() {
           <a className={activeSection === "work" ? "is-active" : ""} href="#work" aria-current={activeSection === "work" ? "location" : undefined} onClick={closeMenu}>Projects</a>
           <a className={activeSection === "experience" ? "is-active" : ""} href="#experience" aria-current={activeSection === "experience" ? "location" : undefined} onClick={closeMenu}>Experience</a>
           <a className={activeSection === "tools" ? "is-active" : ""} href="#tools" aria-current={activeSection === "tools" ? "location" : undefined} onClick={closeMenu}>Tools</a>
-          <a className={activeSection === "music" ? "is-active" : ""} href="#music" aria-current={activeSection === "music" ? "location" : undefined} onClick={closeMenu}>Music</a>
-          <a className={activeSection === "signals" ? "is-active" : ""} href="#signals" aria-current={activeSection === "signals" ? "location" : undefined} onClick={closeMenu}>About</a>
+          <a className={["music", "signals"].includes(activeSection) ? "is-active" : ""} href="#music" aria-current={["music", "signals"].includes(activeSection) ? "location" : undefined} onClick={closeMenu}>Outside work</a>
           <a className={activeSection === "contact" ? "is-active" : ""} href="#contact" aria-current={activeSection === "contact" ? "location" : undefined} onClick={closeMenu}>Contact</a>
           <a className="resume-link" href="/Dhruvith_Chokkarapu_Resume.pdf" download onClick={closeMenu}>
             Resume <ArrowUpRight size={15} weight="bold" />
@@ -1238,27 +983,35 @@ export function App() {
       <main id="main-content">
         <section className="hero" id="top">
           <div className="hero-copy">
-            <h1 aria-label="Engineer, not developer">
+            <p className="hero-eyebrow hero-support">{content.identity.role} <span> / {content.identity.city}</span></p>
+            <h1>
               <span className="hero-line-wrap"><span className="hero-line">{content.hero.lineOne}</span></span>
               <span className="hero-line-wrap"><span className="hero-line"><em>{content.hero.lineTwo}</em></span></span>
             </h1>
-            <div className="accent-rule" aria-hidden="true" />
             <p className="hero-description hero-support">
-              {content.hero.description}<br /><strong>{content.hero.location}</strong>
+              {content.hero.description}
             </p>
+            <div className="hero-actions hero-support">
+              <a href="#work">Explore my work <ArrowDown size={18} /></a>
+              <a href="#tools">Try my tools <ArrowUpRight size={18} /></a>
+            </div>
           </div>
 
-          <figure className="hero-media">
-            <img src="/images/hyderabad-workspace-night.png" alt={content.hero.imageAlt} />
-          </figure>
+          <aside className="hero-media current-work" aria-label="Current work">
+            <span className="current-work-label">{content.hero.currentLabel}</span>
+            <h2>{content.hero.currentTitle}</h2>
+            <p>{content.experience[0].summary}</p>
+            <ul>{content.experience[0].highlights.map((item) => <li key={item}>{item}</li>)}</ul>
+            <a href="#experience">More about my role <ArrowUpRight size={18} /></a>
+          </aside>
 
           <a className="hero-chapter" href="#education">
             <strong>{content.hero.chapter}<br /><em>{content.hero.chapterEmphasis}</em></strong>
             <ArrowRight size={22} />
             <div className="hero-feature">
-              <small>{content.hero.currentLabel}</small>
-              <b>{content.hero.currentTitle}</b>
-              <p>{content.hero.currentCopy}</p>
+              <small>THE JOURNEY</small>
+              <b>VIT → Projects → Production</b>
+              <p>Education, experiments, and the work that followed.</p>
             </div>
             <div className="hero-scroll"><i><b /></i><small>SCROLL</small></div>
           </a>
@@ -1272,8 +1025,6 @@ export function App() {
           </header>
           <EducationRecord item={content.education} />
         </section>
-
-        <StoryBeat beat={content.storyBeats?.[0]} variant="yellow" />
 
         <section className="work-section" id="work">
           <header className="section-heading compact" data-reveal>
@@ -1293,8 +1044,6 @@ export function App() {
           </div>
         </section>
 
-        <StoryBeat beat={content.storyBeats?.[1]} variant="blue" />
-
         <section className="experience-section" id="experience">
           <header className="section-heading compact" data-reveal>
             <span>{content.experienceSection.label}</span>
@@ -1305,8 +1054,6 @@ export function App() {
             {content.experience.map((item) => <ExperienceRow item={item} key={item.id} />)}
           </div>
         </section>
-
-        <StoryBeat beat={content.storyBeats?.[2]} variant="ink" />
 
         <section className="story-section" id="story">
           <header className="section-heading" data-reveal>
@@ -1324,12 +1071,16 @@ export function App() {
             ))}
           </div>
           <blockquote className="story-belief" data-reveal>
-            <span>{content.story.beliefLead}</span>
-            <strong>{content.story.beliefBody} <em>{content.story.beliefEmphasis}</em></strong>
+            <span>Engineer, not developer.</span>
+            <strong>{content.story.beliefLead} {content.story.beliefBody} <em>{content.story.beliefEmphasis}</em></strong>
           </blockquote>
+          <div className="stack-ledger" data-reveal>
+            <header><span>TECHNOLOGIES I WORK WITH</span></header>
+            <div>{content.stack.map(([name, logo]) => (
+              <span className="stack-item" key={name}><img src={logo} alt="" aria-hidden="true" /><b>{name}</b></span>
+            ))}</div>
+          </div>
         </section>
-
-        <StoryBeat beat={content.storyBeats?.[3]} variant="yellow" />
 
         <section className="tools-section" id="tools">
           <header className="section-heading compact" data-reveal>
@@ -1339,7 +1090,7 @@ export function App() {
           </header>
           {content.tools.length ? (
             <div className="tool-grid">
-              {content.tools.map((tool) => <ToolCard tool={tool} onLaunch={setActiveTool} key={tool.id || tool.title} />)}
+              {content.tools.map((tool) => <ToolCard tool={tool} onLaunch={launchTool} key={tool.id || tool.title} />)}
             </div>
           ) : (
             <div className="tool-empty" data-reveal>
@@ -1349,12 +1100,12 @@ export function App() {
             </div>
           )}
           {activeTool && (
-            <section className={`tool-workbench${activeTool.id === "ai-news" ? " is-news" : ""}`} aria-label={`${activeTool.title} tool`} data-reveal>
+            <section ref={workbenchRef} tabIndex={-1} className={`tool-workbench${activeTool.id === "ai-news" ? " is-news" : ""}`} aria-label={`${activeTool.title} tool`}>
               <header>
                 <div><small>USE HERE</small><strong>{activeTool.title}</strong></div>
                 <span>
                   {activeTool.url && <a href={activeTool.url} target="_blank" rel="noreferrer">Open full screen <ArrowUpRight size={16} /></a>}
-                  <button type="button" onClick={() => setActiveTool(null)} aria-label={`Close ${activeTool.title}`}><X size={18} /></button>
+                  <button type="button" onClick={closeTool} aria-label={`Close ${activeTool.title}`}><X size={18} /></button>
                 </span>
               </header>
               {activeTool.id === "ai-news" ? (
@@ -1372,29 +1123,6 @@ export function App() {
               )}
             </section>
           )}
-        </section>
-
-        <section className="principles-section" id="principles">
-          <header className="section-heading compact" data-reveal>
-            <span>{content.principlesSection.label}</span>
-            <h2>{content.principlesSection.heading}</h2>
-          </header>
-          <div className="principle-grid">
-            {content.principles.map(([, title, copy]) => (
-              <article key={title} data-reveal>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </article>
-            ))}
-          </div>
-          <div className="stack-ledger" data-reveal>
-            <header><span>OFFICIAL STACK LEDGER</span><small>Tools chosen for a reason</small></header>
-            <div>
-              {content.stack.map(([name, logo]) => (
-                <span className="stack-item" key={name}><img src={logo} alt="" aria-hidden="true" /><b>{name}</b></span>
-              ))}
-            </div>
-          </div>
         </section>
 
         <section className="music-section" id="music">

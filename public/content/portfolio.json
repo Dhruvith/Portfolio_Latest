@@ -5,49 +5,49 @@
     "city": "Hyderabad"
   },
   "hero": {
-    "lineOne": "Engineer",
-    "lineTwo": "not developer",
-    "description": "I build AI and data systems that turn complex operational work into clear, reliable decisions.",
+    "lineOne": "Dhruvith",
+    "lineTwo": "Chokkarapu",
+    "description": "I build claims workflows, real-time data systems, and conversational tools.",
     "location": "Hyderabad, India.",
     "imageAlt": "A quiet engineering workspace overlooking Charminar at night",
-    "chapter": "Start at the beginning:",
-    "chapterEmphasis": "computer science.",
-    "currentLabel": "NOW",
-    "currentTitle": "Applied AI for claims operations",
-    "currentCopy": "Fast, traceable workflows for people making operational decisions."
+    "chapter": "From computer science",
+    "chapterEmphasis": "to working software.",
+    "currentLabel": "CURRENTLY",
+    "currentTitle": "Applied AI at Neuraoak",
+    "currentCopy": "Claims operations · Hyderabad"
   },
   "story": {
-    "label": "HOW I THINK UNDER PRESSURE",
-    "heading": "Real systems revealed",
-    "emphasis": "the method.",
-    "copy": "Find the true state, place the logic carefully, and make the outcome reviewable. That is how I turn complexity into a useful next action.",
+    "label": "HOW I WORK",
+    "heading": "The decisions",
+    "emphasis": "behind the code.",
+    "copy": "Across data pipelines and AI workflows, I return to three questions: what can the system trust, what should it automate, and how can someone check the result?",
     "beliefLead": "AI can code.",
     "beliefBody": "I give it",
     "beliefEmphasis": "logic."
   },
   "experienceSection": {
-    "label": "WHERE IT GOT REAL",
-    "heading": "Then the stakes",
-    "emphasis": "became real.",
-    "copy": "Production systems brought latency, scale, messy data, and people depending on the outcome. That is where my work moved from building features to engineering decisions."
+    "label": "EXPERIENCE",
+    "heading": "From projects",
+    "emphasis": "to production.",
+    "copy": "At Soulax, I worked on streaming data for geofence analytics. Today, I work on applied AI and claims operations at Neuraoak. Alongside that work, I have built chatbots and voice bots for freelance clients."
   },
   "work": {
-    "label": "WHAT I BUILT NEXT",
-    "heading": "Theory needed",
-    "emphasis": "something real.",
-    "copy": "I used projects as a testing ground—turning concepts into working systems across healthcare, applied AI, finance, and fitness."
+    "label": "SELECTED PROJECTS",
+    "heading": "Learning by",
+    "emphasis": "building.",
+    "copy": "From PDF-based quizzes to finance calculators: projects where I put the coursework to use. Open a project to explore the implementation, or try the finance tool below."
   },
   "educationSection": {
-    "label": "WHERE IT STARTED",
-    "heading": "Computer science was",
-    "emphasis": "the starting point.",
-    "copy": "At VIT, algorithms, databases, networks, and machine learning gave me the vocabulary. Building things taught me how those parts behave together."
+    "label": "EDUCATION",
+    "heading": "It started with",
+    "emphasis": "computer science.",
+    "copy": "I studied computer science at VIT from 2021 to 2025. Databases, networks, and machine learning became the foundation for the projects that followed."
   },
   "toolsSection": {
-    "label": "TRY THE WORK",
-    "heading": "Do not just read about it.",
-    "emphasis": "Use it.",
-    "copy": "This is a growing shelf of focused software. Every live tool is designed to solve one clear problem and can run directly inside the portfolio."
+    "label": "TOOLS",
+    "heading": "Built to be",
+    "emphasis": "used.",
+    "copy": "Try a calculation or read an AI briefing without leaving this page. These are small, focused tools—not just project descriptions."
   },
   "tools": [
     {
@@ -63,44 +63,27 @@
       "id": "ai-news",
       "kind": "native",
       "title": "AI Briefing",
-      "description": "Five useful AI, ML, and developer-technology updates, researched every morning with direct source links.",
-      "status": "New · Daily 08:15",
+      "description": "AI, ML, and technology briefings with summaries, original sources, and past editions.",
+      "status": "Read the briefing",
       "stack": "X · Reddit · Medium"
     }
   ],
-  "storyBeats": [
-    {
-      "kicker": "THE FIRST TURN",
-      "copy": "The foundation gave me the vocabulary. Projects gave it consequences."
-    },
-    {
-      "kicker": "THE STAKES RISE",
-      "copy": "Prototypes can be forgiving. Production systems are not."
-    },
-    {
-      "kicker": "THE PATTERN EMERGES",
-      "copy": "Different systems. The same question: what decision must become clearer?"
-    },
-    {
-      "kicker": "THE PAYOFF",
-      "copy": "A method matters when someone can use the result."
-    }
-  ],
+  "storyBeats": [],
   "principlesSection": {
     "label": "WHAT I WILL NOT TRADE",
     "heading": "The rules the work taught me to protect."
   },
   "signals": {
-    "label": "THE WORLD OUTSIDE THE SCREEN",
-    "heading": "The person behind",
-    "emphasis": "the systems.",
-    "copy": "Hyderabad is home. I watch movies for their pacing, follow cricket for its strategy, and save the places I visit."
+    "label": "MORE ABOUT ME",
+    "heading": "Hyderabad,",
+    "emphasis": "and beyond.",
+    "copy": "Hyderabad is home. I love movies and cricket, and this map keeps track of the places I have visited."
   },
   "musicSection": {
-    "label": "MUSIC I LOVE",
-    "heading": "Songs for different",
-    "emphasis": "kinds of days.",
-    "copy": "The playlists I return to when the work is done."
+    "label": "OUTSIDE WORK",
+    "heading": "A different",
+    "emphasis": "kind of playback.",
+    "copy": "Away from the code: music I love, movies, cricket, and the places I visit. Start with a song."
   },
   "musicPlaylists": [
     {
@@ -111,21 +94,81 @@
       "url": "",
       "banner": "/images/music-telangana-golden-hour.png",
       "tracks": [
-        { "title": "Alaakaa Loova", "artist": "Sai Abhyankkar", "audioSrc": "/audio/library/Alaakaa Loova.mp3" },
-        { "title": "Amma Paata", "artist": "Janhavi Yerram", "audioSrc": "/audio/library/Amma Paata.mp3" },
-        { "title": "Bum Baa Diga Diga", "artist": "Anirudh Ravichander, Vedan, Heisenberg", "audioSrc": "/audio/library/Bum Baa Diga Diga.mp3" },
-        { "title": "Daripontothundu", "artist": "Mamidi Mounika", "audioSrc": "/audio/library/Daripontothundu.mp3" },
-        { "title": "Fire Storm", "artist": "Simbu, SS Thaman, Deepak Blue", "audioSrc": "/audio/library/Fire Storm.mp3" },
-        { "title": "Guns And Roses", "artist": "Thaman S", "audioSrc": "/audio/library/Guns And Roses.mp3" },
-        { "title": "Hungry Cheetah", "artist": "Thaman S", "audioSrc": "/audio/library/Hungry Cheetah.mp3" },
-        { "title": "In The Streets Of Fire", "artist": "Harsha D", "audioSrc": "/audio/library/In The Streets Of Fire.mp3" },
-        { "title": "Koyila", "artist": "Vijai Bulganin", "audioSrc": "/audio/library/Koyila.mp3" },
-        { "title": "Mallepoola Pallaki", "artist": "Dappu Srinu", "audioSrc": "/audio/library/Mallepoola Pallaki.mp3" },
-        { "title": "Neno Butterfly", "artist": "Sublahshini", "audioSrc": "/audio/library/Neno Butterfly.mp3" },
-        { "title": "Raga of Revenge", "artist": "Anirudh Ravichander", "audioSrc": "/audio/library/Raga of Revenge.mp3" },
-        { "title": "Thaalam Trip (Instrumental)", "artist": "Anirudh Ravichander, Shivapriya", "audioSrc": "/audio/library/Thaalam Trip (Instrumental).mp3" },
-        { "title": "Trance of OMI", "artist": "Sruthi Ranjani", "audioSrc": "/audio/library/Trance of OMI.mp3" },
-        { "title": "Washi O Washi", "artist": "Pawan Kalyan", "audioSrc": "/audio/library/Washi O Washi.mp3" }
+        {
+          "title": "Alaakaa Loova",
+          "artist": "Sai Abhyankkar",
+          "audioSrc": "/audio/library/Alaakaa Loova.mp3"
+        },
+        {
+          "title": "Amma Paata",
+          "artist": "Janhavi Yerram",
+          "audioSrc": "/audio/library/Amma Paata.mp3"
+        },
+        {
+          "title": "Bum Baa Diga Diga",
+          "artist": "Anirudh Ravichander, Vedan, Heisenberg",
+          "audioSrc": "/audio/library/Bum Baa Diga Diga.mp3"
+        },
+        {
+          "title": "Daripontothundu",
+          "artist": "Mamidi Mounika",
+          "audioSrc": "/audio/library/Daripontothundu.mp3"
+        },
+        {
+          "title": "Fire Storm",
+          "artist": "Simbu, SS Thaman, Deepak Blue",
+          "audioSrc": "/audio/library/Fire Storm.mp3"
+        },
+        {
+          "title": "Guns And Roses",
+          "artist": "Thaman S",
+          "audioSrc": "/audio/library/Guns And Roses.mp3"
+        },
+        {
+          "title": "Hungry Cheetah",
+          "artist": "Thaman S",
+          "audioSrc": "/audio/library/Hungry Cheetah.mp3"
+        },
+        {
+          "title": "In The Streets Of Fire",
+          "artist": "Harsha D",
+          "audioSrc": "/audio/library/In The Streets Of Fire.mp3"
+        },
+        {
+          "title": "Koyila",
+          "artist": "Vijai Bulganin",
+          "audioSrc": "/audio/library/Koyila.mp3"
+        },
+        {
+          "title": "Mallepoola Pallaki",
+          "artist": "Dappu Srinu",
+          "audioSrc": "/audio/library/Mallepoola Pallaki.mp3"
+        },
+        {
+          "title": "Neno Butterfly",
+          "artist": "Sublahshini",
+          "audioSrc": "/audio/library/Neno Butterfly.mp3"
+        },
+        {
+          "title": "Raga of Revenge",
+          "artist": "Anirudh Ravichander",
+          "audioSrc": "/audio/library/Raga of Revenge.mp3"
+        },
+        {
+          "title": "Thaalam Trip (Instrumental)",
+          "artist": "Anirudh Ravichander, Shivapriya",
+          "audioSrc": "/audio/library/Thaalam Trip (Instrumental).mp3"
+        },
+        {
+          "title": "Trance of OMI",
+          "artist": "Sruthi Ranjani",
+          "audioSrc": "/audio/library/Trance of OMI.mp3"
+        },
+        {
+          "title": "Washi O Washi",
+          "artist": "Pawan Kalyan",
+          "audioSrc": "/audio/library/Washi O Washi.mp3"
+        }
       ]
     }
   ],
@@ -4385,14 +4428,14 @@
     }
   ],
   "lifeNotes": [
-    "Hyderabad is home.",
-    "Movies sharpen my sense of pacing and story.",
-    "Cricket keeps strategy, uncertainty, and patience interesting."
+    "Based in Hyderabad.",
+    "Usually up for a movie.",
+    "Always up for cricket."
   ],
   "contact": {
-    "label": "THE NEXT SCENE",
-    "heading": "Let’s build something useful next.",
-    "copy": "If the problem involves applied AI, data systems, or a workflow that needs clearer logic, I would like to hear about it.",
+    "label": "GET IN TOUCH",
+    "heading": "Have something in mind?",
+    "copy": "For applied AI, data engineering, or a chatbot or voice-bot project, send me a note. Tell me what you are working on.",
     "email": "dhruvith2004@gmail.com",
     "github": "https://github.com/Dhruvith",
     "linkedin": "https://linkedin.com/in/dhruvith-chokkarapu"
@@ -4400,24 +4443,24 @@
   "timeline": [
     {
       "number": "01",
-      "time": "INPUT",
-      "title": "Find the real state.",
-      "place": "Data and context",
-      "body": "Identify the event, source of truth, and constraints first. Reliable decisions need reliable context."
+      "time": "CONTEXT",
+      "title": "What can we trust?",
+      "place": "Data and sources",
+      "body": "Identify the source of truth and check the inputs before adding a model or an automation."
     },
     {
       "number": "02",
-      "time": "LOGIC",
-      "title": "Choose where logic belongs.",
-      "place": "Rules and models",
-      "body": "Use rules where certainty exists and AI where interpretation helps. The boundary between them is part of the product design."
+      "time": "DECISION",
+      "title": "What should be automated?",
+      "place": "Rules and AI",
+      "body": "Use explicit rules for known conditions. Use AI for interpretation, with a clear boundary for human review."
     },
     {
       "number": "03",
-      "time": "OUTPUT",
-      "title": "Make the outcome reviewable.",
-      "place": "Interface and observability",
-      "body": "Show enough evidence, feedback, and recovery paths for a person to understand the result and act with confidence."
+      "time": "REVIEW",
+      "title": "How do we check it?",
+      "place": "Feedback and recovery",
+      "body": "Make the result understandable. Keep the evidence, errors, and recovery options visible to the person using it."
     }
   ],
   "experience": [
@@ -4427,11 +4470,11 @@
       "role": "Jr. Applied AI Engineer",
       "company": "Neuraoak Technologies Private Limited",
       "location": "Hyderabad, India",
-      "summary": "Building an RCM platform that combines real-time claim processing, tenant-safe data access, and applied AI workflows.",
+      "summary": "Working on real-time claims workflows, tenant-safe data access, and applied AI within an RCM platform.",
       "highlights": [
-        "~35% faster claim processing",
-        "~60% less manual effort",
-        "Claim updates in under 2 seconds"
+        "Real-time claim updates",
+        "Tenant-safe data access",
+        "AI-assisted workflows"
       ],
       "stack": "Next.js · Supabase · ClickHouse · LLM agents · MCP"
     },
@@ -4455,7 +4498,7 @@
       "role": "Conversational AI Builder",
       "company": "Freelance engagements",
       "location": "Remote",
-      "summary": "Built chatbots and voice bots around client workflows, with conversation logic and API integrations shaped to the operating context.",
+      "summary": "Built chatbots and voice bots for client workflows, including conversation logic and API integrations.",
       "highlights": [
         "Chatbot workflows",
         "Voice-bot flows",
@@ -4482,7 +4525,7 @@
       "title": "AI-Powered Quiz Generator",
       "summary": "A PDF-to-quiz workflow built with retrieval and grounded generation.",
       "decision": "LangChain and vector search keep generated questions connected to the source material.",
-      "result": "Improved quiz relevance by 70%.",
+      "result": "Questions generated from the uploaded PDF, with retrieval connecting the quiz to its source material.",
       "stack": "LangChain · Vector database · RAG",
       "sourceUrl": "https://github.com/Dhruvith/llmquiz"
     },
@@ -4504,7 +4547,7 @@
       "title": "Fitness Web Application",
       "summary": "A React fitness platform with personalized video recommendations.",
       "decision": "Recommendations connect users to relevant training videos instead of leaving discovery as a manual search task.",
-      "result": "Résumé-reported gains of 85% in engagement and 40% in active users.",
+      "result": "A fitness interface that brings personalized training-video recommendations into one place.",
       "stack": "React · APIs · Recommendation logic"
     }
   ],
