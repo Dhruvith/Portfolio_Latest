@@ -4,6 +4,7 @@ import test from "node:test";
 
 const content = JSON.parse(await readFile(new URL("../public/content/portfolio.json", import.meta.url), "utf8"));
 const app = await readFile(new URL("../src/App.jsx", import.meta.url), "utf8");
+const carousel = await readFile(new URL("../src/ProjectCarousel.jsx", import.meta.url), "utf8");
 
 test("introduction leads with the person's name, with separate education and employment", () => {
   assert.equal(`${content.hero.lineOne} ${content.hero.lineTwo}`, content.identity.name);
@@ -21,13 +22,19 @@ test("technical chapters stay ordered and theatrical interludes are not rendered
     previous = position;
   }
   assert.doesNotMatch(app, /<StoryBeat|className="principle-grid"/);
-  assert.match(app, /href="#work">Explore my work/);
-  assert.match(app, /href="#tools">Try my tools/);
+  assert.match(app, /href="#work"[^>]*>Explore my work/);
+  assert.match(app, /href="#tools"[^>]*>Try my tools/);
 });
 
-test("project disclosure hides collapsed links and gives controls a matching target", () => {
-  assert.match(app, /aria-controls=\{`project-\$\{project.id\}`\}/);
-  assert.match(app, /id=\{`project-\$\{project.id\}`\} hidden=\{!open\}/);
+test("project carousel keeps image cards, in-page details, and keyboard controls", () => {
+  assert.match(carousel, /project-editorial-image/);
+  assert.match(carousel, /project-editorial-detail/);
+  assert.match(carousel, /useMotionValue\(1\)/);
+  assert.match(carousel, /rotateY/);
+  assert.match(carousel, /onPointerMove=/);
+  assert.match(carousel, /prefers-reduced-motion|useReducedMotion/);
+  assert.match(carousel, /event\.key !== "ArrowLeft" && event\.key !== "ArrowRight"/);
+  assert.match(carousel, /aria-label="Next project"/);
   assert.match(app, /workbenchRef.current.focus/);
   assert.match(app, /toolTriggerRef.current\?\.focus/);
 });

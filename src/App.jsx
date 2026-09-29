@@ -23,21 +23,25 @@ import {
   Trophy,
   X,
 } from "@phosphor-icons/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScroll, useTransform } from "motion/react";
 import "leaflet/dist/leaflet.css";
 import Lenis from "lenis";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { loadPortfolioContent } from "./lib/portfolioContent.js";
 import { TravelMap } from "./TravelMap.jsx";
 import { Signature } from "./Signature.jsx";
+import { ProjectCarousel } from "./ProjectCarousel.jsx";
+import { ResumePrinter } from "./ResumePrinter.jsx";
+import { MagneticLink } from "./MagneticLink.jsx";
+import { PullCordSwitch } from "./PullCordSwitch.jsx";
+import { NowPlaying } from "./NowPlaying.jsx";
+import { HeroCollage } from "./HeroCollage.jsx";
+import { m, motionEase, motionTime, Reveal, useReducedMotion } from "./motionSystem.jsx";
 import {
   identity, hero, story, work, educationSection, toolsSection, tools,
   experienceSection, musicSection, musicPlaylists, signals, placesSection,
   lifeNotes, contact, experience, projects, timeline, education, stack,
 } from "../public/content/portfolio.json";
-
-gsap.registerPlugin(ScrollTrigger);
 
 // One editorial source for both the initial render and the local CMS.
 // Keep the large travel dataset out of the initial JavaScript; the CMS fetch loads it.
@@ -58,11 +62,12 @@ const sectionMeta = {
   music: { label: "Music" },
   signals: { label: "More about me" },
   contact: { label: "Contact" },
+  resume: { label: "Resume" },
 };
 
-function ExperienceRow({ item }) {
+function ExperienceRow({ item, index }) {
   return (
-    <article className="experience-row" data-reveal>
+    <Reveal as="article" className="experience-row" index={index}>
       <div className="experience-role">
         <small>{item.year}</small>
         <h3>{item.role}</h3>
@@ -75,47 +80,16 @@ function ExperienceRow({ item }) {
         </ul>
       </div>
       <p className="experience-stack">{item.stack}</p>
-    </article>
+    </Reveal>
   );
 }
 
-function ProjectRow({ project, open, onToggle }) {
-  return (
-    <article className={`project-row${open ? " is-open" : ""}`} data-reveal>
-      <button className="project-trigger" type="button" onClick={onToggle} aria-expanded={open} aria-controls={`project-${project.id}`}>
-        <span className="project-title-block">
-          <small>{project.kind}</small>
-          <strong>{project.title}</strong>
-        </span>
-        <span className="project-summary">{project.summary}</span>
-        <span className="project-year">{project.year}</span>
-        <CaretDown className="project-caret" size={22} />
-      </button>
-      <div className="project-details" id={`project-${project.id}`} hidden={!open}>
-        <div>
-          <small>Implementation</small>
-          <p>{project.decision}</p>
-        </div>
-        <div>
-          <small>Outcome</small>
-          <p>{project.result}</p>
-        </div>
-        <div>
-          <small>Relevant stack</small>
-          <p>{project.stack}</p>
-          {(project.liveUrl || project.sourceUrl) && (
-            <span className="project-actions">
-              {project.title === "DFinance Manager" ? <a href="#tools">Try it here <ArrowRight size={14} /></a> : project.liveUrl && <a href={normalizeHttpsUrl(project.liveUrl)} target="_blank" rel="noreferrer">Open project <ArrowUpRight size={14} /></a>}
-              {project.sourceUrl && <a href={project.sourceUrl} target="_blank" rel="noreferrer">Source <GithubLogo size={14} /></a>}
-            </span>
-          )}
-        </div>
-      </div>
-    </article>
-  );
+function HeroStatement({ description }) {
+  if (description !== "I build claims workflows, real-time data systems, and conversational tools.") return description;
+  return <>I build <em>claims workflows,</em><br /> <em>real-time data systems,</em> and <em>conversational tools.</em></>;
 }
 
-function ToolCard({ tool, onLaunch }) {
+function ToolCard({ tool, onLaunch, index }) {
   const safeUrl = normalizeHttpsUrl(tool.url);
   const safeEmbedUrl = normalizeHttpsUrl(tool.embedUrl);
   const runsHere = tool.kind === "native" || Boolean(safeEmbedUrl);
@@ -132,13 +106,13 @@ function ToolCard({ tool, onLaunch }) {
   );
 
   if (runsHere) {
-    return <button className={`tool-card${tool.id === "ai-news" ? " is-featured" : ""}`} type="button" onClick={() => onLaunch({ ...tool, url: safeUrl, embedUrl: safeEmbedUrl })} data-reveal>{content}</button>;
+    return <Reveal as="button" className={`tool-card${tool.id === "ai-news" ? " is-featured" : ""}`} type="button" onClick={() => onLaunch({ ...tool, url: safeUrl, embedUrl: safeEmbedUrl })} index={index} whileHover={{ y: -4, transition: { duration: motionTime.quick, ease: motionEase } }} whileTap={{ scale: 0.99 }}>{content}</Reveal>;
   }
 
   return safeUrl ? (
-    <a className="tool-card" href={safeUrl} target="_blank" rel="noreferrer" data-reveal>{content}</a>
+    <Reveal as="a" className="tool-card" href={safeUrl} target="_blank" rel="noreferrer" index={index} whileHover={{ y: -4, transition: { duration: motionTime.quick, ease: motionEase } }} whileTap={{ scale: 0.99 }}>{content}</Reveal>
   ) : (
-    <article className="tool-card is-pending" data-reveal>{content}</article>
+    <Reveal as="article" className="tool-card is-pending" index={index}>{content}</Reveal>
   );
 }
 
@@ -412,34 +386,35 @@ function AiNewsWorkbench() {
 }
 
 function EducationRecord({ item }) {
+  const [flipped, setFlipped] = useState(false);
+  const reduced = useReducedMotion();
+  const frontAction = useRef(null);
+  const backAction = useRef(null);
+  const didMount = useRef(false);
+  useEffect(() => {
+    if (!didMount.current) { didMount.current = true; return; }
+    (flipped ? backAction : frontAction).current?.focus({ preventScroll: true });
+  }, [flipped]);
   return (
-    <div className="education-record" data-reveal>
-      <div className="education-primary">
-        <span>{item.period}</span>
-        <h3>{item.institution}</h3>
-        <p>{item.location}</p>
+    <Reveal className="education-flip-wrap">
+      <div className="education-flip" data-flipped={flipped} data-reduced={reduced}>
+        <div className="education-flip-inner">
+          <article className="education-face education-front" aria-hidden={flipped} inert={flipped}>
+            <div className="education-primary"><span>{item.period}</span><h3>{item.institution}</h3><p>{item.location}</p></div>
+            <div className="education-degree"><small>DEGREE</small><strong>{item.degree}</strong><p>CGPA <b>{item.cgpa}</b></p></div>
+            <button ref={frontAction} className="education-flip-action" type="button" onClick={() => setFlipped(true)}>Explore the details <ArrowRight size={18} /></button>
+          </article>
+          <article className="education-face education-back" aria-hidden={!flipped} inert={!flipped}>
+            <div className="education-back-header"><div><small>{item.institution}</small><h3>What I studied & built on.</h3></div><button ref={backAction} className="education-flip-action" type="button" onClick={() => setFlipped(false)}>Back to degree <ArrowRight size={18} /></button></div>
+            <div className="education-back-grid">
+              <div><small>COURSEWORK</small><ul>{item.coursework.map((entry) => <li key={entry}>{entry}</li>)}</ul></div>
+              <div><small>ACHIEVEMENTS</small><ul>{item.achievements.map((entry) => <li key={entry}>{entry}</li>)}</ul></div>
+              <div><small>CERTIFICATIONS</small><ul>{item.certifications.map((entry) => <li key={entry}>{entry}</li>)}</ul></div>
+            </div>
+          </article>
+        </div>
       </div>
-      <div className="education-degree">
-        <small>DEGREE</small>
-        <strong>{item.degree}</strong>
-        <p>CGPA <b>{item.cgpa}</b></p>
-      </div>
-      <details className="education-detail" onToggle={() => ScrollTrigger.refresh()}>
-        <summary>Coursework, achievements & certifications</summary>
-        <div>
-          <small>RELEVANT COURSEWORK</small>
-          <ul>{item.coursework.map((entry) => <li key={entry}>{entry}</li>)}</ul>
-        </div>
-        <div>
-          <small>ACHIEVEMENTS</small>
-          <ul>{item.achievements.map((entry) => <li key={entry}>{entry}</li>)}</ul>
-        </div>
-        <div>
-          <small>CERTIFICATIONS</small>
-          <ul>{item.certifications.map((entry) => <li key={entry}>{entry}</li>)}</ul>
-        </div>
-      </details>
-    </div>
+    </Reveal>
   );
 }
 
@@ -537,7 +512,7 @@ function MinimalPlaylistPlayer({ playlist }) {
         onEnded={() => moveTrack(1)}
       />
       <header className="minimal-player-header">
-        <strong>{currentTrack.title || playlist.title}</strong>
+        <NowPlaying track={currentTrack} art={playlist.banner} playing={playing} enabled={Boolean(audioSource)} onToggle={togglePlayback} />
         <div>
           <button className={shuffle ? "is-active" : ""} type="button" onClick={() => setShuffle((value) => !value)} disabled={!tracks.length} aria-label="Shuffle songs" aria-pressed={shuffle}><Shuffle size={16} /></button>
           <button type="button" onClick={() => setQueueOpen((value) => !value)} aria-expanded={queueOpen}><ListBullets size={16} /> Songs</button>
@@ -585,6 +560,10 @@ function MinimalPlaylistPlayer({ playlist }) {
 }
 
 function MinimalMusicExperience({ playlists }) {
+  const stageRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: stageRef, offset: ["start end", "end start"] });
+  const artworkY = useTransform(scrollYProgress, [0, 1], ["-2%", "2%"]);
   const availablePlaylists = (playlists || []).filter((playlist) => playlist?.title && playlist?.tracks?.length);
   const firstKey = availablePlaylists[0]?.id || availablePlaylists[0]?.url || "";
   const [activeKey, setActiveKey] = useState(firstKey);
@@ -597,8 +576,8 @@ function MinimalMusicExperience({ playlists }) {
   if (!active) return null;
 
   return (
-    <article className="music-stage" data-reveal>
-      <img className="music-stage-art" src={active.banner || "/images/music-telangana-golden-hour.png"} alt="Golden-hour countryside near Hyderabad" />
+    <article className="music-stage" ref={stageRef}>
+      <m.img className="music-stage-art" style={{ y: reduceMotion ? 0 : artworkY }} src={active.banner || "/images/music-telangana-golden-hour.png"} alt="Golden-hour countryside near Hyderabad" />
       <div className="music-stage-shade" aria-hidden="true" />
       <header className="music-stage-header">
         <div className="music-stage-brand"><strong>MUSIC I LOVE</strong><small>Selected by Dhruvith</small></div>
@@ -622,7 +601,12 @@ function MinimalMusicExperience({ playlists }) {
 
 
 export function App() {
-  const [openProject, setOpenProject] = useState("02");
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const [theme, setTheme] = useState(() => {
+    try { return localStorage.getItem("dhruvith-portfolio-theme") === "dark" ? "dark" : "light"; }
+    catch { return "light"; }
+  });
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTool, setActiveTool] = useState(null);
   const [content, setContent] = useState(fallbackContent);
@@ -631,14 +615,14 @@ export function App() {
   const toolTriggerRef = useRef(null);
 
   useEffect(() => {
-    ScrollTrigger.refresh();
-  }, [content, openProject]);
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem("dhruvith-portfolio-theme", theme); } catch { /* private storage */ }
+  }, [theme]);
 
   useEffect(() => {
     if (!activeTool || !workbenchRef.current) return;
     workbenchRef.current.focus({ preventScroll: true });
     workbenchRef.current.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
-    ScrollTrigger.refresh();
   }, [activeTool]);
 
   const launchTool = (tool) => {
@@ -658,7 +642,6 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const lenis = reduceMotion ? null : new Lenis({
       duration: 0.8,
       easing: (time) => Math.min(1, 1.001 - Math.pow(2, -10 * time)),
@@ -686,60 +669,23 @@ export function App() {
     window.addEventListener("scroll", updateProgress, { passive: true });
     updateProgress();
 
-    const context = gsap.context(() => {
-      if (reduceMotion) return;
-
-      gsap.timeline({ defaults: { ease: "power3.out" } })
-        .from(".site-nav", { y: -14, opacity: 0, duration: 0.5 }, 0)
-        .from(".hero-media", { x: 24, opacity: 0.35, duration: 0.85 }, 0.08)
-        .from(".hero-line", { y: 30, opacity: 0, duration: 0.78, stagger: 0.08 }, 0.12)
-        .from(".hero-support", { y: 16, opacity: 0, duration: 0.52 }, 0.42)
-        .from(".hero-chapter", { y: 18, opacity: 0, duration: 0.52 }, 0.58);
-
-      gsap.utils.toArray("[data-reveal]").forEach((node) => {
-        const isHeading = node.matches(".section-heading, .music-heading");
-        gsap.from(isHeading ? Array.from(node.children) : node, {
-          y: isHeading ? 24 : 28,
-          opacity: 0,
-          duration: isHeading ? 0.9 : 0.76,
-          stagger: isHeading ? 0.075 : 0,
-          ease: "power3.out",
-          clearProps: "transform,opacity",
-          scrollTrigger: { trigger: node, start: "top 86%", once: true },
-        });
-      });
-
-      gsap.to(".music-stage-art", {
-        yPercent: 5,
-        scale: 1.035,
-        ease: "none",
-        scrollTrigger: { trigger: ".music-stage", start: "top bottom", end: "bottom top", scrub: 0.7 },
-      });
-
-      gsap.utils.toArray(".timeline-row").forEach((node) => {
-        ScrollTrigger.create({
-          trigger: node,
-          start: "top 62%",
-          end: "bottom 38%",
-          toggleClass: { targets: node, className: "is-active" },
-        });
-      });
-    });
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => target.classList.toggle("is-active", isIntersecting));
+    }, { rootMargin: "-38% 0px -38% 0px" });
+    document.querySelectorAll(".timeline-row").forEach((node) => timelineObserver.observe(node));
 
     const handleKey = (event) => {
       if (event.key === "Escape") setMenuOpen(false);
     };
     window.addEventListener("keydown", handleKey);
-    document.fonts.ready.then(() => ScrollTrigger.refresh());
-
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
       lenis?.destroy();
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("keydown", handleKey);
-      context.revert();
+      timelineObserver.disconnect();
     };
-  }, []);
+  }, [reduceMotion]);
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -747,8 +693,10 @@ export function App() {
     <div className="portfolio-shell">
       <a className="skip-link" href="#education">Skip to content</a>
       <div className="grain" aria-hidden="true" />
+      <m.div className="scroll-progress" style={{ scaleX: scrollYProgress }} aria-hidden="true" />
+      <PullCordSwitch theme={theme} onToggle={setTheme} />
 
-      <header className="site-nav">
+      <m.header className="site-nav" initial={reduceMotion ? false : { y: -12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: motionTime.reveal, ease: motionEase }}>
         <a className="nav-identity" href="#top" aria-label="Dhruvith Chokkarapu, home" aria-current={activeSection === "top" ? "location" : undefined}>
           <strong>{content.identity.name.toUpperCase()}</strong>
           <i aria-hidden="true" />
@@ -764,38 +712,33 @@ export function App() {
           <a className={activeSection === "tools" ? "is-active" : ""} href="#tools" aria-current={activeSection === "tools" ? "location" : undefined} onClick={closeMenu}>Tools</a>
           <a className={["music", "signals"].includes(activeSection) ? "is-active" : ""} href="#music" aria-current={["music", "signals"].includes(activeSection) ? "location" : undefined} onClick={closeMenu}>Outside work</a>
           <a className={activeSection === "contact" ? "is-active" : ""} href="#contact" aria-current={activeSection === "contact" ? "location" : undefined} onClick={closeMenu}>Contact</a>
-          <a className="resume-link" href="/Dhruvith_Chokkarapu_Resume.pdf" download onClick={closeMenu}>
+          <a className="resume-link" href="#resume" onClick={closeMenu}>
             Resume <ArrowUpRight size={15} weight="bold" />
           </a>
         </nav>
-      </header>
+      </m.header>
 
       <main id="main-content">
         <section className="hero" id="top">
           <div className="hero-copy">
-            <p className="hero-eyebrow hero-support">{content.identity.role} <span> / {content.identity.city}</span></p>
+            <m.p className="hero-eyebrow hero-support" initial={reduceMotion ? false : { y: 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: motionTime.reveal, delay: 0.1, ease: motionEase }}>{content.identity.role} <span> / {content.identity.city}</span></m.p>
             <h1>
-              <span className="hero-line-wrap"><span className="hero-line">{content.hero.lineOne}</span></span>
-              <span className="hero-line-wrap"><span className="hero-line"><em>{content.hero.lineTwo}</em></span></span>
+              <span className="hero-line-wrap"><m.span className="hero-line" initial={reduceMotion ? false : { y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: motionTime.hero, delay: 0.14, ease: motionEase }}>{content.hero.lineOne}</m.span></span>
+              <span className="hero-line-wrap"><m.span className="hero-line" initial={reduceMotion ? false : { y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: motionTime.hero, delay: 0.22, ease: motionEase }}><em>{content.hero.lineTwo}</em></m.span></span>
             </h1>
-            <p className="hero-description hero-support">
-              {content.hero.description}
-            </p>
-            <div className="hero-actions hero-support">
-              <a href="#work">Explore my work <ArrowDown size={18} /></a>
-              <a href="#tools">Try my tools <ArrowUpRight size={18} /></a>
-            </div>
+            <m.p className="hero-description hero-support" initial={reduceMotion ? false : { y: 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: motionTime.reveal, delay: 0.32, ease: motionEase }}>
+              <HeroStatement description={content.hero.description} />
+            </m.p>
+            <p className="hero-current-line">{content.hero.currentTitle}</p>
+            <m.div className="hero-actions hero-support" initial={reduceMotion ? false : { y: 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: motionTime.reveal, delay: 0.4, ease: motionEase }}>
+              <MagneticLink href="#work">Explore my work <ArrowDown size={18} /></MagneticLink>
+              <m.a href="#tools" whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }} transition={{ duration: motionTime.quick, ease: motionEase }}>Try my tools <ArrowUpRight size={18} /></m.a>
+            </m.div>
           </div>
 
-          <aside className="hero-media current-work" aria-label="Current work">
-            <span className="current-work-label">{content.hero.currentLabel}</span>
-            <h2>{content.hero.currentTitle}</h2>
-            <p>{content.experience[0].summary}</p>
-            <ul>{content.experience[0].highlights.map((item) => <li key={item}>{item}</li>)}</ul>
-            <a href="#experience">More about my role <ArrowUpRight size={18} /></a>
-          </aside>
+          <HeroCollage />
 
-          <a className="hero-chapter" href="#education">
+          <m.a className="hero-chapter" href="#education" initial={reduceMotion ? false : { y: 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} whileHover={{ y: -2, transition: { duration: motionTime.quick, ease: motionEase } }} transition={{ duration: motionTime.reveal, delay: 0.48, ease: motionEase }}>
             <strong>{content.hero.chapter}<br /><em>{content.hero.chapterEmphasis}</em></strong>
             <ArrowRight size={22} />
             <div className="hero-feature">
@@ -804,90 +747,81 @@ export function App() {
               <p>Education, experiments, and the work that followed.</p>
             </div>
             <div className="hero-scroll"><i><b /></i><small>SCROLL</small></div>
-          </a>
+          </m.a>
         </section>
 
         <section className="education-section" id="education">
-          <header className="section-heading compact" data-reveal>
+          <Reveal as="header" className="section-heading compact">
             <span>{content.educationSection.label}</span>
             <h2>{content.educationSection.heading} <em>{content.educationSection.emphasis}</em></h2>
             <p>{content.educationSection.copy}</p>
-          </header>
+          </Reveal>
           <EducationRecord item={content.education} />
         </section>
 
         <section className="work-section" id="work">
-          <header className="section-heading compact" data-reveal>
+          <Reveal as="header" className="section-heading compact">
             <span>{content.work.label}</span>
             <h2>{content.work.heading} <em>{content.work.emphasis}</em></h2>
             <p>{content.work.copy}</p>
-          </header>
-          <div className="project-list">
-            {content.projects.map((project) => (
-              <ProjectRow
-                key={project.id}
-                project={project}
-                open={openProject === project.id}
-                onToggle={() => setOpenProject((current) => (current === project.id ? "" : project.id))}
-              />
-            ))}
-          </div>
+          </Reveal>
+          <ProjectCarousel projects={content.projects} />
         </section>
 
         <section className="experience-section" id="experience">
-          <header className="section-heading compact" data-reveal>
+          <Reveal as="header" className="section-heading compact">
             <span>{content.experienceSection.label}</span>
             <h2>{content.experienceSection.heading} <em>{content.experienceSection.emphasis}</em></h2>
             <p>{content.experienceSection.copy}</p>
-          </header>
+          </Reveal>
           <div className="experience-list">
-            {content.experience.map((item) => <ExperienceRow item={item} key={item.id} />)}
+            {content.experience.map((item, index) => <ExperienceRow item={item} index={index} key={item.id} />)}
           </div>
         </section>
 
         <section className="story-section" id="story">
-          <header className="section-heading" data-reveal>
+          <Reveal as="header" className="section-heading">
             <span>{content.story.label}</span>
             <h2>{content.story.heading} <em>{content.story.emphasis}</em></h2>
             <p>{content.story.copy}</p>
-          </header>
+          </Reveal>
           <div className="timeline">
-            {content.timeline.map((item) => (
-              <article className="timeline-row" key={item.number} data-reveal>
+            {content.timeline.map((item, index) => (
+              <Reveal as="article" className="timeline-row" key={item.number} index={index}>
                 <div><small>{item.time}</small><strong>{item.place}</strong></div>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
-              </article>
+              </Reveal>
             ))}
           </div>
-          <blockquote className="story-belief" data-reveal>
+          <Reveal as="blockquote" className="story-belief">
             <span>Engineer, not developer.</span>
             <strong>{content.story.beliefLead} {content.story.beliefBody} <em>{content.story.beliefEmphasis}</em></strong>
-          </blockquote>
-          <div className="stack-ledger" data-reveal>
+          </Reveal>
+          <Reveal className="stack-ledger">
             <header><span>TECHNOLOGIES I WORK WITH</span></header>
             <div>{content.stack.map(([name, logo]) => (
               <span className="stack-item" key={name}><img src={logo} alt="" aria-hidden="true" /><b>{name}</b></span>
             ))}</div>
-          </div>
+          </Reveal>
         </section>
 
         <section className="tools-section" id="tools">
-          <header className="section-heading compact" data-reveal>
+          <Reveal as="header" className="section-heading compact">
             <span>{content.toolsSection.label}</span>
             <h2>{content.toolsSection.heading} <em>{content.toolsSection.emphasis}</em></h2>
             <p>{content.toolsSection.copy}</p>
-          </header>
+          </Reveal>
           {content.tools.length ? (
             <div className="tool-grid">
-              {content.tools.map((tool) => <ToolCard tool={tool} onLaunch={launchTool} key={tool.id || tool.title} />)}
+              {content.tools.map((tool, index) => <ToolCard tool={tool} onLaunch={launchTool} index={index} key={tool.id || tool.title} />)}
             </div>
           ) : (
-            <div className="tool-empty" data-reveal>
+            <Reveal className="tool-empty">
               <Toolbox size={30} weight="light" />
               <span><small>PUBLIC ACCESS NEXT</small><strong>Interactive tools are being prepared.</strong></span>
               <p>Each tool will open directly from here once its public link and access notes are ready.</p>
-            </div>
+            </Reveal>
           )}
           {activeTool && (
             <section ref={workbenchRef} tabIndex={-1} className={`tool-workbench${activeTool.id === "ai-news" ? " is-news" : ""}`} aria-label={`${activeTool.title} tool`}>
@@ -916,27 +850,27 @@ export function App() {
         </section>
 
         <section className="music-section" id="music">
-          <header className="music-heading" data-reveal>
+          <Reveal as="header" className="music-heading">
             <span>{content.musicSection.label}</span>
             <h2>{content.musicSection.heading} <em>{content.musicSection.emphasis}</em></h2>
             <p>{content.musicSection.copy}</p>
-          </header>
+          </Reveal>
           <MinimalMusicExperience playlists={content.musicPlaylists} />
         </section>
 
         <section className="signals-section" id="signals">
-          <div className="signals-intro" data-reveal>
+          <Reveal className="signals-intro">
             <span>{content.signals.label}</span>
             <h2>{content.signals.heading} <em>{content.signals.emphasis}</em></h2>
             <p>{content.signals.copy}</p>
-          </div>
-          <aside className="life-notes" data-reveal>
+          </Reveal>
+          <Reveal as="aside" className="life-notes">
             <MapPin size={19} /><span>{content.lifeNotes[0]}</span>
             <FilmSlate size={19} /><span>{content.lifeNotes[1]}</span>
             <Trophy size={19} /><span>{content.lifeNotes[2]}</span>
-          </aside>
+          </Reveal>
           <div className="personal-grid">
-            <article className="atlas-card" id="travel-map" data-reveal>
+            <article className="atlas-card" id="travel-map">
               <header>
                 <span><MapTrifold size={18} weight="light" /> {content.placesSection.label}</span>
                 <small>{content.places.length} places{content.placesSection.firstVisited && content.placesSection.lastVisited ? ` · ${content.placesSection.firstVisited.slice(0, 4)}—${content.placesSection.lastVisited.slice(0, 4)}` : ""}</small>
@@ -951,17 +885,18 @@ export function App() {
         </section>
 
         <section className="contact-section" id="contact">
-          <div className="contact-statement" data-reveal>
+          <Reveal className="contact-statement">
             <span>{content.contact.label}</span>
             <h2>{content.contact.heading}</h2>
             <p>{content.contact.copy}</p>
-          </div>
-          <div className="contact-links" data-reveal>
+          </Reveal>
+          <Reveal className="contact-links">
             <a href={`mailto:${content.contact.email}`}><EnvelopeSimple size={22} /><span><small>Email</small>{content.contact.email}</span><ArrowUpRight size={18} /></a>
             <a href={content.contact.github} target="_blank" rel="noreferrer"><GithubLogo size={22} /><span><small>GitHub</small>{content.contact.github.replace("https://", "")}</span><ArrowUpRight size={18} /></a>
             <a href={content.contact.linkedin} target="_blank" rel="noreferrer"><LinkedinLogo size={22} /><span><small>LinkedIn</small>{content.identity.name}</span><ArrowUpRight size={18} /></a>
-            <a href="/Dhruvith_Chokkarapu_Resume.pdf" download><DownloadSimple size={22} /><span><small>Resume</small>Download PDF</span><ArrowDown size={18} /></a>
-          </div>
+            <a href="#resume"><DownloadSimple size={22} /><span><small>Resume</small>Open resume</span><ArrowDown size={18} /></a>
+          </Reveal>
+          <ResumePrinter identity={content.identity} />
           <footer>
             <Signature />
             <span>© 2026 Dhruvith Chokkarapu</span>

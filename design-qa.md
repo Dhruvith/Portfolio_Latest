@@ -266,3 +266,94 @@ final result: passed
 - Browser console errors: none. Two pre-existing Firestore permission warnings correctly fell back to bundled content and are unrelated to this change.
 
 final result: passed
+
+---
+
+# Portfolio design QA — local preview
+
+Source direction: `C:\Users\DELL\.codex\generated_images\019fa74f-2add-7be3-a4a2-b6506124daf3\exec-5b6e1079-9211-4e89-aef3-19581d3810d9.png` (the user-selected first concept).
+
+Implementation: `http://localhost:4174/`, inspected in the user's Brave extension tab at desktop width approximately 1690 px and a narrow viewport approximately 390 px. The desktop, carousel, music, contact, footer, and dark-mode screenshots were captured and reviewed in the working chat. The Brave extension intermittently timed out on a subsequent mobile screenshot, so that image capture is not claimed as complete; DOM geometry and interactions were checked after reconnection.
+
+Comparison and corrections:
+
+- Preserved the selected concept's warm-white canvas, bold name, blue technical proposition, right-side editorial column, yellow micro-accent, and restrained featured-work card.
+- Replaced the former static project presentation with a keyboard-accessible carousel; hid inactive cards from focus and cleaned up side-card text.
+- The VIT card uses a reversible front/back to reveal actual coursework, achievements, and certifications without adding fabricated content. Focus transfers to the visible face.
+- The top-right cord changes the entire page theme, persists the preference, and has an accessible switch button. Dark-mode visual review exposed low-contrast copy in contact, experience, and tools; those selectors were corrected.
+- The now-playing pill reads the actual current MP3 title, artist, and playback state. A local middleware 404 prevented the bundled file from loading; it now falls through to the permitted public copy, and Brave confirmed the song duration and advancing current time in-page.
+- The footer preserves Dhruvith's existing dimensional signature, with a drawn flourish entering on view. Reduced-motion rules remove the essential movement.
+
+Status: **passed for the desktop implementation and functional interactions**. A fresh mobile visual capture remains advisable. The narrow viewport had no horizontal overflow, the back of the flip card fit its height, and dragging the cord toggled the page theme. No remote deployment or Git push was made.
+
+## Pass I — selected photo-led direction and drag-only theme cord (29 September 2026)
+
+### Source and rendered evidence
+
+- User-selected source: `C:\Users\DELL\AppData\Local\Temp\codex-clipboard-5871bf48-45c1-4118-9901-040de30c7d03.png` (1486 × 1058).
+- Brave local preview: `http://localhost:4174/`.
+- Captured comparison views: `qa-selected-desktop.png` and `qa-selected-projects.png`. Source and implementation captures were inspected together at the hero and project-card regions; the source and browser crop use different viewport heights, so the comparison was by region, not a claimed pixel-perfect overlay.
+
+### Findings and corrections
+
+- P1: the implementation had retained the selected palette and typography but lost the photographic collage and project images. Added a Charminar-led two-photo hero composition and purpose-made imagery for the three visible project cards.
+- P1: the theme switch changed on click, contrary to the requested physical interaction. Pointer activation now requires a downward drag past the threshold; a visible suspended lamp and glow show the light state. Enter and Space remain available for keyboard and assistive-technology access.
+- P2: the first image-led pass had an undersized collage and overly strong paper grain. Enlarged the collage and lowered the texture intensity, then recaptured the desktop comparison.
+
+### Fidelity and UX checks
+
+- Typography, color, spacing: passed. Warm-white canvas, black-and-blue name, restrained blue accents, and editorial card rhythm match the selected direction without changing factual content.
+- Imagery: passed. Both hero photographs and all visible project images load in the local preview. WebP assets are used for the displayed project photography.
+- Content and order: passed. Education still precedes projects, as separately specified by the user; the selected screenshot's immediate project section was therefore not copied literally.
+- Interaction: passed. A click does not change theme; a downward pull toggles it in both directions; keyboard Space toggles it. Project cards open details in place, and carousel navigation advances correctly.
+- Responsive/accessibility: passed. Narrow viewport had no horizontal overflow; the collage and cards stack, with a single visible project card. Reduced-motion behavior and visible focus styling remain intact.
+- Browser console: no errors in the final Brave preview.
+- Build and tests: production build passed; editorial/motion tests 8 passed; Sites worker tests 4 passed.
+
+final result: passed
+
+## Pass J — Xevrion-inspired project carousel (29 September 2026)
+
+### Source and rendered evidence
+
+- User-selected source: `C:\Users\DELL\AppData\Local\Temp\codex-clipboard-aeb989ad-53c2-404b-bb49-cd2ac2d5f43e.png` (1872 × 767).
+- Interaction reference: `https://lab.xevrion.dev/lab/carousel-3d`; implementation principles were checked against the reference's published source, without copying it verbatim.
+- Local Brave render: `qa-carousel-3d-initial.png` (2054 × 1234) at `http://localhost:4174/#work`. The source and implementation were visually compared together; different viewport dimensions make this a region-by-region comparison, not a pixel overlay.
+
+### Findings and corrections
+
+- P1: the selected-projects strip looked flat despite the requested carousel treatment. Replaced it with a shallow, draggable 3D arc: the selected card is front-facing while adjacent cards angle back. This retains readable photographs, descriptions, and project links on four real cards.
+- P2: the first narrow-screen drag could select text instead of advancing. Added a small movement threshold, pointer capture after the threshold, and disabled native image dragging. A subsequent Brave swipe advanced the project correctly.
+- The reference's deeper ring would put large editorial cards edge-on. The shallower arc is an intentional adaptation to the existing design language, not an omitted effect.
+
+### Fidelity and UX checks
+
+- Content, imagery, hierarchy, and palette: passed. The same initial Quiz card, neighboring Hospital and DFinance cards, existing images, copy, section title, and warm-white/blue design system remain.
+- Interaction: passed. Next/previous buttons, side-card selection, center-card details, pointer drag, and left/right keyboard navigation were exercised in Brave.
+- Responsive/accessibility: passed. At a 390 px viewport, the 3D arrangement becomes one readable flat card with swipe and controls. Inactive cards are not focusable, visible focus styles remain, and reduced motion uses the flat presentation.
+- Clean Brave preview console: zero errors. Production build passed; editorial/motion tests 8 passed; Sites worker tests 4 passed.
+- `AGENTS.md` now requires Xevrion UI Lab as this project's sole component reference for future component choices, subject to adaptation and accessibility.
+- No Git push or deployment was made.
+
+final result: passed
+
+## Pass K — smaller resume printer (29 September 2026)
+
+### Evidence and comparison
+
+- Source visual truth: `C:\Users\DELL\AppData\Local\Temp\codex-clipboard-1cc4b8d9-da60-4ad7-b19d-e8d7dfc4bc2e.png` (1850 × 620 px, idle state).
+- Rendered implementation: `qa-resume-printer-small.png` (1707 × 433 px, idle state, normal Brave desktop viewport and 1× captured pixels). Both images were opened together for a focused printer-and-heading comparison. The implementation capture is shorter because the current Brave window is 433 CSS px high; its bottom is viewport-cropped, not page-clipped, so no full-frame pixel overlay is claimed.
+- P1 before: the printer occupied about 550 CSS px and dominated the two-column resume block. After: it occupies 400 CSS px (about 27% narrower) while retaining the original asset, centered placement, and hierarchy.
+- Print interaction was exercised in Brave. The resized receipt settled visibly within the printer scene, and the tear/download control remained separate below it. At the narrow breakpoint, geometry showed no horizontal overflow.
+
+### Required fidelity surfaces
+
+- Typography and copy: unchanged; heading, description, buttons, and receipt text remain legible.
+- Spacing and layout rhythm: passed; printer scene reduced from 550 × 510 to 400 × 445 CSS px, with a 320 px maximum on narrow screens. The receipt dimensions were reduced with the scene so controls do not collide.
+- Colors and tokens: unchanged; the cool-gray panel and blue controls retain contrast.
+- Image quality: passed; the same local printer asset renders sharply at the smaller width, without replacement or stretching.
+- Interaction and accessibility: passed on desktop for print and tear-ready states. The mobile visual screenshot was unavailable because Brave returned a blank frame during its temporary viewport override; DOM geometry was checked, but no mobile visual claim is made.
+
+Build passed; editorial and motion tests passed (8/8); clean desktop Brave console (zero errors). No Git push or deployment.
+
+final result: passed

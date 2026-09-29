@@ -7,7 +7,7 @@ The visual direction is a light, functional Scandinavian system: warm white surf
 ## Durable portfolio decisions
 
 - Direction: semi-formal, clear, warm, functional, and technically credible. Take inspiration from Swedish reduced form and IKEA's balance of form, function, quality, accessibility, and durability without copying IKEA branding.
-- No Three.js, WebGL, floating blobs, particle fields, terminal clichés, cyberpunk neon, gradient mesh, card walls, or decorative AI imagery. User-requested exception: the footer signature may use restrained CSS 3D depth, a replayable signing entrance, and pointer tilt, with reduced-motion support. Do not reintroduce unrelated 3D objects.
+- No Three.js, WebGL, floating blobs, particle fields, terminal clichés, cyberpunk neon, gradient mesh, card walls, or decorative AI imagery. User-requested exceptions: the footer signature may use restrained CSS 3D depth, and the selected-project cards may use the Xevrion-inspired 3D carousel interaction. Keep both readable and reduced-motion safe; do not reintroduce unrelated 3D objects.
 - Avoid glass-heavy surfaces. Use flat, high-contrast panels, visible construction, and restrained shadows.
 - Motion must reveal hierarchy: masked text entrances, restrained image parallax, and project-row transitions. Avoid decorative bouncing or spinning.
 - Lead the hero with Dhruvith's name, role, concrete work, and direct project/tool links. Preserve “Engineer, not developer” and “AI can code. I give it logic.” as supporting copy in the method section, not the primary introduction.
@@ -27,6 +27,12 @@ The visual direction is a light, functional Scandinavian system: warm white surf
 - Keep the animated footer signature, but never show a replay label or icon. Do not restore the removed Charminar photograph/card in the personal section.
 
 Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts/prepare-sites-build.mjs`, and `tests/sites-worker.test.mjs` intact so the same local prototype can be handed to Sites later. Before a Sites handoff, run `npm run build` and `npm run test:sites`.
+
+## Component source rule — mandatory
+
+- For future UI component work in this portfolio, use [Xevrion UI Lab](https://lab.xevrion.dev/) as the sole component reference/library whenever a reusable interaction or component is needed. Inspect the exact demo and source before adapting it to the portfolio; do not substitute a different component gallery or add a competing UI component library unless Dhruvith explicitly changes this rule.
+- Adapt the interaction to the existing design, real content, and available project count rather than copying its demo presentation wholesale. Preserve keyboard access, visible focus, contrast, responsive behavior, and `prefers-reduced-motion`.
+- This preference does not replace the project's existing React, Motion, icon, mapping, or backend dependencies where they are required for functionality; it governs new UI component choices.
 
 ## Personal-project isolation — mandatory
 

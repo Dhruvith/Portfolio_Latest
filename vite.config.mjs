@@ -22,9 +22,15 @@ function servePersonalAudio(request, response, next) {
 
   const filePath = path.resolve(personalAudioRoot, relativePath);
   const rootPrefix = `${personalAudioRoot}${path.sep}`.toLowerCase();
-  if (!filePath.toLowerCase().startsWith(rootPrefix) || !existsSync(filePath)) {
+  if (!filePath.toLowerCase().startsWith(rootPrefix)) {
     response.statusCode = 404;
     response.end("Audio file not found");
+    return;
+  }
+  // Prefer a private local library while editing. If that file is absent,
+  // let Vite serve the explicitly bundled, permitted public/audio copy.
+  if (!existsSync(filePath)) {
+    next();
     return;
   }
 

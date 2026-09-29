@@ -5,6 +5,7 @@ export function Signature() {
   const root = useRef(null);
   const word = useRef(null);
   const dot = useRef(null);
+  const flourish = useRef(null);
   const animations = useRef([]);
   const reduced = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const resetTilt = () => {
@@ -27,6 +28,10 @@ export function Signature() {
         { opacity: 0, transform: "translateY(-8px)" },
         { opacity: 1, transform: "translateY(0)" },
       ], { duration: 240, delay: 1250, fill: "backwards", easing: "ease-out" }),
+      flourish.current.animate([
+        { strokeDashoffset: 360, opacity: 0 },
+        { strokeDashoffset: 0, opacity: 1 },
+      ], { duration: 820, delay: 740, fill: "backwards", easing: "cubic-bezier(.22,1,.36,1)" }),
     ];
   };
   useEffect(() => {
@@ -47,6 +52,6 @@ export function Signature() {
       event.currentTarget.style.setProperty("--sign-x", `${(event.clientY - box.top) / box.height * -10 + 5}deg`);
       event.currentTarget.style.setProperty("--sign-y", `${(event.clientX - box.left) / box.width * 16 - 8}deg`);
     }} onPointerLeave={resetTilt} onBlur={resetTilt}>
-    <span className="signature-depth" aria-hidden="true"><span ref={word} className="signature-ink">Dhruvith</span><span ref={dot} className="signature-period">.</span></span>
+    <span className="signature-depth" aria-hidden="true"><span ref={word} className="signature-ink">Dhruvith</span><span ref={dot} className="signature-period">.</span><svg className="signature-flourish" viewBox="0 0 340 44" preserveAspectRatio="none"><path ref={flourish} d="M7 26 C70 8 123 17 178 24 S279 34 335 5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="360" /></svg></span>
   </button>;
 }
